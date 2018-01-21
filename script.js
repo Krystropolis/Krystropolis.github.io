@@ -14,12 +14,9 @@ $(document).ready(function() {
 
 	/**
 	 * load content into our page
-	 * @param {element} btn - the button that called the function
-	 * @param {string} content - file containing content
 	 */
  	function load_()
 	 {
-		//toggleBtnColor(btn);
 		var content = this.getAttribute('value');
 		$('.content').load(content + '.html', function() {
 			if (console) {
@@ -30,20 +27,24 @@ $(document).ready(function() {
 
 	/**
 	 * remove content from our page
-	 * @param {element} btn - the button that called the function
 	 */
- 	function unload_(btn)
+ 	function unload_()
 	 {
-	    //toggleBtnColor(btn);
 	    $('.content').empty();
 	}	
 
-	function navHandler(){
+	/**
+	 * adds event handlers for all click events
+	 */
+	function clickHandlers(){
+		// click events for navigation
 		var navLinks = document.querySelectorAll('.mdl-navigation__link');
 		for (var i = 0; i < navLinks.length; i++){
 			navLinks[i].addEventListener('click', load_);
 		}
+		// unload content when test button is clicked
+		document.querySelector('.test-button').addEventListener('click', unload_);
 	}
 
-	navHandler();
+	clickHandlers();
 });
