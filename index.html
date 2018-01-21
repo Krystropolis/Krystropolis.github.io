@@ -17,112 +17,66 @@
 <html lang="en">
 
 <head>
-	<title>Krystropolis</title>
-	<meta name="description" content="A portfolio website for Krystal Elliott.">
-	<!-- encoding to allow for special chars -->
-    <meta charset="utf-8">
-    <!-- display the website in edge mode -->
-    <meta http-equiv="X-UA-Compatible" content="IE=edge">
-    <!-- make mobile compatible -->
-    <meta name="viewport" content="width=device-width, initial-scale=1.0, minimum-scale=1.0">
-    <!-- stylesheets and scripts -->
-    <link rel="stylesheet" href="https://fonts.googleapis.com/css?family=Roboto:regular,bold,italic,thin,light,bolditalic,black,medium&lang=en">
-    <link rel="stylesheet" href="https://code.getmdl.io/1.3.0/material.blue_grey-red.min.css" />
-    <link rel="stylesheet" href="https://fonts.googleapis.com/icon?family=Material+Icons">    
-    <link rel="stylesheet" href="styles.css" />
-    <script defer src="https://code.getmdl.io/1.3.0/material.min.js"></script>
-    <script src="script.js"></script>
+  <title>Krystropolis</title>
+  <meta name="description" content="A portfolio website for Krystal Elliott.">
+  <!-- encoding to allow for special chars -->
+  <meta charset="utf-8">
+  <!-- display the website in edge mode -->
+  <meta http-equiv="X-UA-Compatible" content="IE=edge">
+  <!-- make mobile compatible -->
+  <meta name="viewport" content="width=device-width, initial-scale=1.0, minimum-scale=1.0">
+  <!-- stylesheets and scripts -->
+  <link rel="stylesheet" href="https://fonts.googleapis.com/css?family=Roboto:regular,bold,italic,thin,light,bolditalic,black,medium&lang=en">
+  <link rel="stylesheet" href="https://code.getmdl.io/1.3.0/material.blue_grey-red.min.css" />
+  <link rel="stylesheet" href="https://fonts.googleapis.com/icon?family=Material+Icons">    
+  <link rel="stylesheet" href="styles.css" />
+  <script defer src="https://code.getmdl.io/1.3.0/material.min.js"></script>
+  <script src="script.js"></script>
+  <script src="https://code.jquery.com/jquery-2.1.4.min.js"></script>
 </head>
 
-<body>
-    <div class="mdl-layout mdl-js-layout mdl-layout--fixed-header">
-        <header class="mdl-layout__header mdl-layout__header--waterfall portfolio-header">
-            <div class="mdl-layout__header-row portfolio-logo-row">
-                <span class="mdl-layout__title">
-                    <div class="portfolio-logo"></div>
-                    <span class="mdl-layout__title large">Welcome to Krystropolis!</span>
-                </span>
-            </div>
-            <div class="mdl-layout__header-row portfolio-navigation-row mdl-layout--large-screen-only">
-                <nav class="mdl-navigation mdl-typography--body-1-force-preferred-font">
-                    <a class="mdl-navigation__link is-active" href="index.html">Portfolio</a>
-                    <a class="mdl-navigation__link" href="blog.html">Blog</a>
-                    <a class="mdl-navigation__link" href="about.html">About</a>
-                    <a class="mdl-navigation__link" href="contact.html">Contact</a>
-                </nav>
-            </div>
-        </header>
-        <div class="mdl-layout__drawer mdl-layout--small-screen-only">
-            <nav class="mdl-navigation mdl-typography--body-1-force-preferred-font">
-                <a class="mdl-navigation__link is-active" href="index.html">Portfolio</a>
-                <a class="mdl-navigation__link" href="blog.html">Blog</a>
-                <a class="mdl-navigation__link" href="about.html">About</a>
-                <a class="mdl-navigation__link" href="contact.html">Contact</a>
-            </nav>
-        </div>
-        <main class="mdl-layout__content">
-            <div class="mdl-grid portfolio-max-width">
-                <div class="mdl-cell mdl-cell--12-col mdl-card mdl-shadow--4dp">
-                    <div class="mdl-card__title">
-                        <h2 class="mdl-card__title-text">Portfolio</h2>
-                    </div>
-                    <div class="mdl-card__media">
-                        <div class="article-border"></div>
-                    </div>
-                    <div class="mdl-card__supporting-text">
-                        <strong>Includes</strong>
-                        <span>Various development projects and endeavours. <a href="mailto:e.krystal@gmail.com">Contact me</a> to learn more.</span>
-                    </div>
-                    <div class="mdl-grid portfolio-copy">
-                        <h3 class="mdl-cell mdl-cell--12-col mdl-typography--headline">Senior Project</h3>
-                        <div class="mdl-cell mdl-cell--6-col mdl-card__supporting-text no-padding">
-                        	<p>My senior project focused on supervised machine learning, utilizing <a href="https://www.ibm.com/watson/" target="_blank">IBM Watson</a> to create a virtual advisor who could assist prospective students with academic planning. My team participated in the <a href="https://www.edtechnetwork.psu.edu/news/nittany-watson-challenge-top-10-proposals">Nittany Watson Challenge</a>, creating a minimum viable product that would advance several rounds, and secure funding for further research and development.</p>
-                        	<p>My former instructor, Mr. Ronald DelPorto, was kind enough to attend my capstone presentation and record part of it. During this presentation, I established a scenario to guide the audience through the use of our system.</p>
-                            <a href="https://www.youtube.com/watch?v=3gAqwNpoJxA">Intelligent Academic Advisor, Part I</a><br/>
-                            <a href="https://www.youtube.com/watch?v=kRPAQEqDL0o">Intelligent Academic Advisor, Part II</a>
-                        </div>
-                        <div class="mdl-cell mdl-cell--6-col">
-                        	<iframe width="560" height="315" src="https://www.youtube.com/embed/3gAqwNpoJxA" frameborder="0" allow="autoplay; encrypted-media" allowfullscreen></iframe>
-                            <!-- <img class="article-image" src=" images/portfolio-example-02.jpg" border="0" alt=""> -->
-                        </div>
-                        <h3 class="mdl-cell mdl-cell--12-col mdl-typography--headline">Initial Ideas</h3>
-                        <div class="mdl-cell mdl-cell--6-col">
-                            <img class="article-image" src=" images/portfolio-example-03.jpg" border="0" alt="">
-                        </div>
-                        <div class="mdl-cell mdl-cell--6-col mdl-card__supporting-text no-padding ">
-                            <p>
-                                Excepteur reprehenderit sint exercitation ipsum consequat qui sit id velit elit. Velit anim eiusmod labore sit amet. Voluptate voluptate irure occaecat deserunt incididunt esse in. Sunt velit aliquip sunt elit ex nulla reprehenderit qui ut eiusmod ipsum do. Duis veniam reprehenderit laborum occaecat id proident nulla veniam. Duis enim deserunt voluptate aute veniam sint pariatur exercitation. Irure mollit est sit labore est deserunt pariatur duis aute laboris cupidatat. Consectetur consequat esse est sit veniam adipisicing ipsum enim irure.
-                            </p>
-                        </div>
-                        <h3 class="mdl-cell mdl-cell--12-col mdl-typography--headline">Final Concept</h3>
-                        <div class="mdl-cell mdl-cell--6-col">
-                            <img class="article-image" src=" images/portfolio-example-05.jpg" border="0" alt="">
-                        </div>
-                        <div class="mdl-cell mdl-cell--6-col">
-                            <img class="article-image" src=" images/portfolio-example-06.jpg" border="0" alt="">
-                        </div>
-                        <div class="mdl-cell mdl-cell--8-col mdl-card__supporting-text no-padding ">
-                            <p>
-                                Excepteur reprehenderit sint exercitation ipsum consequat qui sit id velit elit. Velit anim eiusmod labore sit amet. Voluptate voluptate irure occaecat deserunt incididunt esse in. Sunt velit aliquip sunt elit ex nulla reprehenderit qui ut eiusmod ipsum do. Duis veniam reprehenderit laborum occaecat id proident nulla veniam. Duis enim deserunt voluptate aute veniam sint pariatur exercitation. Irure mollit est sit labore est deserunt pariatur duis aute laboris cupidatat. Consectetur consequat esse est sit veniam adipisicing ipsum enim irure.
-                            </p>
-                        </div>
-                    </div>
-                </div>
-            </div>
-            <footer class="mdl-mini-footer">
-                <div class="mdl-mini-footer__left-section">
-                    <div class="mdl-logo">Simple portfolio website</div>
-                </div>
-                <div class="mdl-mini-footer__right-section">
-                    <ul class="mdl-mini-footer__link-list">
-                        <li><a href="#">Help</a></li>
-                        <li><a href="#">Privacy & Terms</a></li>
-                    </ul>
-                </div>
-            </footer>
-        </main>
+<body>    
+  <div class="mdl-layout mdl-js-layout mdl-layout--fixed-header">
+    <header class="mdl-layout__header mdl-layout__header--waterfall portfolio-header">
+      <div class="mdl-layout__header-row portfolio-logo-row">
+        <span class="mdl-layout__title">
+          <div class="portfolio-logo"></div>
+          <span class="mdl-layout__title large">Welcome to Krystropolis!</span>
+        </span>
+      </div>
+      <div class="mdl-layout__header-row portfolio-navigation-row mdl-layout--large-screen-only">
+        <nav class="mdl-navigation mdl-typography--body-1-force-preferred-font">
+          <a class="mdl-navigation__link is-active" href="index.html">Portfolio</a>
+          <a class="mdl-navigation__link" href="blog.html">Blog</a>
+          <a class="mdl-navigation__link" href="about.html">About</a>
+          <a class="mdl-navigation__link" href="contact.html">Contact</a>
+        </nav>
+      </div>
+    </header>
+    <div class="mdl-layout__drawer mdl-layout--small-screen-only">
+      <nav class="mdl-navigation mdl-typography--body-1-force-preferred-font">
+        <a class="mdl-navigation__link is-active" href="index.html">Portfolio</a>
+        <a class="mdl-navigation__link" href="blog.html">Blog</a>
+        <a class="mdl-navigation__link" href="about.html">About</a>
+        <a class="mdl-navigation__link" href="contact.html">Contact</a>
+      </nav>
     </div>
-    <script src="https://code.getmdl.io/1.3.0/material.min.js"></script>
+    <main class="mdl-layout__content">
+      <div class="content">Test Content</div>
+      <button onclick="load_('portfolio.html')">test1</button>
+      <button onclick="unload_()">test2</button>
+      <footer class="mdl-mini-footer">
+        <div class="mdl-mini-footer__left-section">
+          <div class="mdl-logo">&#169; Krystal Elliott 2018</div>
+        </div>
+        <div class="mdl-mini-footer__right-section">
+          <ul class="mdl-mini-footer__link-list">
+            <li><a href="mailto:e.krystal@gmail.com">Contact</a></li>
+          </ul>
+        </div>
+      </footer>
+    </main>
+  </div>
+  <script src="https://code.getmdl.io/1.3.0/material.min.js"></script>
 </body>
-
 </html>
