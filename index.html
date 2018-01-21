@@ -63,8 +63,16 @@
     </div>
     <main class="mdl-layout__content">
       <div class="content">Test Content</div>
-      <button class="mdl-button" onclick="load_('portfolio.html')">Add Content Test Button</button>
-      <button class="mdl-button" onclick="unload_()">Remove Content Test Button</button>
+      <div class="mdl-grid">
+        <div class="mdl-layout-spacer"></div>
+        <div class="mdl-cell mdl-cell--3-col">
+          <button class="mdl-button mdl-js-button mdl-js-ripple-effect mdl-button--raised mdl-button--colored mdl-button--primary" onclick="load_(this,'portfolio.html')">Add Content Test Button</button>
+        </div>
+        <div class="mdl-cell mdl-cell--3-col">
+          <button class="mdl-button mdl-js-button mdl-js-ripple-effect mdl-button--raised mdl-button--colored mdl-button--primary" onclick="unload_(this)">Remove Content Test Button</button>
+        </div>
+        <div class="mdl-layout-spacer"></div>
+      </div>
       <footer class="mdl-mini-footer">
         <div class="mdl-mini-footer__left-section">
           <div class="mdl-logo">&#169; Krystal Elliott 2018</div>
