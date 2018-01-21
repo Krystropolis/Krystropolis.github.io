@@ -47,4 +47,6 @@ $(document).ready(function() {
 	}
 
 	clickHandlers();
+	// initialize page with portfolio page temporarily
+	document.querySelector('.nav-portfolio').click();
 });
