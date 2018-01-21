@@ -20,10 +20,10 @@ $(document).ready(function() {
  	function load_()
 	 {
 		//toggleBtnColor(btn);
-		var content = this.getAttribute('href');
-		$('.content').load(content, function() {
+		var content = this.getAttribute('value');
+		$('.content').load(content + '.html', function() {
 			if (console) {
-				console.log(content + ' loaded successfully.');
+				console.log(content + ' loaded successfully');
 			}
 		});
 	}	
