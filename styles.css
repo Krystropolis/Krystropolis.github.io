@@ -146,6 +146,10 @@ img.article-image {
   max-width: 700px;
 }
 
+.portfolio-resume {
+  max-width: 800px;
+}
+
 .no-padding {
   padding: 0;
 }
@@ -192,3 +196,32 @@ footer {
   background-size: cover;
 }
 
+.experience--position, .skill-header {
+  font-weight: bold;
+  font-size: medium;
+}
+.experience--employer, .education--school {
+  font-style: italic;
+}
+.experience--date {
+  font-size: smaller;
+}
+.experience--responsibilities {
+  font-size: small;
+}
+
+.education--degree {
+  font-weight: bold;
+}
+.education--gpa {
+  font-size: smaller;
+}
+
+.skills {
+  list-style: none;
+  padding-left: 20px;
+}
+.skill-level {
+  font-weight: bold;
+  text-decoration: underline;
+}
