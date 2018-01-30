@@ -42,8 +42,6 @@ $(document).ready(function() {
 		for (var i = 0; i < navLinks.length; i++){
 			navLinks[i].addEventListener('click', load_);
 		}
-		// unload content when test button is clicked
-		document.querySelector('.test-button').addEventListener('click', unload_);
 	}
 
 	clickHandlers();
