@@ -135,7 +135,7 @@ img.article-image {
 
 img.article-image-block {
   width: 100%;
-  height: 100%;
+  height: 500px;
   object-fit: cover;
 }
 
