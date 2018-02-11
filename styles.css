@@ -128,11 +128,6 @@ img.article-image {
   height: auto;
 }
 
-img.portfolio-image {
-  max-width: 200px;
-  height: auto;
-}
-
 .article-border {
   background: url(images/sons-red.gif);
   background-repeat: repeat-x;
