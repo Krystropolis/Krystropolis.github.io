@@ -67,10 +67,10 @@ export default async function AboutPage() {
         {/* Contact CTA */}
         <section className="card p-8 text-center hover:shadow-soft-lg transition-shadow duration-300">
           <h2 className="text-2xl font-bold text-gray-900 dark:text-gray-100 mb-4">
-            Let's Connect
+            {"Let's Connect"}
           </h2>
           <p className="text-lg text-gray-600 dark:text-gray-300 mb-6">
-            I'm always interested in hearing about new opportunities, collaborations, or just having a great conversation about technology and development.
+            {"I'm always interested in hearing about new opportunities, collaborations, or just having a great conversation about technology and development."}
           </p>
           <a
             href="mailto:e.krystal@gmail.com"
