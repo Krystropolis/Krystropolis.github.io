@@ -98,20 +98,6 @@ export default async function PortfolioPage() {
                       aria-label={`View ${link.label} (opens in new tab)`}
                     >
                       {link.label}
-                      <svg
-                        className="w-4 h-4 ml-2 inline-block"
-                        fill="none"
-                        stroke="currentColor"
-                        viewBox="0 0 24 24"
-                        aria-hidden="true"
-                      >
-                        <path
-                          strokeLinecap="round"
-                          strokeLinejoin="round"
-                          strokeWidth={2}
-                          d="M10 6H6a2 2 0 00-2 2v10a2 2 0 002 2h10a2 2 0 002-2V8a2 2 0 00-2-2h-4m-4 4h.01M5 5H4a2 2 0 00-2 2v14a2 2 0 002 2h14a2 2 0 002-2V7a2 2 0 00-2-2h-1m-7 2a2 2 0 11-4 0 2 2 0 014 0z"
-                        />
-                      </svg>
                     </a>
                   ))}
                 </div>

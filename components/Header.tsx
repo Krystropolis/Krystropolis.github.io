@@ -96,17 +96,18 @@ export default function Header() {
             >
               {isDark ? (
                 <svg
-                  className="w-5 h-5 text-yellow-500"
+                  className="w-5 h-5 text-yellow-400"
                   fill="none"
                   stroke="currentColor"
                   viewBox="0 0 24 24"
                   aria-hidden="true"
                 >
+                  <circle cx="12" cy="12" r="5" />
                   <path
                     strokeLinecap="round"
                     strokeLinejoin="round"
                     strokeWidth={2}
-                    d="M12 3v1m0 16v1m9-9h-1M4 12H3m15.364 6.364l-.707-.707M6.343 6.343l-.707-.707m12.728 0l-.707.707M6.343 17.657l-.707.707M16 12a4 4 0 11-8 0 4 4 0 018 0z"
+                    d="M12 1v2M12 21v2M4.22 4.22l1.42 1.42M18.36 18.36l1.42 1.42M1 12h2M21 12h2M4.22 19.78l1.42-1.42M18.36 5.64l1.42-1.42"
                   />
                 </svg>
               ) : (
@@ -121,7 +122,7 @@ export default function Header() {
                     strokeLinecap="round"
                     strokeLinejoin="round"
                     strokeWidth={2}
-                    d="M20.354 15.354A9 9 0 018.646 3L6 12.354A9 9 0 003.354 6.646L15.646 19.354A9 9 0 0020.354 15.354zM9 10h.01M15 10h.01M12 14h.01M21 12a9 9 0 11-18 0 9 9 0 0118 0z"
+                    d="M21 12.79A9 9 0 1111.21 3 7 7 0 0021 12.79z"
                   />
                 </svg>
               )}
