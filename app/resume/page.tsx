@@ -6,15 +6,15 @@ export default async function ResumePage() {
   const data = await loadResumeData();
 
   return (
-    <div className="container mx-auto px-4 py-12 animate-fade-in">
+    <div className="container mx-auto px-4 sm:px-6 lg:px-8 py-16 animate-fade-in">
       <div className="max-w-4xl mx-auto">
         {/* Page Header */}
         <div className="mb-12">
-          <h1 className="text-4xl md:text-5xl font-bold text-primary-600 dark:text-primary-400 mb-4">
+          <h1 className="text-4xl md:text-5xl font-bold text-gray-900 dark:text-gray-100 mb-4">
             Résumé
           </h1>
           <div className="flex items-center justify-between flex-wrap gap-4">
-            <p className="text-lg text-gray-600 dark:text-gray-300">
+            <p className="text-lg text-gray-600 dark:text-gray-400">
               Software Engineer
             </p>
             <PrintButton />
@@ -22,7 +22,7 @@ export default async function ResumePage() {
         </div>
 
         {/* Contact Information */}
-        <section className="card p-6 mb-8" aria-labelledby="contact-heading">
+        <section className="card p-6 mb-10" aria-labelledby="contact-heading">
           <h2 id="contact-heading" className="text-2xl font-bold text-primary-600 dark:text-primary-400 mb-4">
             Contact Information
           </h2>
@@ -48,8 +48,8 @@ export default async function ResumePage() {
         </section>
 
         {/* Experience */}
-        <section className="mb-8" aria-labelledby="experience-heading">
-          <h2 id="experience-heading" className="text-2xl font-bold text-primary-600 dark:text-primary-400 mb-6">
+        <section className="mb-10" aria-labelledby="experience-heading">
+          <h2 id="experience-heading" className="text-2xl font-bold text-gray-900 dark:text-gray-100 mb-6 pb-2 border-b border-gray-200 dark:border-gray-700">
             Experience
           </h2>
           <div className="space-y-6">
@@ -82,8 +82,8 @@ export default async function ResumePage() {
         </section>
 
         {/* Education */}
-        <section className="mb-8" aria-labelledby="education-heading">
-          <h2 id="education-heading" className="text-2xl font-bold text-primary-600 dark:text-primary-400 mb-6">
+        <section className="mb-10" aria-labelledby="education-heading">
+          <h2 id="education-heading" className="text-2xl font-bold text-gray-900 dark:text-gray-100 mb-6 pb-2 border-b border-gray-200 dark:border-gray-700">
             Education
           </h2>
           <div className="grid md:grid-cols-2 gap-6">
@@ -109,8 +109,8 @@ export default async function ResumePage() {
         </section>
 
         {/* Skills */}
-        <section className="mb-8" aria-labelledby="skills-heading">
-          <h2 id="skills-heading" className="text-2xl font-bold text-primary-600 dark:text-primary-400 mb-6">
+        <section className="mb-10" aria-labelledby="skills-heading">
+          <h2 id="skills-heading" className="text-2xl font-bold text-gray-900 dark:text-gray-100 mb-6 pb-2 border-b border-gray-200 dark:border-gray-700">
             Skills
           </h2>
           <div className="grid md:grid-cols-2 lg:grid-cols-4 gap-6">

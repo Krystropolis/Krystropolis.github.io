@@ -5,18 +5,18 @@ export default async function PortfolioPage() {
   const data = await loadPortfolioData();
 
   return (
-    <div className="container mx-auto px-4 py-12 animate-fade-in">
+    <div className="container mx-auto px-4 sm:px-6 lg:px-8 py-16 animate-fade-in">
       <div className="max-w-4xl mx-auto">
         {/* Page Header */}
         <div className="mb-12">
-          <h1 className="text-4xl md:text-5xl font-bold text-primary-600 dark:text-primary-400 mb-4">
+          <h1 className="text-4xl md:text-5xl font-bold text-gray-900 dark:text-gray-100 mb-4">
             Portfolio
           </h1>
-          <p className="text-lg text-gray-600 dark:text-gray-300">
+          <p className="text-lg text-gray-600 dark:text-gray-400">
             Various development projects and endeavors.{' '}
             <a
               href="mailto:e.krystal@gmail.com"
-              className="text-primary-600 dark:text-primary-400 hover:underline"
+              className="text-primary-600 dark:text-primary-400 hover:underline font-medium"
             >
               Contact me
             </a>
@@ -30,9 +30,9 @@ export default async function PortfolioPage() {
           {data.projects.map((project: Project, index: number) => (
             <article
               key={index}
-              className="card p-6 md:p-8"
+              className="card p-6 md:p-8 hover:shadow-soft-lg transition-shadow duration-300"
             >
-              <h2 className="text-2xl md:text-3xl font-bold text-primary-600 dark:text-primary-400 mb-4">
+              <h2 className="text-2xl md:text-3xl font-bold text-gray-900 dark:text-gray-100 mb-4">
                 {project.title}
               </h2>
 
@@ -57,7 +57,7 @@ export default async function PortfolioPage() {
               {/* Technologies */}
               <div className="mb-6">
                 <h3 className="text-lg font-semibold text-gray-900 dark:text-gray-100 mb-3">
-                  Technologies Used
+                  Technologies
                 </h3>
                 <div className="flex flex-wrap gap-2">
                   {project.technologies.map((tech: string, i: number) => (

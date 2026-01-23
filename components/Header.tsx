@@ -46,57 +46,57 @@ export default function Header() {
   ];
 
   return (
-    <header className="sticky top-0 z-50 bg-surface-light dark:bg-surface-dark shadow-md">
+    <header className="sticky top-0 z-50 bg-surface-light dark:bg-surface-dark shadow-soft backdrop-blur-sm bg-opacity-95 dark:bg-opacity-95 border-b border-gray-200 dark:border-gray-700">
       <nav
-        className="container mx-auto px-4 py-4"
+        className="container mx-auto px-4 sm:px-6 lg:px-8 py-4"
         aria-label="Main navigation"
       >
         <div className="flex items-center justify-between">
           {/* Logo */}
           <Link
             href="/"
-            className="flex items-center space-x-2 hover:opacity-80 transition-opacity"
+            className="flex items-center space-x-3 group"
             aria-label="Home"
           >
-            <div className="w-10 h-10 rounded-full bg-primary-600 flex items-center justify-center text-white font-bold text-xl">
+            <div className="w-11 h-11 rounded-xl bg-gradient-to-br from-primary-500 to-primary-600 flex items-center justify-center text-white font-bold text-xl shadow-soft group-hover:shadow-soft-lg transition-all duration-300">
               K
             </div>
-            <span className="text-xl font-bold text-primary-600 dark:text-primary-400 hidden sm:block">
+            <span className="text-xl font-bold text-gray-900 dark:text-gray-100 hidden sm:block tracking-tight">
               Krystropolis
             </span>
           </Link>
 
           {/* Desktop Navigation */}
-          <div className="hidden md:flex items-center space-x-6">
+          <div className="hidden md:flex items-center space-x-1">
             {navItems.map((item) => (
               <Link
                 key={item.href}
                 href={item.href}
-                className={`relative px-3 py-2 rounded-md transition-colors ${
+                className={`relative px-4 py-2 rounded-lg font-medium transition-all duration-200 ${
                   pathname === item.href
-                    ? 'text-primary-600 dark:text-primary-400 font-semibold'
-                    : 'text-gray-600 dark:text-gray-300 hover:text-primary-600 dark:hover:text-primary-400'
+                    ? 'text-primary-600 dark:text-primary-400 bg-primary-50 dark:bg-primary-900/20'
+                    : 'text-gray-600 dark:text-gray-300 hover:text-primary-600 dark:hover:text-primary-400 hover:bg-gray-100 dark:hover:bg-gray-800'
                 }`}
                 aria-current={pathname === item.href ? 'page' : undefined}
               >
                 {item.label}
                 {pathname === item.href && (
-                  <span className="absolute bottom-0 left-0 right-0 h-0.5 bg-primary-600 dark:bg-primary-400 rounded-full" />
+                  <span className="absolute bottom-0 left-1/2 -translate-x-1/2 w-8 h-0.5 bg-primary-600 dark:bg-primary-400 rounded-full" />
                 )}
               </Link>
             ))}
           </div>
 
           {/* Dark Mode Toggle & Mobile Menu Button */}
-          <div className="flex items-center space-x-4">
+          <div className="flex items-center space-x-2">
             <button
               onClick={toggleTheme}
-              className="p-2 rounded-md hover:bg-gray-200 dark:hover:bg-gray-700 transition-colors"
+              className="p-2.5 rounded-lg hover:bg-gray-100 dark:hover:bg-gray-800 transition-colors focus:outline-none focus:ring-2 focus:ring-primary-500"
               aria-label={`Switch to ${isDark ? 'light' : 'dark'} mode`}
             >
               {isDark ? (
                 <svg
-                  className="w-6 h-6 text-yellow-500"
+                  className="w-5 h-5 text-yellow-500"
                   fill="none"
                   stroke="currentColor"
                   viewBox="0 0 24 24"
@@ -111,7 +111,7 @@ export default function Header() {
                 </svg>
               ) : (
                 <svg
-                  className="w-6 h-6 text-gray-700 dark:text-gray-300"
+                  className="w-5 h-5 text-gray-700 dark:text-gray-300"
                   fill="none"
                   stroke="currentColor"
                   viewBox="0 0 24 24"
@@ -130,13 +130,13 @@ export default function Header() {
             {/* Mobile Menu Button */}
             <button
               onClick={toggleMenu}
-              className="md:hidden p-2 rounded-md hover:bg-gray-200 dark:hover:bg-gray-700 transition-colors"
+              className="md:hidden p-2.5 rounded-lg hover:bg-gray-100 dark:hover:bg-gray-800 transition-colors focus:outline-none focus:ring-2 focus:ring-primary-500"
               aria-expanded={isMenuOpen}
               aria-controls="mobile-menu"
               aria-label="Toggle navigation menu"
             >
               <svg
-                className="w-6 h-6 text-gray-700 dark:text-gray-300"
+                className="w-5 h-5 text-gray-700 dark:text-gray-300"
                 fill="none"
                 stroke="currentColor"
                 viewBox="0 0 24 24"
@@ -166,7 +166,7 @@ export default function Header() {
         {isMenuOpen && (
           <div
             id="mobile-menu"
-            className="md:hidden mt-4 pb-4 space-y-2 animate-fade-in"
+            className="md:hidden mt-4 pb-2 space-y-1 animate-fade-in-up"
             role="menu"
           >
             {navItems.map((item) => (
@@ -174,10 +174,10 @@ export default function Header() {
                 key={item.href}
                 href={item.href}
                 onClick={closeMenu}
-                className={`block px-4 py-2 rounded-md transition-colors ${
+                className={`block px-4 py-3 rounded-lg font-medium transition-colors ${
                   pathname === item.href
-                    ? 'text-primary-600 dark:text-primary-400 font-semibold bg-primary-50 dark:bg-primary-900/20'
-                    : 'text-gray-600 dark:text-gray-300 hover:bg-gray-200 dark:hover:bg-gray-700'
+                    ? 'text-primary-600 dark:text-primary-400 bg-primary-50 dark:bg-primary-900/20'
+                    : 'text-gray-600 dark:text-gray-300 hover:bg-gray-100 dark:hover:bg-gray-800'
                 }`}
                 role="menuitem"
               >

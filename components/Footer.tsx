@@ -4,25 +4,25 @@ export default function Footer() {
   const currentYear = new Date().getFullYear();
 
   return (
-    <footer className="bg-surface-light dark:bg-surface-dark border-t border-gray-200 dark:border-gray-700 mt-12">
-      <div className="container mx-auto px-4 py-8">
-        <div className="flex flex-col md:flex-row justify-between items-center space-y-4 md:space-y-0">
+    <footer className="bg-surface-light dark:bg-surface-dark border-t border-gray-200 dark:border-gray-700 mt-16">
+      <div className="container mx-auto px-4 sm:px-6 lg:px-8 py-12">
+        <div className="flex flex-col md:flex-row justify-between items-center space-y-6 md:space-y-0">
           {/* Copyright */}
           <div className="text-center md:text-left">
-            <p className="text-gray-600 dark:text-gray-300">
+            <p className="text-sm text-gray-600 dark:text-gray-400">
               © {currentYear} Krystal Elliott. All rights reserved.
             </p>
           </div>
 
           {/* Social Links */}
           <nav aria-label="Social media links">
-            <ul className="flex items-center justify-center md:justify-end space-x-4">
+            <ul className="flex items-center justify-center md:justify-end space-x-3">
               <li>
                 <a
                   href="https://krystropolis.blogspot.com/"
                   target="_blank"
                   rel="noopener noreferrer"
-                  className="btn btn-secondary"
+                  className="p-2.5 rounded-lg bg-gray-100 dark:bg-gray-800 text-gray-600 dark:text-gray-300 hover:text-primary-600 dark:hover:text-primary-400 hover:bg-gray-200 dark:hover:bg-gray-700 transition-all duration-200 focus:outline-none focus:ring-2 focus:ring-primary-500"
                   aria-label="Visit my blog (opens in new tab)"
                 >
                   <svg
@@ -45,7 +45,7 @@ export default function Footer() {
               <li>
                 <a
                   href="mailto:e.krystal@gmail.com"
-                  className="btn btn-secondary"
+                  className="p-2.5 rounded-lg bg-gray-100 dark:bg-gray-800 text-gray-600 dark:text-gray-300 hover:text-primary-600 dark:hover:text-primary-400 hover:bg-gray-200 dark:hover:bg-gray-700 transition-all duration-200 focus:outline-none focus:ring-2 focus:ring-primary-500"
                   aria-label="Send me an email"
                 >
                   <svg
@@ -70,13 +70,13 @@ export default function Footer() {
         </div>
 
         {/* Additional Links */}
-        <div className="mt-6 pt-6 border-t border-gray-200 dark:border-gray-700 text-center">
+        <div className="mt-8 pt-8 border-t border-gray-200 dark:border-gray-700">
           <nav aria-label="Additional links">
-            <ul className="flex items-center justify-center space-x-6 text-sm text-gray-600 dark:text-gray-400">
+            <ul className="flex items-center justify-center space-x-8 text-sm text-gray-600 dark:text-gray-400">
               <li>
                 <Link
                   href="/"
-                  className="hover:text-primary-600 dark:hover:text-primary-400 transition-colors"
+                  className="hover:text-primary-600 dark:hover:text-primary-400 transition-colors font-medium"
                 >
                   Home
                 </Link>
@@ -84,7 +84,7 @@ export default function Footer() {
               <li>
                 <Link
                   href="/resume"
-                  className="hover:text-primary-600 dark:hover:text-primary-400 transition-colors"
+                  className="hover:text-primary-600 dark:hover:text-primary-400 transition-colors font-medium"
                 >
                   Résumé
                 </Link>
@@ -92,7 +92,7 @@ export default function Footer() {
               <li>
                 <Link
                   href="/portfolio"
-                  className="hover:text-primary-600 dark:hover:text-primary-400 transition-colors"
+                  className="hover:text-primary-600 dark:hover:text-primary-400 transition-colors font-medium"
                 >
                   Portfolio
                 </Link>
@@ -100,7 +100,7 @@ export default function Footer() {
               <li>
                 <Link
                   href="/about"
-                  className="hover:text-primary-600 dark:hover:text-primary-400 transition-colors"
+                  className="hover:text-primary-600 dark:hover:text-primary-400 transition-colors font-medium"
                 >
                   About
                 </Link>
