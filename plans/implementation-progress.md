@@ -23,6 +23,12 @@
 - [x] Create Portfolio section (ProjectCard components) with accessibility
 - [x] Create About section (InterestCard components) with accessibility
 
+### Phase 5: Deployment Setup (2026-01-23)
+- [x] Fix ESLint errors blocking build (unescaped apostrophes in about page)
+- [x] Configure Next.js for static export (`output: 'export'` in next.config.mjs)
+- [x] Successfully build static export to `out/` directory
+- [x] Create GitHub Actions workflow for automatic deployment to GitHub Pages
+
 ## Current Status
 
 The Next.js development server is running in the background. You can access the site at `http://localhost:3000`.
@@ -64,10 +70,13 @@ The Next.js development server is running in the background. You can access the 
 ## Next Steps
 
 ### Immediate (You Can Do Now)
-1. **Test the site**: Visit `http://localhost:3000` and navigate through all pages
-2. **Add new work experience**: Edit [`data/resume.json`](../data/resume.json) to add your recent experience since 2018
-3. **Update content**: Refine the copy in JSON files to be more professional yet personal
-4. **Test dark mode**: Toggle the theme and verify it persists
+1. **Deploy to GitHub Pages**: Push changes to trigger automatic deployment
+   - Enable GitHub Pages in repository settings (Source: GitHub Actions)
+   - Run: `git add . && git commit -m "feat: add GitHub Pages deployment workflow" && git push origin main`
+2. **Test the site**: Visit `http://localhost:3000` and navigate through all pages
+3. **Add new work experience**: Edit [`data/resume.json`](../data/resume.json) to add your recent experience since 2018
+4. **Update content**: Refine the copy in JSON files to be more professional yet personal
+5. **Test dark mode**: Toggle the theme and verify it persists
 
 ### Future Enhancements (Optional)
 The following features are planned but not yet implemented:
@@ -78,19 +87,21 @@ The following features are planned but not yet implemented:
 - [ ] Component testing with Jest + React Testing Library
 - [ ] Accessibility tests with axe-core
 - [ ] Performance optimization and Lighthouse audit
-- [ ] Production build and deployment
 
 ## Files Created
 
 ### Configuration Files
 - [`package.json`](../package.json) - Dependencies and scripts
 - [`tsconfig.json`](../tsconfig.json) - TypeScript configuration
-- [`next.config.mjs`](../next.config.mjs) - Next.js configuration
+- [`next.config.mjs`](../next.config.mjs) - Next.js configuration (with static export)
 - [`tailwind.config.ts`](../tailwind.config.ts) - Tailwind CSS configuration
 - [`postcss.config.mjs`](../postcss.config.mjs) - PostCSS configuration
 - [`.eslintrc.json`](../.eslintrc.json) - ESLint with accessibility rules
 - [`.prettierrc`](../.prettierrc) - Prettier configuration
 - [`.gitignore`](../.gitignore) - Git ignore rules
+
+### Deployment Files
+- [`.github/workflows/deploy.yml`](../.github/workflows/deploy.yml) - GitHub Actions workflow for automatic deployment to GitHub Pages
 
 ### Application Files
 - [`app/layout.tsx`](../app/layout.tsx) - Root layout
