@@ -1,0 +1,45 @@
+{
+  "intro": "Software Engineer with a passion for learning, creating, and problem-solving. I believe in the power of technology to make a positive impact, and I'm always eager to take on new challenges.",
+  "interests": [
+    {
+      "title": "Penn State Makers Club 2015",
+      "description": "I like to tinker. Here's a picture of some ornaments we made using a laser cutter, some solder, wires, leds, a battery and Christmas spirit.",
+      "image": "/images/makers.jpg"
+    },
+    {
+      "title": "Boe-Bot",
+      "description": "I'm currently tinkering with a Boe-Bot robot kit to learn about embedded software and robotics.",
+      "image": "/images/boebot1.jpg"
+    },
+    {
+      "title": "React",
+      "description": "I'm currently learning React on Udemy and Codecademy. If you're brand new to coding, I highly recommend Codecademy! They were my entry to programming (aside from learning HTML for my Neopets page). If you have a little more experience, take a look at Udemy. They have a lot of low cost courses.",
+      "image": null
+    },
+    {
+      "title": "Data Structures & Algorithms",
+      "description": "LeetCode, Firecode, and 'Cracking the Coding Interview' have been my go-tos for strengthening my knowledge of data structures and algorithms. Preparing for interviews? These are the sites to use!",
+      "image": null
+    },
+    {
+      "title": "Fitness",
+      "description": "I go to the gym about 3 times a week. I start off with some cardio to get the heart pumping, then switch over to a little bit of lifting. Starting Strength and StrongLifts 5x5 program have influenced my routine. I am also getting more into stretching and yoga.",
+      "image": null
+    },
+    {
+      "title": "Philanthropy",
+      "description": "I am always interested in hearing about how I can help others. Most recently, I worked with Family Gateway (Dallas, Texas) and lead 12 of my coworkers in collecting funding and supplies to help displaced families. At the beginning of the school year, we contributed over 30 backpacks filled with supplies. For Halloween, Thanksgiving, and Christmas, we worked to contribute costumes, over 1 ton of food, and more than 100 toys. There is truly no greater feeling than that of improving the lives of those around you. If we haven't been the person in need, surely we have known them. I've been fortunate to have experienced kindness from so many others, it's only right that I give back.",
+      "image": null
+    },
+    {
+      "title": "Art",
+      "description": "All doodles on this site will be my own. I love painting and drawing. My kitties inspire me often.",
+      "image": "/images/simba.jpg"
+    },
+    {
+      "title": "Nature",
+      "description": "I am in love with nature. Don't get me wrong, I love my job, but after a long day of staring at a screen, all I want is to be surrounded by trees and mountains. My first hiking trip was to Glendalough in Ireland (I studied in Ireland for 4 months). I've been hooked since.",
+      "image": "/images/krystal-cliffs-of-moher.jpg"
+    }
+  ]
+}
