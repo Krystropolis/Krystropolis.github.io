@@ -4,12 +4,12 @@
     {
       "title": "Penn State Makers Club 2015",
       "description": "I like to tinker. Here's a picture of some ornaments we made using a laser cutter, some solder, wires, leds, a battery and Christmas spirit.",
-      "image": "images/makers.jpg"
+      "image": "/images/makers.jpg"
     },
     {
       "title": "Boe-Bot",
       "description": "I'm currently tinkering with a Boe-Bot robot kit to learn about embedded software and robotics.",
-      "image": "images/boebot1.jpg"
+      "image": "/images/boebot1.jpg"
     },
     {
       "title": "React",
@@ -34,12 +34,12 @@
     {
       "title": "Art",
       "description": "All doodles on this site will be my own. I love painting and drawing. My kitties inspire me often.",
-      "image": "images/simba.jpg"
+      "image": "/images/simba.jpg"
     },
     {
       "title": "Nature",
       "description": "I am in love with nature. Don't get me wrong, I love my job, but after a long day of staring at a screen, all I want is to be surrounded by trees and mountains. My first hiking trip was to Glendalough in Ireland (I studied in Ireland for 4 months). I've been hooked since.",
-      "image": "images/krystal-cliffs-of-moher.jpg"
+      "image": "/images/krystal-cliffs-of-moher.jpg"
     }
   ]
 }

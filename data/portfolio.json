@@ -10,7 +10,7 @@
         "Microcontrollers"
       ],
       "images": [
-        "images/boebot2.jpg"
+        "/images/boebot2.jpg"
       ],
       "links": []
     },
@@ -53,7 +53,7 @@
         "JavaScript"
       ],
       "images": [
-        "images/college-portfolio.PNG"
+        "/images/college-portfolio.PNG"
       ],
       "links": [
         {
@@ -72,8 +72,8 @@
         "Game Development"
       ],
       "images": [
-        "images/tetris-1.PNG",
-        "images/tetris-2.PNG"
+        "/images/tetris-1.PNG",
+        "/images/tetris-2.PNG"
       ],
       "links": [
         {
