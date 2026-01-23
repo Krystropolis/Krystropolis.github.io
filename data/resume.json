@@ -1,0 +1,116 @@
+{
+  "contact": {
+    "email": "e.krystal@gmail.com",
+    "location": "Dallas, TX"
+  },
+  "experience": [
+    {
+      "position": "Application Developer II",
+      "company": "ARGO Data",
+      "location": "Richardson, TX",
+      "startDate": "2018-02",
+      "endDate": "2018-03",
+      "isCurrent": false,
+      "description": [
+        "Employed rapid prototyping to quickly fabricate a model of our product, successfully securing the interest of potential clients and stakeholders.",
+        "Delivered modular web components to replace existing SPA infrastructure with one that is flexible, scalable, and maintainable.",
+        "Engaged in mobile-first design to enable seamless experiences whether accessing our application via desktop or handheld device."
+      ]
+    },
+    {
+      "position": "Application Developer I",
+      "company": "ARGO Data",
+      "location": "Richardson, TX",
+      "startDate": "2017-05",
+      "endDate": "2018-02",
+      "isCurrent": false,
+      "description": [
+        "Participated in the full software development life cycle of mission-critical solutions for the financial services industry, using an agile methodology.",
+        "Built configurable interfaces, based on UX and BA requirements, using modern front end technologies.",
+        "Developed scalable web applications using the MVC pattern.",
+        "Communicated with SQL server, using a REST API.",
+        "Worked with developers, project managers, UX designers, and quality assurance personnel to develop technical design, documentation, code, and testing logic.",
+        "Participated in a quality remediation effort to resolve approximately 180 defects over the course of 3 months, which resulted in a noticeable improvement in the quality and stability of the application.",
+        "Organized a tactical solution, which facilitated the successful implementation of requirements delivered within the last 5 weeks of the development cycle."
+      ]
+    },
+    {
+      "position": "MES Project Management Intern",
+      "company": "General Electric",
+      "location": "Erie, PA",
+      "startDate": "2016-05",
+      "endDate": "2016-08",
+      "isCurrent": false,
+      "description": [
+        "Managed the integration of two manufacturing execution systems.",
+        "Coordinated the efforts of three teams, operating from multiple locations.",
+        "Designed UI mock-ups and determined architectural requirements for the integration of new system components focusing on quality control.",
+        "Led a team of five in the creation of a simplified small parts ordering solution.",
+        "Presented a functional and scalable prototype, using a Raspberry Pi and Python."
+      ]
+    },
+    {
+      "position": "Software Development Intern",
+      "company": "FeneTech Inc.",
+      "location": "Aurora, OH",
+      "startDate": "2015-05",
+      "endDate": "2015-08",
+      "isCurrent": false,
+      "description": [
+        "Developed internal tools and scripts, increasing task efficiency by at least 30%.",
+        "Developed new functionality and corrected existing code, using VB.Net and SQL.",
+        "Developed a Proof of Concept prototype to assess the viability of secure document distribution using an embedded browser within the application."
+      ]
+    }
+  ],
+  "education": [
+    {
+      "degree": "B.S. Software Engineering",
+      "school": "Penn State Behrend",
+      "graduationDate": "2017-05",
+      "gpa": "3.37"
+    },
+    {
+      "degree": "B.A. English Literature",
+      "school": "College of Staten Island",
+      "graduationDate": "2010-05",
+      "gpa": "3.59"
+    }
+  ],
+  "skills": {
+    "programming": {
+      "intermediate": [
+        "Java",
+        "JavaScript",
+        "HTML",
+        "CSS",
+        "C++"
+      ],
+      "novice": [
+        "C",
+        "C#",
+        "Python",
+        "VB.Net"
+      ]
+    },
+    "databases": [
+      "MS Access",
+      "SQL",
+      "Oracle"
+    ],
+    "tools": [
+      "Atlassian",
+      "Bootstrap",
+      "Material Design Lite",
+      "TortoiseSVN",
+      "Swagger",
+      "Git",
+      "SVN"
+    ],
+    "languages": [
+      "English (Native)",
+      "Spanish (Novice)",
+      "German (Novice)"
+    ]
+  }
+}
