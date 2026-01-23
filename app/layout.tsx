@@ -19,7 +19,7 @@ export default function RootLayout({
 }) {
   return (
     <html lang="en">
-      <body className={inter.className}>
+      <body className={`${inter.className} bg-background-light dark:bg-background-dark text-gray-900 dark:text-gray-100 transition-colors duration-200`}>
         <a href="#main-content" className="skip-link">
           Skip to main content
         </a>
