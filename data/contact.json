@@ -1,0 +1,57 @@
+{
+  "title": "Get in Touch",
+  "subtitle": "Have a question or want to work together?",
+  "email": "e.krystal@gmail.com",
+  "location": "Dallas, TX",
+  "socialLinks": [
+    {
+      "label": "GitHub",
+      "url": "https://github.com/krystropolis",
+      "icon": "github"
+    },
+    {
+      "label": "LinkedIn",
+      "url": "https://linkedin.com/in/ejkrystal",
+      "icon": "linkedin"
+    }
+  ],
+  "form": {
+    "fields": {
+      "name": {
+        "label": "Your Name",
+        "placeholder": "John Doe",
+        "required": true
+      },
+      "email": {
+        "label": "Your Email",
+        "placeholder": "john@example.com",
+        "required": true,
+        "type": "email"
+      },
+      "subject": {
+        "label": "Subject",
+        "placeholder": "Project Inquiry",
+        "required": true
+      },
+      "message": {
+        "label": "Message",
+        "placeholder": "Tell me about your project...",
+        "required": true,
+        "rows": 5
+      }
+    },
+    "honeypot": {
+      "name": "website",
+      "label": "Leave this field empty"
+    },
+    "submit": {
+      "label": "Send Message",
+      "successMessage": "Message sent successfully!",
+      "errorMessage": "Failed to send message. Please try again."
+    }
+  },
+  "emailFallback": {
+    "label": "Or email me directly:",
+    "linkText": "e.krystal@gmail.com"
+  }
+}
