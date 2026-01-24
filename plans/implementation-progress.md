@@ -67,16 +67,45 @@ The Next.js development server is running in the background. You can access the 
 - Modern typography with Inter font
 - Smooth transitions and animations
 
+## In Progress Tasks 🔄
+
+### Phase 6: Content Refinement (Not Started)
+- [ ] Update [`data/resume.json`](../data/resume.json) with work experience from 2018-2026
+- [ ] Refresh skills with modern technologies learned since 2018
+- [ ] Add new portfolio projects if available
+- [ ] Review and refine all copy for professional yet personal tone
+- [ ] Update contact information if changed
+- [ ] Ensure consistent voice throughout all content
+- [ ] Remove any outdated references or dated content
+
+### Phase 7: Testing & Optimization (Not Started)
+- [ ] Test responsiveness across devices (mobile, tablet, desktop)
+- [ ] Test cross-browser compatibility (Chrome, Firefox, Safari, Edge)
+- [ ] Run accessibility audit with axe-core or Lighthouse
+- [ ] Verify WCAG AA compliance (color contrast, keyboard navigation)
+- [ ] Run Lighthouse performance audit
+- [ ] Optimize images and assets
+- [ ] Verify SEO (meta tags, sitemap, structured data)
+
+### Phase 8: Deployment & Cleanup (In Progress)
+- [x] Configure Next.js for static export (`output: 'export'`)
+- [x] Create GitHub Actions workflow for automatic deployment
+- [ ] Enable GitHub Pages in repository settings (Source: GitHub Actions)
+- [ ] Push changes to trigger automatic deployment
+- [ ] Test production build locally
+- [ ] Remove old files: [`index.html`](../index.html), [`about.html`](../about.html), [`resume.html`](../resume.html), [`portfolio.html`](../portfolio.html), [`styles.css`](../styles.css), [`script.js`](../script.js)
+- [ ] Update [`README.md`](../README.md) with new setup instructions
+
 ## Next Steps
 
 ### Immediate (You Can Do Now)
-1. **Deploy to GitHub Pages**: Push changes to trigger automatic deployment
+1. **Content Updates**: Edit [`data/resume.json`](../data/resume.json) to add your recent experience since 2018
+2. **Update skills**: Add modern technologies you've learned since 2018
+3. **Refine copy**: Review and update content in JSON files for professional yet personal tone
+4. **Test the site**: Visit `http://localhost:3000` and navigate through all pages
+5. **Deploy to GitHub Pages**:
    - Enable GitHub Pages in repository settings (Source: GitHub Actions)
-   - Run: `git add . && git commit -m "feat: add GitHub Pages deployment workflow" && git push origin main`
-2. **Test the site**: Visit `http://localhost:3000` and navigate through all pages
-3. **Add new work experience**: Edit [`data/resume.json`](../data/resume.json) to add your recent experience since 2018
-4. **Update content**: Refine the copy in JSON files to be more professional yet personal
-5. **Test dark mode**: Toggle the theme and verify it persists
+   - Run: `git add . && git commit -m "feat: ready for deployment" && git push origin main`
 
 ### Future Enhancements (Optional)
 The following features are planned but not yet implemented:
@@ -87,6 +116,12 @@ The following features are planned but not yet implemented:
 - [ ] Component testing with Jest + React Testing Library
 - [ ] Accessibility tests with axe-core
 - [ ] Performance optimization and Lighthouse audit
+- [ ] Contact form for professional inquiries
+- [ ] Social media links (LinkedIn, GitHub, Twitter/X)
+- [ ] Blog integration from existing blogspot
+- [ ] Portfolio filtering by technology, type, or date
+- [ ] Image lightbox for better portfolio viewing
+- [ ] Search functionality for portfolio projects or skills
 
 ## Files Created
 
