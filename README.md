@@ -215,7 +215,7 @@ This project is open source and available under the [MIT License](LICENSE).
 
 - **Author**: Krystal Elliott
 - **Email**: e.krystal@gmail.com
-- **Location**: Dallas, TX
+- **Location**: Munich, Germany
 - **GitHub**: [krystropolis](https://github.com/krystropolis)
 
 ---

@@ -9,7 +9,7 @@ export default async function AboutPage() {
       <div className="max-w-4xl mx-auto">
         {/* Page Header */}
         <div className="mb-12">
-          <h1 className="text-4xl md:text-5xl font-bold text-gray-900 dark:text-gray-100 mb-4">
+          <h1 className="text-4xl md:text-5xl font-serif font-bold text-gray-900 dark:text-gray-100 mb-4">
             About Me
           </h1>
           <div className="flex items-center justify-between flex-wrap gap-4">
@@ -21,7 +21,7 @@ export default async function AboutPage() {
 
         {/* Introduction */}
         <section className="card p-6 mb-10" aria-labelledby="intro-heading">
-          <h2 id="intro-heading" className="text-2xl font-bold text-primary-600 dark:text-primary-400 mb-4">
+          <h2 id="intro-heading" className="text-2xl font-serif font-bold text-primary-600 dark:text-primary-400 mb-4">
             Get to Know Me
           </h2>
           <p className="text-lg text-gray-700 dark:text-gray-300 leading-relaxed">
@@ -31,7 +31,7 @@ export default async function AboutPage() {
 
         {/* Interests Grid */}
         <section className="mb-10" aria-labelledby="interests-heading">
-          <h2 id="interests-heading" className="text-2xl font-bold text-gray-900 dark:text-gray-100 mb-6 pb-2 border-b border-gray-200 dark:border-gray-700">
+          <h2 id="interests-heading" className="text-2xl font-serif font-bold text-gray-900 dark:text-gray-100 mb-6 pb-2 border-b border-gray-200 dark:border-gray-700">
             My Interests
           </h2>
           <div className="grid md:grid-cols-2 gap-6">
@@ -40,7 +40,7 @@ export default async function AboutPage() {
                 key={index}
                 className="card p-6 flex flex-col hover:shadow-soft-lg transition-shadow duration-300"
               >
-                <h3 className="text-xl font-bold text-gray-900 dark:text-gray-100 mb-3">
+                <h3 className="text-xl font-serif font-bold text-gray-900 dark:text-gray-100 mb-3">
                   {interest.title}
                 </h3>
 
@@ -62,22 +62,6 @@ export default async function AboutPage() {
               </article>
             ))}
           </div>
-        </section>
-
-        {/* Contact CTA */}
-        <section className="card p-8 text-center hover:shadow-soft-lg transition-shadow duration-300">
-          <h2 className="text-2xl font-bold text-gray-900 dark:text-gray-100 mb-4">
-            {"Let's Connect"}
-          </h2>
-          <p className="text-lg text-gray-600 dark:text-gray-300 mb-6">
-            {"I'm always interested in hearing about new opportunities, collaborations, or just having a great conversation about technology and development."}
-          </p>
-          <a
-            href="mailto:e.krystal@gmail.com"
-            className="btn btn-primary inline-block"
-          >
-            Get in Touch
-          </a>
         </section>
       </div>
     </div>

@@ -64,3 +64,48 @@ export interface AboutData {
   intro: string;
   interests: Interest[];
 }
+
+export interface SocialLink {
+  label: string;
+  url: string;
+  icon: string;
+}
+
+export interface FormField {
+  label: string;
+  placeholder: string;
+  required: boolean;
+  type?: string;
+  rows?: number;
+}
+
+export interface FormConfig {
+  fields: {
+    name: FormField;
+    email: FormField;
+    subject: FormField;
+    message: FormField;
+  };
+  honeypot: {
+    name: string;
+    label: string;
+  };
+  submit: {
+    label: string;
+    successMessage: string;
+    errorMessage: string;
+  };
+}
+
+export interface ContactData {
+  title: string;
+  subtitle: string;
+  email: string;
+  location: string;
+  socialLinks: SocialLink[];
+  form: FormConfig;
+  emailFallback: {
+    label: string;
+    linkText: string;
+  };
+}

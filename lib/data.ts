@@ -1,4 +1,4 @@
-import { ResumeData, PortfolioData, AboutData } from '@/types';
+import { ResumeData, PortfolioData, AboutData, ContactData } from '@/types';
 
 // Use dynamic imports for JSON files - Next.js handles this automatically
 export async function loadResumeData(): Promise<ResumeData> {
@@ -14,4 +14,9 @@ export async function loadPortfolioData(): Promise<PortfolioData> {
 export async function loadAboutData(): Promise<AboutData> {
   const data = await import('@/data/about.json');
   return data.default as AboutData;
+}
+
+export async function loadContactData(): Promise<ContactData> {
+  const data = await import('@/data/contact.json');
+  return data.default as ContactData;
 }
