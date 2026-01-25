@@ -20,16 +20,16 @@ export interface Education {
   gpa?: string;
 }
 
-export interface SkillCategory {
-  intermediate?: string[];
-  novice?: string[];
+export interface Skill {
+  name: string;
+  icon?: string;
 }
 
 export interface Skills {
   programming: SkillCategory;
-  databases: string[];
-  tools: string[];
-  languages: string[];
+  databases: Skill[];
+  tools: Skill[];
+  languages: Skill[];
 }
 
 export interface ResumeData {

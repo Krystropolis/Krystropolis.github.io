@@ -39,3 +39,11 @@ next-env.d.ts
 
 # plans
 plans/
+
+# old site files (kept as backup)
+about.html
+index.html
+portfolio.html
+resume.html
+script.js
+styles.css

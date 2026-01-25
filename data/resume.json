@@ -80,37 +80,37 @@
   "skills": {
     "programming": {
       "intermediate": [
-        "Java",
-        "JavaScript",
-        "HTML",
-        "CSS",
-        "C++"
+        { "name": "Java", "icon": "Code2" },
+        { "name": "JavaScript", "icon": "Code" },
+        { "name": "HTML", "icon": "FileCode" },
+        { "name": "CSS", "icon": "Palette" },
+        { "name": "C++", "icon": "Cpu" }
       ],
       "novice": [
-        "C",
-        "C#",
-        "Python",
-        "VB.Net"
+        { "name": "C", "icon": "Terminal" },
+        { "name": "C#", "icon": "Hash" },
+        { "name": "Python", "icon": "FileJson" },
+        { "name": "VB.Net", "icon": "FileCode" }
       ]
     },
     "databases": [
-      "MS Access",
-      "SQL",
-      "Oracle"
+      { "name": "MS Access", "icon": "Database" },
+      { "name": "SQL", "icon": "Database" },
+      { "name": "Oracle", "icon": "Database" }
     ],
     "tools": [
-      "Atlassian",
-      "Bootstrap",
-      "Material Design Lite",
-      "TortoiseSVN",
-      "Swagger",
-      "Git",
-      "SVN"
+      { "name": "Atlassian", "icon": "GitBranch" },
+      { "name": "Bootstrap", "icon": "Layout" },
+      { "name": "Material Design Lite", "icon": "Layout" },
+      { "name": "TortoiseSVN", "icon": "GitBranch" },
+      { "name": "Swagger", "icon": "FileJson" },
+      { "name": "Git", "icon": "GitBranch" },
+      { "name": "SVN", "icon": "GitBranch" }
     ],
     "languages": [
-      "English (Native)",
-      "Spanish (Novice)",
-      "German (Novice)"
+      { "name": "English (Native)", "icon": "Globe" },
+      { "name": "Spanish (Novice)", "icon": "Globe" },
+      { "name": "German (Novice)", "icon": "Globe" }
     ]
   }
 }

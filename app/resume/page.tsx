@@ -1,6 +1,41 @@
 import { loadResumeData } from '@/lib/data';
-import { Experience, Education, Skills } from '@/types';
+import { Experience, Education, Skills, Skill } from '@/types';
 import PrintButton from '@/components/PrintButton';
+import * as Icons from 'lucide-react';
+
+// Map icon names to Lucide React icon components
+const iconMap: Record<string, React.ComponentType<{ className?: string }>> = {
+  Code2: Icons.Code2,
+  Code: Icons.Code,
+  FileCode: Icons.FileCode,
+  Palette: Icons.Palette,
+  Cpu: Icons.Cpu,
+  Terminal: Icons.Terminal,
+  Hash: Icons.Hash,
+  FileJson: Icons.FileJson,
+  Database: Icons.Database,
+  GitBranch: Icons.GitBranch,
+  Layout: Icons.Layout,
+  Globe: Icons.Globe,
+};
+
+function SkillIcon({ skill, index }: { skill: Skill; index: number }) {
+  const IconComponent = skill.icon ? iconMap[skill.icon] : null;
+  
+  return (
+    <div
+      className="inline-flex items-center gap-2 px-3 py-2 bg-gradient-to-r from-primary-50 to-accent-50 dark:from-primary-900/20 dark:to-accent-900/20 rounded-lg border border-primary-200 dark:border-primary-800 hover:shadow-lg hover:scale-105 transition-all duration-300 animate-pop-in"
+      style={{ animationDelay: `${index * 100}ms` }}
+    >
+      {IconComponent && (
+        <IconComponent className="w-4 h-4 text-primary-600 dark:text-primary-400" />
+      )}
+      <span className="text-sm font-medium text-gray-700 dark:text-gray-300">
+        {skill.name}
+      </span>
+    </div>
+  );
+}
 
 export default async function ResumePage() {
   const data = await loadResumeData();
@@ -113,84 +148,74 @@ export default async function ResumePage() {
           <h2 id="skills-heading" className="text-2xl font-serif font-bold text-gray-900 dark:text-gray-100 mb-6 pb-2 border-b border-gray-200 dark:border-gray-700">
             Skills
           </h2>
-          <div className="grid md:grid-cols-2 lg:grid-cols-4 gap-6">
+          <div className="space-y-6">
             {/* Programming Languages */}
-            <div className="card p-6">
-              <h3 className="text-lg font-serif font-bold text-primary-600 dark:text-primary-400 mb-3">
+            <div>
+              <h3 className="text-xl font-serif font-bold text-gray-900 dark:text-gray-100 mb-4">
                 Programming Languages
               </h3>
               <div className="space-y-3">
                 {data.skills.programming.intermediate && (
                   <div>
-                    <p className="text-sm font-bold text-accent-600 dark:text-accent-400 mb-1">
+                    <p className="text-sm font-bold text-accent-600 dark:text-accent-400 mb-2">
                       Intermediate
                     </p>
-                    <ul className="space-y-1 ml-4 list-disc">
-                      {data.skills.programming.intermediate.map((lang: string, i: number) => (
-                        <li key={i} className="text-gray-700 dark:text-gray-300">
-                          {lang}
-                        </li>
+                    <div className="flex flex-wrap gap-2">
+                      {data.skills.programming.intermediate.map((skill: Skill, i: number) => (
+                        <SkillIcon key={i} skill={skill} index={i} />
                       ))}
-                    </ul>
+                    </div>
                   </div>
                 )}
                 {data.skills.programming.novice && (
                   <div>
-                    <p className="text-sm font-bold text-accent-600 dark:text-accent-400 mb-1">
+                    <p className="text-sm font-bold text-accent-600 dark:text-accent-400 mb-2">
                       Novice
                     </p>
-                    <ul className="space-y-1 ml-4 list-disc">
-                      {data.skills.programming.novice.map((lang: string, i: number) => (
-                        <li key={i} className="text-gray-700 dark:text-gray-300">
-                          {lang}
-                        </li>
+                    <div className="flex flex-wrap gap-2">
+                      {data.skills.programming.novice.map((skill: Skill, i: number) => (
+                        <SkillIcon key={i} skill={skill} index={i} />
                       ))}
-                    </ul>
+                    </div>
                   </div>
                 )}
               </div>
             </div>
 
             {/* Databases */}
-            <div className="card p-6">
-              <h3 className="text-lg font-serif font-bold text-primary-600 dark:text-primary-400 mb-3">
+            <div>
+              <h3 className="text-xl font-serif font-bold text-gray-900 dark:text-gray-100 mb-4">
                 Databases
               </h3>
-              <ul className="space-y-1 ml-4 list-disc">
-                {data.skills.databases.map((db: string, i: number) => (
-                  <li key={i} className="text-gray-700 dark:text-gray-300">
-                    {db}
-                  </li>
+              <div className="flex flex-wrap gap-2">
+                {data.skills.databases.map((skill: Skill, i: number) => (
+                  <SkillIcon key={i} skill={skill} index={i} />
                 ))}
-              </ul>
+              </div>
             </div>
 
             {/* Tools */}
-            <div className="card p-6">
-              <h3 className="text-lg font-serif font-bold text-primary-600 dark:text-primary-400 mb-3">
+            <div>
+              <h3 className="text-xl font-serif font-bold text-gray-900 dark:text-gray-100 mb-4">
                 Frameworks & Tools
               </h3>
-              <ul className="space-y-1 ml-4 list-disc">
-                {data.skills.tools.map((tool: string, i: number) => (
-                  <li key={i} className="text-gray-700 dark:text-gray-300">
-                    {tool}
-                  </li>
+              <div className="flex flex-wrap gap-2">
+                {data.skills.tools.map((skill: Skill, i: number) => (
+                  <SkillIcon key={i} skill={skill} index={i} />
                 ))}
-              </ul>
+              </div>
             </div>
 
             {/* Languages */}
-            <div className="card p-6">
-              <h3 className="text-lg font-serif font-bold text-primary-600 dark:text-primary-400 mb-3">
+            <div>
+              <h3 className="text-xl font-serif font-bold text-gray-900 dark:text-gray-100 mb-4">
                 Natural Languages
               </h3>
-              <ul className="space-y-1 ml-4 list-disc">
-                {data.skills.languages.map((lang: string, i: number) => (
-                  <li key={i} className="text-gray-700 dark:text-gray-300">
-                    {lang}
-                  </li>
+              <div className="flex flex-wrap gap-2">
+                {data.skills.languages.map((skill: Skill, i: number) => (
+                  <SkillIcon key={i} skill={skill} index={i} />
                 ))}
-              </ul>
+              </div>
             </div>
           </div>
         </section>
