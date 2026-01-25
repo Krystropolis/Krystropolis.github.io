@@ -40,11 +40,19 @@ export default function Header() {
   };
 
   const navItems = [
+    { href: '/', label: 'Home' },
     { href: '/resume', label: 'Resume' },
     { href: '/portfolio', label: 'Portfolio' },
     { href: '/about', label: 'About' },
     { href: '/contact', label: 'Contact' },
   ];
+
+  const isActive = (href: string) => {
+    if (href === '/') {
+      return pathname === '/' || pathname === '';
+    }
+    return pathname === href;
+  };
 
   return (
     <header className="sticky top-0 z-50 bg-surface-light dark:bg-surface-dark shadow-soft backdrop-blur-sm bg-opacity-95 dark:bg-opacity-95 border-b border-gray-200 dark:border-gray-700">
@@ -77,14 +85,14 @@ export default function Header() {
                 key={item.href}
                 href={item.href}
                 className={`relative px-4 py-2 rounded-lg font-medium transition-all duration-200 ${
-                  pathname === item.href
+                  isActive(item.href)
                     ? 'text-primary-600 dark:text-primary-400 bg-primary-50 dark:bg-primary-900/20'
                     : 'text-gray-600 dark:text-gray-300 hover:text-primary-600 dark:hover:text-primary-400 hover:bg-gray-100 dark:hover:bg-gray-800'
                 }`}
-                aria-current={pathname === item.href ? 'page' : undefined}
+                aria-current={isActive(item.href) ? 'page' : undefined}
               >
                 {item.label}
-                {pathname === item.href && (
+                {isActive(item.href) && (
                   <span className="absolute bottom-0 left-1/2 -translate-x-1/2 w-8 h-0.5 bg-primary-600 dark:bg-primary-400 rounded-full" />
                 )}
               </Link>
@@ -178,7 +186,7 @@ export default function Header() {
                 href={item.href}
                 onClick={closeMenu}
                 className={`block px-4 py-3 rounded-lg font-medium transition-colors ${
-                  pathname === item.href
+                  isActive(item.href)
                     ? 'text-primary-600 dark:text-primary-400 bg-primary-50 dark:bg-primary-900/20'
                     : 'text-gray-600 dark:text-gray-300 hover:bg-gray-100 dark:hover:bg-gray-800'
                 }`}

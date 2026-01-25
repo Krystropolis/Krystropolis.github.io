@@ -1,45 +1,97 @@
 {
-  "intro": "Software Engineer with a passion for learning, creating, and problem-solving. I believe in the power of technology to make a positive impact, and I'm always eager to take on new challenges.",
+  "hero": {
+    "name": "Krystal Elliott",
+    "title": "Software Engineer",
+    "tagline": "Building meaningful experiences through code"
+  },
+  "about": {
+    "summary": "I'm a software engineer with a passion for learning, creating, and problem-solving. I believe in the power of technology to make a positive impact, and I'm always eager to take on new challenges. My journey in tech started with curiosity and has grown into a career dedicated to building solutions that matter.",
+    "values": [
+      "Continuous Learning",
+      "Problem-Solving",
+      "Community"
+    ],
+    "unique": "What sets me apart is my blend of technical expertise and genuine curiosity. I don't just write code—I seek to understand the 'why' behind every problem, which leads to more thoughtful and effective solutions."
+  },
+  "currentFocus": {
+    "role": "Software Engineer",
+    "learning": [
+      "React",
+      "TypeScript",
+      "System Design"
+    ],
+    "technologies": [
+      "JavaScript",
+      "Next.js",
+      "Node.js",
+      "Python",
+      "SQL"
+    ]
+  },
+  "story": {
+    "journey": "My journey began with a simple curiosity about how things work. That curiosity led me to computer science at Penn State, where I discovered my love for creating software. From tinkering with robotics in the Makers Club to building production applications today, every step has been driven by a desire to learn and create. I studied in Ireland for four months, which gave me a global perspective that I bring to every project. Today, I'm focused on building meaningful software while continuing to grow as a developer and as a person.",
+    "milestones": [
+      {
+        "year": "2015",
+        "title": "Penn State Makers Club",
+        "description": "Discovered my passion for tinkering and creating with technology"
+      },
+      {
+        "year": "2016",
+        "title": "Study Abroad in Ireland",
+        "description": "Gained global perspective and fell in love with nature and hiking"
+      },
+      {
+        "year": "2017",
+        "title": "Started Career",
+        "description": "Began my professional journey as a software engineer"
+      }
+    ]
+  },
   "interests": [
     {
-      "title": "Penn State Makers Club 2015",
-      "description": "I like to tinker. Here's a picture of some ornaments we made using a laser cutter, some solder, wires, leds, a battery and Christmas spirit.",
-      "image": "/images/makers.jpg"
+      "title": "Creative Coding",
+      "description": "I love personal projects and experiments. From robotics kits to web applications, tinkering is how I learn and grow. Currently working with a Boe-Bot to learn about embedded software and robotics.",
+      "image": "/images/boebot1.jpg",
+      "category": "professional"
     },
     {
-      "title": "Boe-Bot",
-      "description": "I'm currently tinkering with a Boe-Bot robot kit to learn about embedded software and robotics.",
-      "image": "/images/boebot1.jpg"
-    },
-    {
-      "title": "React",
-      "description": "I'm currently learning React on Udemy and Codecademy. If you're brand new to coding, I highly recommend Codecademy! They were my entry to programming (aside from learning HTML for my Neopets page). If you have a little more experience, take a look at Udemy. They have a lot of low cost courses.",
-      "image": null
-    },
-    {
-      "title": "Data Structures & Algorithms",
-      "description": "LeetCode, Firecode, and 'Cracking the Coding Interview' have been my go-tos for strengthening my knowledge of data structures and algorithms. Preparing for interviews? These are the sites to use!",
-      "image": null
+      "title": "Continuous Learning",
+      "description": "I'm passionate about staying current and expanding my skills. I dive into Data Structures & Algorithms through LeetCode and 'Cracking the Coding Interview.' For frameworks, I use Udemy and Codecademy—they've been invaluable resources throughout my journey.",
+      "image": null,
+      "category": "professional"
     },
     {
       "title": "Fitness",
-      "description": "I go to the gym about 3 times a week. I start off with some cardio to get the heart pumping, then switch over to a little bit of lifting. Starting Strength and StrongLifts 5x5 program have influenced my routine. I am also getting more into stretching and yoga.",
-      "image": null
+      "description": "I go to the gym about 3 times a week. I start with cardio to get my heart pumping, then switch to lifting. Starting Strength and StrongLifts 5x5 have influenced my routine. I'm also getting more into stretching and yoga.",
+      "image": null,
+      "category": "personal"
     },
     {
       "title": "Philanthropy",
-      "description": "I am always interested in hearing about how I can help others. Most recently, I worked with Family Gateway (Dallas, Texas) and lead 12 of my coworkers in collecting funding and supplies to help displaced families. At the beginning of the school year, we contributed over 30 backpacks filled with supplies. For Halloween, Thanksgiving, and Christmas, we worked to contribute costumes, over 1 ton of food, and more than 100 toys. There is truly no greater feeling than that of improving the lives of those around you. If we haven't been the person in need, surely we have known them. I've been fortunate to have experienced kindness from so many others, it's only right that I give back.",
-      "image": null
+      "description": "I believe in giving back. Most recently, I worked with Family Gateway in Dallas, leading 12 coworkers in collecting funding and supplies for displaced families. We contributed over 30 backpacks, more than 1 ton of food, and 100+ toys for families in need.",
+      "image": null,
+      "category": "community"
     },
     {
       "title": "Art",
-      "description": "All doodles on this site will be my own. I love painting and drawing. My kitties inspire me often.",
-      "image": "/images/simba.jpg"
+      "description": "I love painting and drawing. All doodles on this site are my own. My kitties inspire me often, and I find creative expression to be a perfect balance to my technical work.",
+      "image": "/images/simba.jpg",
+      "category": "personal"
     },
     {
       "title": "Nature",
-      "description": "I am in love with nature. Don't get me wrong, I love my job, but after a long day of staring at a screen, all I want is to be surrounded by trees and mountains. My first hiking trip was to Glendalough in Ireland (I studied in Ireland for 4 months). I've been hooked since.",
-      "image": "/images/krystal-cliffs-of-moher.jpg"
+      "description": "I'm in love with nature. After a long day of staring at screens, all I want is to be surrounded by trees and mountains. My first hiking trip was to Glendalough in Ireland. I've been hooked ever since.",
+      "image": "/images/krystal-cliffs-of-moher.jpg",
+      "category": "personal"
     }
-  ]
+  ],
+  "lookingFor": {
+    "opportunities": [
+      "Full-time roles",
+      "Contract work",
+      "Interesting collaborations"
+    ],
+    "collaboration": "I'm always interested in hearing about new opportunities, collaborations, or just having a great conversation about technology and development."
+  }
 }

@@ -57,12 +57,51 @@ export interface PortfolioData {
 export interface Interest {
   title: string;
   description: string;
-  image?: string;
+  image?: string | null;
+  category?: 'professional' | 'personal' | 'community';
+}
+
+export interface Hero {
+  name: string;
+  title: string;
+  tagline: string;
+}
+
+export interface About {
+  summary: string;
+  values: string[];
+  unique: string;
+}
+
+export interface CurrentFocus {
+  role: string;
+  learning: string[];
+  technologies: string[];
+}
+
+export interface Milestone {
+  year: string;
+  title: string;
+  description: string;
+}
+
+export interface Story {
+  journey: string;
+  milestones: Milestone[];
+}
+
+export interface LookingFor {
+  opportunities: string[];
+  collaboration: string;
 }
 
 export interface AboutData {
-  intro: string;
+  hero: Hero;
+  about: About;
+  currentFocus: CurrentFocus;
+  story: Story;
   interests: Interest[];
+  lookingFor: LookingFor;
 }
 
 export interface SocialLink {
