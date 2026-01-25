@@ -35,6 +35,13 @@ export interface Skill {
   icon?: string;
 }
 
+export interface SkillCategory {
+  expert?: Skill[];
+  advanced?: Skill[];
+  intermediate?: Skill[];
+  novice?: Skill[];
+}
+
 export interface Skills {
   programming: SkillCategory;
   databases: Skill[];
