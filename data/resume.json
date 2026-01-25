@@ -1,9 +1,50 @@
 {
   "contact": {
     "email": "e.krystal@gmail.com",
-    "location": "Munich, Germany"
+    "location": "Seattle, WA"
   },
   "experience": [
+    {
+      "position": "Family Caregiver, Volunteer Work, International Relocation",
+      "company": "",
+      "location": "",
+      "startDate": "2020-10",
+      "endDate": null,
+      "isCurrent": true,
+      "description": [
+        "Providing family care and support while managing international relocation from the United States to Germany."
+      ]
+    },
+    {
+      "position": "Software Engineer",
+      "company": "The Walt Disney Company",
+      "location": "Seattle, WA",
+      "startDate": "2019-05",
+      "endDate": "2020-09",
+      "isCurrent": false,
+      "description": [
+        "Maintained the front end of a legacy content management system that utilized AngularJS and JQuery.",
+        "Updated server APIs, in conjunction with the consuming application, to improve data presentation.",
+        "Used React to refactor a Flash-based permissions tool.",
+        "Participated in a newly created on-call team and authored the document that minimized the time-to-resolution for critical incidents.",
+        "Performed system maintenance in AWS and deployed new code to production."
+      ]
+    },
+    {
+      "position": "Software Solutions Engineer",
+      "company": "Contractor for Walt Disney",
+      "location": "Seattle, WA",
+      "startDate": "2018-06",
+      "endDate": "2019-05",
+      "isCurrent": false,
+      "description": [
+        "Triaged issues and resolved bugs impacting a content management system.",
+        "Assisted business partner development teams with API and framework usage, serving as a subject matter expert on the implementation of RESTful Java services.",
+        "Performed system migrations to AWS, and verified both the system functionality and data integrity.",
+        "Created training materials to improve the on-boarding process for new team members and business partners.",
+        "Developed and implemented processes for ticket standardization, reducing time-to-resolution for all issues, and enabling management to gather metrics and build reports approximately 20% faster."
+      ]
+    },
     {
       "position": "Application Developer II",
       "company": "ARGO Data",
@@ -33,33 +74,46 @@
         "Participated in a quality remediation effort to resolve approximately 180 defects over the course of 3 months, which resulted in a noticeable improvement in the quality and stability of the application.",
         "Organized a tactical solution, which facilitated the successful implementation of requirements delivered within the last 5 weeks of the development cycle."
       ]
-    },
+    }
+  ],
+  "internships": [
     {
-      "position": "MES Project Management Intern",
+      "position": "MES Project Manager",
       "company": "General Electric",
       "location": "Erie, PA",
       "startDate": "2016-05",
       "endDate": "2016-08",
       "isCurrent": false,
       "description": [
-        "Managed the integration of two manufacturing execution systems.",
-        "Coordinated the efforts of three teams, operating from multiple locations.",
-        "Designed UI mock-ups and determined architectural requirements for the integration of new system components focusing on quality control.",
-        "Led a team of five in the creation of a simplified small parts ordering solution.",
-        "Presented a functional and scalable prototype, using a Raspberry Pi and Python."
+        "Managed the integration of two manufacturing execution systems by coordinating the efforts of three teams, operating in multiple locations.",
+        "Designed UI mock-ups and researched architectural requirements for the integration of new system components."
       ]
     },
     {
-      "position": "Software Development Intern",
-      "company": "FeneTech Inc.",
+      "position": "Software Developer",
+      "company": "FeneTech",
       "location": "Aurora, OH",
       "startDate": "2015-05",
       "endDate": "2015-08",
       "isCurrent": false,
       "description": [
-        "Developed internal tools and scripts, increasing task efficiency by at least 30%.",
-        "Developed new functionality and corrected existing code, using VB.Net and SQL.",
-        "Developed a Proof of Concept prototype to assess the viability of secure document distribution using an embedded browser within the application."
+        "Developed a Proof of Concept prototype to assess the viability of secure document distribution using an embedded browser within the application.",
+        "Identified a bottleneck in a recurring data entry process and built a reusable automation script, leveraging PowerShell, for a cross-functional teammate.",
+        "Integrated the tool into the team's daily workflow, achieving a 30% reduction in execution time and eliminating error-prone manual steps.",
+        "Developed new functionality and corrected existing code for proprietary software, using VB.Net and SQL."
+      ]
+    },
+    {
+      "position": "Software Quality Assurance",
+      "company": "FeneTech",
+      "location": "Aurora, OH",
+      "startDate": "2014-05",
+      "endDate": "2014-08",
+      "isCurrent": false,
+      "description": [
+        "Conducted black box software testing for both web and non-web applications.",
+        "Worked closely with both the development and applications departments to perform functional, application, regression, acceptance, multi-user, and workflow testing.",
+        "Created and maintained test plans."
       ]
     }
   ],

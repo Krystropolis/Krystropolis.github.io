@@ -13,6 +13,16 @@ export interface Experience {
   description: string[];
 }
 
+export interface Internship {
+  position: string;
+  company: string;
+  location: string;
+  startDate: string;
+  endDate?: string;
+  isCurrent: boolean;
+  description: string[];
+}
+
 export interface Education {
   degree: string;
   school: string;
@@ -35,6 +45,7 @@ export interface Skills {
 export interface ResumeData {
   contact: Contact;
   experience: Experience[];
+  internships: Internship[];
   education: Education[];
   skills: Skills;
 }

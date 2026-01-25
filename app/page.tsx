@@ -5,7 +5,7 @@ export default function HomePage() {
     <div className="container mx-auto px-4 sm:px-6 lg:px-8 py-16">
       <div className="max-w-5xl mx-auto">
         {/* Hero Section */}
-        <div className="text-center mb-12 animate-fade-in-up py-8">
+        <div className="text-center mb-8 animate-fade-in-up py-8">
           <h1 className="text-5xl md:text-6xl lg:text-7xl font-serif font-bold text-gray-900 dark:text-gray-100 mb-6 tracking-tight">
             Welcome to <span className="text-primary-600 dark:text-primary-400">Krystropolis</span>
           </h1>

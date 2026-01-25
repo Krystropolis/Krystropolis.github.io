@@ -177,3 +177,44 @@
   animation: pop-in 0.3s ease-out forwards;
   opacity: 0;
 }
+
+/* Collapsible section styles */
+.collapsible-content {
+  transition: max-height 0.3s ease-in-out, opacity 0.3s ease-in-out;
+}
+
+.collapsible-content.collapsed {
+  max-height: 0;
+  opacity: 0;
+  overflow: hidden;
+}
+
+.collapsible-content.expanded {
+  max-height: 5000px;
+  opacity: 1;
+}
+
+/* Print styles for collapsible sections */
+@media print {
+  /* Force all collapsible sections to be expanded */
+  .collapsible-content {
+    max-height: none !important;
+    opacity: 1 !important;
+    overflow: visible !important;
+  }
+
+  /* Hide navigation and interactive elements */
+  .no-print {
+    display: none !important;
+  }
+
+  /* Show print-only elements */
+  .print-only {
+    display: block !important;
+  }
+}
+
+/* Ensure sticky navigation stays visible */
+.sticky {
+  position: sticky !important;
+}
