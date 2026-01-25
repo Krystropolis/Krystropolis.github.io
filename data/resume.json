@@ -1,7 +1,7 @@
 {
   "contact": {
     "email": "e.krystal@gmail.com",
-    "location": "Dallas, TX"
+    "location": "Munich, Germany"
   },
   "experience": [
     {
@@ -109,8 +109,8 @@
     ],
     "languages": [
       { "name": "English (Native)", "icon": "Globe" },
-      { "name": "Spanish (Novice)", "icon": "Globe" },
-      { "name": "German (Novice)", "icon": "Globe" }
+      { "name": "German (B1)", "icon": "Globe" },
+      { "name": "Spanish (A2)", "icon": "Globe" }
     ]
   }
 }

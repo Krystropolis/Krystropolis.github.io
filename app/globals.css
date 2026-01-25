@@ -125,6 +125,40 @@
   .card {
     @apply shadow-none border border-gray-300;
   }
+
+  /* Remove dark mode styles for print */
+  html.dark,
+  html.dark body,
+  html.dark * {
+    color: black !important;
+    background-color: white !important;
+  }
+
+  /* Ensure links are readable in print */
+  a {
+    text-decoration: underline;
+    color: black !important;
+  }
+
+  /* Improve print layout */
+  .container {
+    max-width: 100% !important;
+    padding: 0 !important;
+  }
+
+  /* Remove animations for print */
+  * {
+    animation: none !important;
+    transition: none !important;
+  }
+
+  /* Ensure animated elements are visible in print */
+  .animate-pop-in,
+  .animate-fade-in,
+  .animate-fade-in-up {
+    opacity: 1 !important;
+    transform: none !important;
+  }
 }
 
 /* Animation keyframes */

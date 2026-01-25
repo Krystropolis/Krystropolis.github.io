@@ -11,6 +11,11 @@ export const metadata: Metadata = {
   title: 'Krystropolis - Krystal Elliott',
   description: 'Software Engineer portfolio and resume for Krystal Elliott',
   keywords: ['Software Engineer', 'Web Developer', 'Portfolio', 'Resume'],
+  icons: {
+    icon: '/favicon.svg',
+    shortcut: '/favicon.svg',
+    apple: '/favicon.svg',
+  },
 };
 
 export default function RootLayout({
@@ -24,11 +29,11 @@ export default function RootLayout({
         <a href="#main-content" className="skip-link">
           Skip to main content
         </a>
-        <Header />
+        <Header className="no-print" />
         <main id="main-content" className="min-h-screen">
           {children}
         </main>
-        <Footer />
+        <Footer className="no-print" />
       </body>
     </html>
   );

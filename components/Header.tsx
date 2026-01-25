@@ -4,7 +4,7 @@ import { useState, useEffect } from 'react';
 import Link from 'next/link';
 import { usePathname } from 'next/navigation';
 
-export default function Header() {
+export default function Header({ className = '' }: { className?: string }) {
   const [isDark, setIsDark] = useState(false);
   const [isMenuOpen, setIsMenuOpen] = useState(false);
   const pathname = usePathname();
@@ -55,7 +55,7 @@ export default function Header() {
   };
 
   return (
-    <header className="sticky top-0 z-50 bg-surface-light dark:bg-surface-dark shadow-soft backdrop-blur-sm bg-opacity-95 dark:bg-opacity-95 border-b border-gray-200 dark:border-gray-700">
+    <header className={`sticky top-0 z-50 bg-surface-light dark:bg-surface-dark shadow-soft backdrop-blur-sm bg-opacity-95 dark:bg-opacity-95 border-b border-gray-200 dark:border-gray-700 ${className}`}>
       <nav
         className="container mx-auto px-4 sm:px-6 lg:px-8 py-4"
         aria-label="Main navigation"
@@ -84,17 +84,14 @@ export default function Header() {
               <Link
                 key={item.href}
                 href={item.href}
-                className={`relative px-4 py-2 rounded-lg font-medium transition-all duration-200 ${
+                className={`px-4 py-2 rounded-lg font-medium transition-all duration-200 ${
                   isActive(item.href)
-                    ? 'text-primary-600 dark:text-primary-400 bg-primary-50 dark:bg-primary-900/20'
+                    ? 'text-primary-600 dark:text-primary-400'
                     : 'text-gray-600 dark:text-gray-300 hover:text-primary-600 dark:hover:text-primary-400 hover:bg-gray-100 dark:hover:bg-gray-800'
                 }`}
                 aria-current={isActive(item.href) ? 'page' : undefined}
               >
                 {item.label}
-                {isActive(item.href) && (
-                  <span className="absolute bottom-0 left-1/2 -translate-x-1/2 w-8 h-0.5 bg-primary-600 dark:bg-primary-400 rounded-full" />
-                )}
               </Link>
             ))}
           </div>

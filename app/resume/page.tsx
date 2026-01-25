@@ -1,6 +1,7 @@
 import { loadResumeData } from '@/lib/data';
 import { Experience, Education, Skills, Skill } from '@/types';
-import PrintButton from '@/components/PrintButton';
+import ShareButton from '@/components/ShareButton';
+import ScrollToTop from '@/components/ScrollToTop';
 import * as Icons from 'lucide-react';
 
 // Map icon names to Lucide React icon components
@@ -46,41 +47,15 @@ export default async function ResumePage() {
         {/* Page Header */}
         <div className="mb-12">
           <h1 className="text-4xl md:text-5xl font-serif font-bold text-gray-900 dark:text-gray-100 mb-4">
-            Resume
+            Krystal Elliott
           </h1>
           <div className="flex items-center justify-between flex-wrap gap-4">
             <p className="text-lg text-gray-600 dark:text-gray-400">
               Software Engineer
             </p>
-            <PrintButton />
+            <ShareButton className="no-print" />
           </div>
         </div>
-
-        {/* Contact Information */}
-        <section className="card p-6 mb-10" aria-labelledby="contact-heading">
-          <h2 id="contact-heading" className="text-2xl font-serif font-bold text-primary-600 dark:text-primary-400 mb-4">
-            Contact Information
-          </h2>
-          <div className="grid md:grid-cols-2 gap-4">
-            <div>
-              <p className="text-sm text-gray-600 dark:text-gray-400 mb-1">Email</p>
-              <a
-                href={`mailto:${data.contact.email}`}
-                className="text-lg text-primary-600 dark:text-primary-400 hover:underline"
-              >
-                {data.contact.email}
-              </a>
-            </div>
-            {data.contact.location && (
-              <div>
-                <p className="text-sm text-gray-600 dark:text-gray-400 mb-1">Location</p>
-                <p className="text-lg text-gray-900 dark:text-gray-100">
-                  {data.contact.location}
-                </p>
-              </div>
-            )}
-          </div>
-        </section>
 
         {/* Experience */}
         <section className="mb-10" aria-labelledby="experience-heading">
@@ -220,6 +195,7 @@ export default async function ResumePage() {
           </div>
         </section>
       </div>
+      <ScrollToTop className="no-print" />
     </div>
   );
 }
