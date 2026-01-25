@@ -61,7 +61,7 @@ export default async function AboutPage() {
           {/* Unique */}
           <div className="bg-gray-50 dark:bg-gray-800/50 p-4 rounded-lg border-l-4 border-primary-500">
             <p className="text-gray-700 dark:text-gray-300 italic">
-              "{data.about.unique}"
+              &ldquo;{data.about.unique}&rdquo;
             </p>
           </div>
         </section>
@@ -179,7 +179,7 @@ export default async function AboutPage() {
         {/* Let's Connect CTA */}
         <section className="card p-8 text-center animate-fade-in-up" style={{ animationDelay: '0.6s' }}>
           <h2 className="text-2xl font-serif font-bold text-gray-900 dark:text-gray-100 mb-4">
-            Let's Connect
+            Let&apos;s Connect
           </h2>
           <p className="text-lg text-gray-600 dark:text-gray-300 mb-6 max-w-2xl mx-auto">
             {data.lookingFor.collaboration}

@@ -53,7 +53,19 @@ function CollapsibleSectionHeader({
   ref: (el: HTMLElement | null) => void;
 }) {
   return (
-    <div className="flex items-center justify-between cursor-pointer group" onClick={onToggle}>
+    <div 
+      className="flex items-center justify-between cursor-pointer group" 
+      onClick={onToggle}
+      onKeyDown={(e) => {
+        if (e.key === 'Enter' || e.key === ' ') {
+          e.preventDefault();
+          onToggle();
+        }
+      }}
+      role="button"
+      tabIndex={0}
+      aria-expanded={isCollapsed}
+    >
       <h2 
         id={id} 
         ref={ref}
