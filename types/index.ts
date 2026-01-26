@@ -8,7 +8,7 @@ export interface Experience {
   company: string;
   location: string;
   startDate: string;
-  endDate?: string;
+  endDate: string | null;
   isCurrent: boolean;
   description: string[];
 }
@@ -18,7 +18,7 @@ export interface Internship {
   company: string;
   location: string;
   startDate: string;
-  endDate?: string;
+  endDate: string | null;
   isCurrent: boolean;
   description: string[];
 }
