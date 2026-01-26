@@ -1,7 +1,7 @@
 'use client';
 
 import { useState, useEffect, useRef } from 'react';
-import { loadResumeData } from '@/lib/data';
+import { loadResumeData, formatDate } from '@/lib/data';
 import { Experience, Internship, Education, Skills, Skill } from '@/types';
 import ShareButton from '@/components/ShareButton';
 import ScrollToTop from '@/components/ScrollToTop';
@@ -187,7 +187,7 @@ export default function ResumePage() {
                       {exp.position}
                     </h3>
                     <span className="text-sm text-accent-600 dark:text-accent-400 font-medium">
-                      {exp.startDate} - {exp.endDate || 'Present'}
+                      {formatDate(exp.startDate)} - {formatDate(exp.endDate)}
                     </span>
                   </div>
                   <p className="text-lg italic text-gray-700 dark:text-gray-300 mb-4">
@@ -229,7 +229,7 @@ export default function ResumePage() {
                       {internship.position}
                     </h3>
                     <span className="text-sm text-accent-600 dark:text-accent-400 font-medium">
-                      {internship.startDate} - {internship.endDate || 'Present'}
+                      {formatDate(internship.startDate)} - {formatDate(internship.endDate)}
                     </span>
                   </div>
                   <p className="text-lg italic text-gray-700 dark:text-gray-300 mb-4">
@@ -271,7 +271,7 @@ export default function ResumePage() {
                     </p>
                   )}
                   <p className="text-sm text-gray-600 dark:text-gray-400">
-                    Graduated: {edu.graduationDate}
+                    Graduated: {formatDate(edu.graduationDate)}
                   </p>
                 </article>
               ))}

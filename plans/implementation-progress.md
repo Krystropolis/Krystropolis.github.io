@@ -50,6 +50,20 @@
 - [x] Test spam protection (honeypot field, email obfuscation)
 - [x] Complete testing checklist (11/11 items passed)
 
+### Phase 4.6: Homepage Enhancements (2026-01-26)
+- [x] Remove blinking cursor animation from "await hireMe();" text in [`app/page.tsx`](../app/page.tsx)
+- [x] Implement typewriter effect for "await hireMe();" text with:
+  - Character-by-character typing animation (100ms per character)
+  - Blinking cursor during typing that disappears after completion
+  - Client component conversion using React hooks (useState, useEffect)
+- [x] Reorder homepage layout for mobile devices:
+  - Image appears before resume/portfolio cards on mobile (screens < lg)
+  - Maintains original order on larger screens (lg and above)
+  - Added `order-1 lg:order-2` and `order-2 lg:order-1` classes
+- [x] Audit and identify unused images in the project:
+  - Identified 8 unused images: `bg1.png`, `ke-nobg.png`, `krystal-cliffs-of-moher-nobg.png`, `krystalelliott-nobg-2.png`, `krystalelliott.jpg`, `logo.png`, `makers.jpg`, `sons-red.gif`
+  - Documented 10 actively used images across the application
+
 ### Phase 5: Deployment Setup (2026-01-23)
 - [x] Fix ESLint errors blocking build (unescaped apostrophes in about page)
 - [x] Configure Next.js for static export (`output: 'export'` in next.config.mjs)
@@ -62,7 +76,7 @@ The Next.js development server is running in the background. You can access the 
 
 ### What's Working
 
-- **Home Page** (`/`): Welcome page with navigation to all sections
+- **Home Page** (`/`): Welcome page with navigation to all sections, typewriter animation, mobile-optimized layout (2026-01-26)
 - **Resume Page** (`/resume`): Full resume with experience, education, and skills
 - **Portfolio Page** (`/portfolio`): Project showcase with technology tags
 - **About Page** (`/about`): Personal interests and background
@@ -80,6 +94,8 @@ The Next.js development server is running in the background. You can access the 
 - Data-driven content from JSON files
 - TypeScript for type safety
 - Contact page with spam protection (2026-01-24)
+- Homepage typewriter animation for "await hireMe();" text (2026-01-26)
+- Mobile-optimized homepage layout (image appears first on mobile) (2026-01-26)
 
 ✅ **Accessibility Features**
 - Proper heading hierarchy (h1, h2, h3)
@@ -123,6 +139,7 @@ The Next.js development server is running in the background. You can access the 
 - [ ] Push changes to trigger automatic deployment
 - [ ] Test production build locally
 - [ ] Remove old files: [`index.html`](../index.html), [`about.html`](../about.html), [`resume.html`](../resume.html), [`portfolio.html`](../portfolio.html), [`styles.css`](../styles.css), [`script.js`](../script.js)
+- [ ] Remove unused images: `bg1.png`, `ke-nobg.png`, `krystal-cliffs-of-moher-nobg.png`, `krystalelliott-nobg-2.png`, `krystalelliott.jpg`, `logo.png`, `makers.jpg`, `sons-red.gif` (2026-01-26)
 - [ ] Update [`README.md`](../README.md) with new setup instructions
 
 ## Next Steps
@@ -169,7 +186,7 @@ The following features are planned but not yet implemented:
 
 ### Application Files
 - [`app/layout.tsx`](../app/layout.tsx) - Root layout
-- [`app/page.tsx`](../app/page.tsx) - Home page
+- [`app/page.tsx`](../app/page.tsx) - Home page with typewriter animation (2026-01-26)
 - [`app/resume/page.tsx`](../app/resume/page.tsx) - Resume page
 - [`app/portfolio/page.tsx`](../app/portfolio/page.tsx) - Portfolio page
 - [`app/about/page.tsx`](../app/about/page.tsx) - About page
@@ -178,6 +195,11 @@ The following features are planned but not yet implemented:
 - [`components/Header.tsx`](../components/Header.tsx) - Navigation header
 - [`components/Footer.tsx`](../components/Footer.tsx) - Footer component
 - [`components/ContactForm.tsx`](../components/ContactForm.tsx) - Contact form component (2026-01-24)
+- [`components/TestimonialCarousel.tsx`](../components/TestimonialCarousel.tsx) - Testimonial carousel
+- [`components/ResumeNavigation.tsx`](../components/ResumeNavigation.tsx) - Resume navigation
+- [`components/ShareButton.tsx`](../components/ShareButton.tsx) - Share button
+- [`components/ScrollToTop.tsx`](../components/ScrollToTop.tsx) - Scroll to top button
+- [`components/PrintButton.tsx`](../components/PrintButton.tsx) - Print resume button
 
 ### Data Files
 - [`types/index.ts`](../types/index.ts) - TypeScript interfaces
@@ -204,7 +226,12 @@ git commit -m "feat: initialize Next.js project with TypeScript and Tailwind CSS
 - Accessibility features are built-in (ARIA labels, semantic HTML, focus indicators).
 - Dark mode is implemented and persists across page reloads.
 - Contact page includes spam protection via honeypot field and email obfuscation (2026-01-24).
+- Homepage features typewriter animation for "await hireMe();" text (2026-01-26).
+- Homepage layout is optimized for mobile devices with image appearing first (2026-01-26).
+- Image audit completed - 8 unused images identified for cleanup (2026-01-26).
 - All core sections are complete and tested.
+
+**Last Updated**: January 26, 2026
 
 ## Questions or Issues?
 
