@@ -26,12 +26,12 @@ export default function RootLayout({
 }) {
   return (
     <html lang="en">
-      <body className={`${inter.variable} ${playfair.variable} ${pressStart2P.variable} font-sans bg-background-light dark:bg-background-dark text-gray-900 dark:text-gray-100 transition-colors duration-200`}>
+      <body className={`${inter.variable} ${playfair.variable} ${pressStart2P.variable} font-sans bg-background-light dark:bg-background-dark text-gray-900 dark:text-gray-100 transition-colors duration-200 min-h-screen grid grid-rows-[auto_1fr_auto]`}>
         <a href="#main-content" className="skip-link">
           Skip to main content
         </a>
         <Header className="no-print" />
-        <main id="main-content" className="min-h-screen">
+        <main id="main-content">
           {children}
         </main>
         <Footer className="no-print" />

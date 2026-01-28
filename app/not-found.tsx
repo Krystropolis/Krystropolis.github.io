@@ -3,7 +3,7 @@ import Link from 'next/link';
 export default function NotFound() {
   return (
     <div className="container mx-auto px-4 sm:px-6 lg:px-8 py-16">
-      <div className="max-w-4xl mx-auto text-center">
+      <div className="max-w-4xl mx-auto text-center relative">
         {/* Compass Animation */}
         <div className="mb-4 flex justify-center">
           <Compass />
@@ -21,7 +21,7 @@ export default function NotFound() {
 
         {/* Supporting Text */}
         <p className="text-xl md:text-2xl text-gray-600 dark:text-gray-400 mb-2 animate-fade-in-up" style={{ animationDelay: '0.1s' }}>
-          Looks like you've wandered off the path
+          Looks like you&#39;ve wandered off the path
         </p>
       </div>
     </div>
