@@ -2,6 +2,45 @@
 @tailwind components;
 @tailwind utilities;
 
+.topography-background {
+  position: fixed;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  z-index: -1;
+  pointer-events: none;
+}
+
+.topography-background::before {
+  content: '';
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  opacity: 0.3;
+  background:
+    radial-gradient(circle at 20% 30%, rgba(99, 102, 241, 0.6) 0%, transparent 50%),
+    radial-gradient(circle at 80% 70%, rgba(139, 92, 246, 0.6) 0%, transparent 50%),
+    radial-gradient(circle at 40% 80%, rgba(59, 130, 246, 0.6) 0%, transparent 50%),
+    radial-gradient(circle at 60% 20%, rgba(99, 102, 241, 0.6) 0%, transparent 50%);
+}
+
+.topography-background::after {
+  content: '';
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  opacity: 0.25;
+  background:
+    radial-gradient(circle at 30% 50%, rgba(99, 102, 241, 0.7) 0%, transparent 40%),
+    radial-gradient(circle at 70% 30%, rgba(139, 92, 246, 0.7) 0%, transparent 40%),
+    radial-gradient(circle at 50% 80%, rgba(59, 130, 246, 0.7) 0%, transparent 40%);
+}
+
 /* Base styles */
 @layer base {
   html {
