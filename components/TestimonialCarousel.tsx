@@ -88,7 +88,7 @@ export default function TestimonialCarousel() {
 
         {/* Author info */}
         <div className="text-center">
-          <p className="text-xl font-serif font-bold text-gray-900 dark:text-gray-100 mb-1">
+          <p className="text-xl font-serif font-bold text-gray-800 dark:text-gray-100 mb-1">
             {testimonial.author}
           </p>
           <p className="text-sm text-gray-600 dark:text-gray-400">

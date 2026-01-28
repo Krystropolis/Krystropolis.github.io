@@ -79,7 +79,7 @@ export default function ContactForm({ data }: ContactFormProps) {
           onChange={handleChange}
           placeholder={data.form.fields.name.placeholder}
           required={data.form.fields.name.required}
-          className="w-full px-4 py-3 rounded-lg border border-gray-300 dark:border-gray-600 bg-white dark:bg-gray-800 text-gray-900 dark:text-gray-100 focus:ring-2 focus:ring-primary-500 focus:border-transparent transition-all duration-200"
+          className="w-full px-4 py-3 rounded-lg border border-gray-300 dark:border-gray-600 bg-surface-light dark:bg-gray-800 text-gray-800 dark:text-gray-100 focus:ring-2 focus:ring-primary-500 focus:border-transparent transition-all duration-200"
         />
       </div>
 
@@ -97,7 +97,7 @@ export default function ContactForm({ data }: ContactFormProps) {
           onChange={handleChange}
           placeholder={data.form.fields.email.placeholder}
           required={data.form.fields.email.required}
-          className="w-full px-4 py-3 rounded-lg border border-gray-300 dark:border-gray-600 bg-white dark:bg-gray-800 text-gray-900 dark:text-gray-100 focus:ring-2 focus:ring-primary-500 focus:border-transparent transition-all duration-200"
+          className="w-full px-4 py-3 rounded-lg border border-gray-300 dark:border-gray-600 bg-surface-light dark:bg-gray-800 text-gray-800 dark:text-gray-100 focus:ring-2 focus:ring-primary-500 focus:border-transparent transition-all duration-200"
         />
       </div>
 
@@ -115,7 +115,7 @@ export default function ContactForm({ data }: ContactFormProps) {
           onChange={handleChange}
           placeholder={data.form.fields.subject.placeholder}
           required={data.form.fields.subject.required}
-          className="w-full px-4 py-3 rounded-lg border border-gray-300 dark:border-gray-600 bg-white dark:bg-gray-800 text-gray-900 dark:text-gray-100 focus:ring-2 focus:ring-primary-500 focus:border-transparent transition-all duration-200"
+          className="w-full px-4 py-3 rounded-lg border border-gray-300 dark:border-gray-600 bg-surface-light dark:bg-gray-800 text-gray-800 dark:text-gray-100 focus:ring-2 focus:ring-primary-500 focus:border-transparent transition-all duration-200"
         />
       </div>
 
@@ -133,7 +133,7 @@ export default function ContactForm({ data }: ContactFormProps) {
           placeholder={data.form.fields.message.placeholder}
           required={data.form.fields.message.required}
           rows={data.form.fields.message.rows || 5}
-          className="w-full px-4 py-3 rounded-lg border border-gray-300 dark:border-gray-600 bg-white dark:bg-gray-800 text-gray-900 dark:text-gray-100 focus:ring-2 focus:ring-primary-500 focus:border-transparent transition-all duration-200 resize-none"
+          className="w-full px-4 py-3 rounded-lg border border-gray-300 dark:border-gray-600 bg-surface-light dark:bg-gray-800 text-gray-800 dark:text-gray-100 focus:ring-2 focus:ring-primary-500 focus:border-transparent transition-all duration-200 resize-none"
         />
       </div>
 

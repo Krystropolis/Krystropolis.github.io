@@ -70,7 +70,7 @@ export default function Header({ className = '' }: { className?: string }) {
             <div className="w-11 h-11 rounded-xl bg-gradient-to-br from-primary-500 to-primary-600 flex items-center justify-center text-white font-bold text-xl shadow-soft group-hover:shadow-soft-lg transition-all duration-300">
               K
             </div>
-            <span className="text-xl font-serif font-bold text-gray-900 dark:text-gray-100 hidden sm:block tracking-tight">
+            <span className="text-xl font-serif font-bold text-gray-800 dark:text-gray-100 hidden sm:block tracking-tight">
               Krystropolis
             </span>
           </Link>

@@ -9,7 +9,7 @@ export default async function PortfolioPage() {
       <div className="max-w-4xl mx-auto">
         {/* Page Header */}
         <div className="mb-12">
-          <h1 className="text-4xl md:text-5xl font-serif font-bold text-gray-900 dark:text-gray-100 mb-4">
+          <h1 className="text-4xl md:text-5xl font-serif font-bold text-gray-800 dark:text-gray-100 mb-4">
             Portfolio
           </h1>
           <p className="text-lg text-gray-600 dark:text-gray-400">
@@ -32,7 +32,7 @@ export default async function PortfolioPage() {
               key={index}
               className="card p-6 md:p-8 hover:shadow-soft-lg transition-shadow duration-300"
             >
-              <h2 className="text-2xl md:text-3xl font-serif font-bold text-gray-900 dark:text-gray-100 mb-4">
+              <h2 className="text-2xl md:text-3xl font-serif font-bold text-gray-800 dark:text-gray-100 mb-4">
                 {project.title}
               </h2>
 
@@ -42,13 +42,13 @@ export default async function PortfolioPage() {
                   <img
                     src={project.images[0]}
                     alt={`${project.title} project screenshot`}
-                    className="w-full h-auto rounded-lg shadow-md"
+                    className="w-full h-auto max-h-96 object-contain rounded-lg shadow-md"
                   />
                 </div>
               )}
 
               {/* Project Description */}
-              <div className="prose prose prose-gray dark:prose-invert max-w-none mb-6">
+              <div className="prose prose-gray dark:prose-invert max-w-none mb-6">
                 <p className="text-gray-700 dark:text-gray-300 leading-relaxed">
                   {project.description}
                 </p>
@@ -56,7 +56,7 @@ export default async function PortfolioPage() {
 
               {/* Technologies */}
               <div className="mb-6">
-                <h3 className="text-lg font-serif font-semibold text-gray-900 dark:text-gray-100 mb-3">
+                <h3 className="text-lg font-serif font-semibold text-gray-800 dark:text-gray-100 mb-3">
                   Technologies
                 </h3>
                 <div className="flex flex-wrap gap-2">
@@ -79,7 +79,7 @@ export default async function PortfolioPage() {
                       key={i}
                       src={image}
                       alt={`${project.title} additional screenshot ${i + 1}`}
-                      className="w-full h-auto rounded-lg shadow-md"
+                      className="w-full h-auto max-h-64 object-contain rounded-lg shadow-md"
                     />
                   ))}
                 </div>

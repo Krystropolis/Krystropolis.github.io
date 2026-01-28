@@ -44,7 +44,7 @@ export default function HomePage() {
           {/* Left Column - Resume and Portfolio */}
           <div className="flex flex-col space-y-6 order-2 lg:order-1">
             {/* Resume */}
-            <Link href="/resume" className="card p-10 hover:shadow-soft-lg hover:scale-[1.02] transition-all duration-300 cursor-pointer bg-gradient-to-br from-primary-50 to-white dark:from-primary-900/20 dark:to-gray-800 shine-effect">
+            <Link href="/resume" className="card p-10 hover:shadow-soft-lg hover:scale-[1.02] transition-all duration-300 cursor-pointer bg-gradient-to-br from-primary-50 to-surface-light dark:from-primary-900/20 dark:to-gray-800 shine-effect">
               <h2 className="text-3xl font-serif font-bold text-primary-600 dark:text-primary-400 mb-3">
                 Resume
               </h2>
@@ -54,7 +54,7 @@ export default function HomePage() {
             </Link>
 
             {/* Portfolio */}
-            <Link href="/portfolio" className="card p-10 hover:shadow-soft-lg hover:scale-[1.02] transition-all duration-300 cursor-pointer bg-gradient-to-br from-accent-50 to-white dark:from-accent-900/20 dark:to-gray-800 shine-effect">
+            <Link href="/portfolio" className="card p-10 hover:shadow-soft-lg hover:scale-[1.02] transition-all duration-300 cursor-pointer bg-gradient-to-br from-accent-50 to-surface-light dark:from-accent-900/20 dark:to-gray-800 shine-effect">
               <h2 className="text-3xl font-serif font-bold text-accent-600 dark:text-accent-400 mb-3">
                 Portfolio
               </h2>

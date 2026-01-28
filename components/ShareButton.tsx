@@ -105,7 +105,7 @@ export default function ShareButton({ className = '' }: ShareButtonProps) {
           aria-labelledby="share-button"
           aria-orientation="vertical"
           tabIndex={-1}
-          className="absolute right-0 mt-2 w-56 bg-white dark:bg-gray-800 rounded-lg shadow-lg border border-gray-200 dark:border-gray-700 py-1 z-50"
+          className="absolute right-0 mt-2 w-56 bg-surface-light dark:bg-gray-800 rounded-lg shadow-lg border border-gray-200 dark:border-gray-700 py-1 z-50"
           onKeyDown={handleKeyDown}
         >
           {/* Copy Link */}

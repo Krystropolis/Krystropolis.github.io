@@ -1,6 +1,7 @@
 {
   "projects": [
     {
+      "id": "brobot-boebot",
       "title": "BroBot the Boe-Bot",
       "description": "I'm a Software Engineer by trade, but I always get really excited when I have the opportunity to tinker with hardware. Cue Brobot the Boe-Bot. I bought this robotics kit to become more familiar with embedded programming and robotics. Brobot uses a Parallax BASIC Stamp 2 microcontroller to interface with touch, light, and infrared sensors. These sensors help Brobot navigate his environment.",
       "technologies": [
@@ -12,9 +13,12 @@
       "images": [
         "/images/boebot2.jpg"
       ],
-      "links": []
+      "links": [],
+      "featured": false,
+      "size": "medium"
     },
     {
+      "id": "intelligent-academic-advisor",
       "title": "Intelligent Academic Advisor",
       "description": "My senior project focused on supervised machine learning, utilizing IBM Watson to create a virtual advisor who could assist prospective students with academic planning. My team participated in the Nittany Watson Challenge, creating a minimum viable product that would advance several rounds, and secure funding for further research and development. This is the current state of the project, which has had further development since my graduation, but retains many of the features and much of the knowledge added during my involvement.",
       "technologies": [
@@ -41,9 +45,12 @@
           "label": "Watch Presentation Part II",
           "url": "https://www.youtube.com/watch?v=kRPAQEqDL0o"
         }
-      ]
+      ],
+      "featured": true,
+      "size": "large"
     },
     {
+      "id": "college-portfolio-site",
       "title": "College Portfolio Site",
       "description": "When I was in college, I started learning about front end frameworks. My professors recommended having a web presence, so I used Bootstrap to create a page with my at-the-time resume and some information pertaining to projects, classes, and interests.",
       "technologies": [
@@ -60,7 +67,9 @@
           "label": "View College Portfolio",
           "url": "http://www.personal.psu.edu/kye5098/portfolio"
         }
-      ]
+      ],
+      "featured": false,
+      "size": "small"
     },
     {
       "title": "Tetris in C",

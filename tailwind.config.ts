@@ -37,11 +37,11 @@ const config: Config = {
           950: '#4c0519',
         },
         background: {
-          light: '#f8fafc',
+          light: '#f3f4f6',
           dark: '#0f172a',
         },
         surface: {
-          light: '#ffffff',
+          light: '#fafafa',
           dark: '#1e293b',
         },
       },

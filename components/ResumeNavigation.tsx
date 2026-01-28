@@ -42,7 +42,7 @@ export default function ResumeNavigation({ sections, activeSection }: ResumeNavi
 
   if (isMobile) {
     return (
-      <nav className="sticky top-16 z-40 bg-white dark:bg-gray-900 border-b border-gray-200 dark:border-gray-700 shadow-sm no-print">
+      <nav className="sticky top-16 z-40 bg-surface-light dark:bg-gray-900 border-b border-gray-200 dark:border-gray-700 shadow-sm no-print">
         <div className="container mx-auto px-4 sm:px-6 lg:px-8">
           <div className="flex overflow-x-auto py-3 gap-4 whitespace-nowrap">
             {sections.map((section) => (
@@ -66,8 +66,8 @@ export default function ResumeNavigation({ sections, activeSection }: ResumeNavi
 
   return (
     <nav className="hidden md:block sticky top-20 z-40 w-64 flex-shrink-0 no-print">
-      <div className="bg-white dark:bg-gray-900 rounded-xl shadow-lg border border-gray-200 dark:border-gray-700 p-4">
-        <h3 className="text-lg font-serif font-bold text-gray-900 dark:text-gray-100 mb-4 pb-2 border-b border-gray-200 dark:border-gray-700">
+      <div className="bg-surface-light dark:bg-gray-900 rounded-xl shadow-lg border border-gray-200 dark:border-gray-700 p-4">
+        <h3 className="text-lg font-serif font-bold text-gray-800 dark:text-gray-100 mb-4 pb-2 border-b border-gray-200 dark:border-gray-700">
           Quick Navigation
         </h3>
         <ul className="space-y-2">
