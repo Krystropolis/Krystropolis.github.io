@@ -90,6 +90,31 @@
           "url": "https://krystropolis.blogspot.com/2017/04/united-blocks-of-america.html#more"
         }
       ]
+    },
+    {
+      "id": "lunar-new-year-fire-horse",
+      "title": "2026 Lunar New Year: Fire Horse Experience",
+      "description": "A high-fidelity, standalone web experiment featuring a magnetic UI interaction and a real-time countdown to the Lunar New Year. This project explores the intersection of modern frontend physics, glassmorphism, and cultural storytelling. The project focuses on micro-interactions that provide instant feedback to the user, making the interface feel alive. Features include engaging responsiveness with a custom magnetic UI that mirrors the welcoming spirit of the New Year, accessibility-first design with support for prefers-reduced-motion, high-contrast text shadows, and semantic HTML structure, glassmorphism UI with backdrop-filter blur effects, and dynamic cultural integration with a Word of the Day feature cycling through traditional Chinese Chengyu idioms related to the Year of the Horse.",
+      "technologies": [
+        "HTML5",
+        "CSS3",
+        "Vanilla JavaScript",
+        "Google Fonts",
+        "Glassmorphism",
+        "CSS Grid",
+        "CSS Custom Properties"
+      ],
+      "images": [
+        "/images/lny-site-screenshot.png"
+      ],
+      "links": [
+        {
+          "label": "View Live Demo",
+          "url": "https://lny.krystropolis.com/"
+        }
+      ],
+      "featured": true,
+      "size": "large"
     }
   ]
 }
