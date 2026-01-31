@@ -10,6 +10,8 @@
         "Sensors",
         "Microcontrollers"
       ],
+      "categories": ["embedded-systems"],
+      "year": 2020,
       "images": [
         "/images/boebot2.jpg"
       ],
@@ -27,6 +29,8 @@
         "React",
         "Node.js"
       ],
+      "categories": ["full-stack", "frontend", "backend", "machine-learning"],
+      "year": 2018,
       "images": [],
       "links": [
         {
@@ -59,6 +63,8 @@
         "CSS",
         "JavaScript"
       ],
+      "categories": ["frontend", "ui-ux-design"],
+      "year": 2016,
       "images": [
         "/images/college-portfolio.PNG"
       ],
@@ -72,6 +78,7 @@
       "size": "small"
     },
     {
+      "id": "tetris-in-c",
       "title": "Tetris in C",
       "description": "During senior year, I had an Embedded Systems course, in which I was to program Tetris. We used QNX RTOS and C for this course. This was developed in several stages. The first stage involved a GUI design and shape creation. The second stage entailed controlling shape movement and establishing bounds. The third stage required a slight redesign of the GUI because the initial dimensions given to us were incorrect. Finally, we worked on line clearing, shape rotation, and sound implementation. Correction: The final stage was competing to become the ultimate Tetris champion.",
       "technologies": [
@@ -80,6 +87,8 @@
         "Embedded Systems",
         "Game Development"
       ],
+      "categories": ["embedded-systems", "game-development"],
+      "year": 2017,
       "images": [
         "/images/tetris-1.PNG",
         "/images/tetris-2.PNG"
@@ -104,6 +113,8 @@
         "CSS Grid",
         "CSS Custom Properties"
       ],
+      "categories": ["frontend", "ui-ux-design"],
+      "year": 2025,
       "images": [
         "/images/lny-site-screenshot.png"
       ],
@@ -115,6 +126,105 @@
       ],
       "featured": true,
       "size": "large"
+    },
+    {
+      "id": "personal-portfolio-website",
+      "title": "Personal Portfolio Website",
+      "description": "A comprehensive personal portfolio website built with Next.js, featuring a modern design system, dark mode support, and responsive layouts. The project demonstrates full-stack development skills, component architecture, and AI-assisted refactoring to transform an outdated website into a professional showcase.",
+      "technologies": [
+        "Next.js",
+        "React",
+        "TypeScript",
+        "Tailwind CSS",
+        "Jest",
+        "ESLint",
+        "Prettier",
+        "Kilo Code",
+        "AI-Assisted Development"
+      ],
+      "categories": ["full-stack", "frontend", "ui-ux-design", "ai-development"],
+      "year": 2025,
+      "featured": true,
+      "size": "large",
+      "images": [
+        "/images/Krystropolis-WebDark-Screenshot.png",
+        "/images/old-web-resume.png"
+      ],
+      "links": [
+        {
+          "label": "View GitHub Repository",
+          "url": "https://github.com/Krystropolis/Krystropolis.github.io"
+        }
+      ]
     }
+  ],
+  "categories": [
+    {
+      "id": "frontend",
+      "name": "Frontend Development",
+      "icon": "Layout"
+    },
+    {
+      "id": "backend",
+      "name": "Backend Development",
+      "icon": "Server"
+    },
+    {
+      "id": "full-stack",
+      "name": "Full Stack Development",
+      "icon": "Layers"
+    },
+    {
+      "id": "embedded-systems",
+      "name": "Embedded Systems",
+      "icon": "Cpu"
+    },
+    {
+      "id": "machine-learning",
+      "name": "Machine Learning",
+      "icon": "Brain"
+    },
+    {
+      "id": "ui-ux-design",
+      "name": "UI/UX Design",
+      "icon": "Palette"
+    },
+    {
+      "id": "game-development",
+      "name": "Game Development",
+      "icon": "Gamepad2"
+    },
+    {
+      "id": "ai-development",
+      "name": "AI-Assisted Development",
+      "icon": "Bot"
+    }
+  ],
+  "technologies": [
+    "React",
+    "TypeScript",
+    "Python",
+    "Embedded C",
+    "Robotics",
+    "Node.js",
+    "Java",
+    "Machine Learning",
+    "HTML5",
+    "CSS3",
+    "Vanilla JavaScript",
+    "Google Fonts",
+    "Glassmorphism",
+    "CSS Grid",
+    "CSS Custom Properties",
+    "IBM Watson",
+    "Bootstrap",
+    "QNX RTOS",
+    "Next.js",
+    "Tailwind CSS",
+    "Jest",
+    "ESLint",
+    "Prettier",
+    "Kilo Code",
+    "AI-Assisted Development"
   ]
 }

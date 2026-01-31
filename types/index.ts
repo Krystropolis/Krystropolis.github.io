@@ -58,9 +58,14 @@ export interface ResumeData {
 }
 
 export interface Project {
+  id: string;
   title: string;
   description: string;
   technologies: string[];
+  categories: string[];
+  year: number;
+  featured?: boolean;
+  size?: string;
   images: string[];
   links?: {
     label: string;
@@ -68,8 +73,16 @@ export interface Project {
   }[];
 }
 
+export interface Category {
+  id: string;
+  name: string;
+  icon: string;
+}
+
 export interface PortfolioData {
   projects: Project[];
+  categories: Category[];
+  technologies: string[];
 }
 
 export interface Interest {

@@ -1,8 +1,90 @@
+'use client';
+
+import { useState, useMemo } from 'react';
 import { loadPortfolioData } from '@/lib/data';
 import { Project } from '@/types';
+import FilterBar from '@/components/Portfolio/FilterBar';
+import SearchBar from '@/components/Portfolio/SearchBar';
+import ProjectCard from '@/components/Portfolio/ProjectCard';
+import EmptyState from '@/components/Portfolio/EmptyState';
 
-export default async function PortfolioPage() {
-  const data = await loadPortfolioData();
+export default function PortfolioPage() {
+  const [data, setData] = useState<any>(null);
+  const [selectedCategories, setSelectedCategories] = useState<string[]>([]);
+  const [searchQuery, setSearchQuery] = useState('');
+
+  // Load portfolio data on mount
+  useState(() => {
+    loadPortfolioData().then(setData);
+  }, []);
+
+  // Filter and sort projects
+  const filteredProjects = useMemo(() => {
+    if (!data) return [];
+
+    let projects = [...data.projects];
+
+    // Filter by categories (OR logic - project matches if it has ANY selected category)
+    if (selectedCategories.length > 0) {
+      projects = projects.filter((project) =>
+        project.categories.some((category) => selectedCategories.includes(category))
+      );
+    }
+
+    // Filter by search query (checks title, description, and technologies)
+    if (searchQuery.trim()) {
+      const query = searchQuery.toLowerCase();
+      projects = projects.filter(
+        (project) =>
+          project.title.toLowerCase().includes(query) ||
+          project.description.toLowerCase().includes(query) ||
+          project.technologies.some((tech) => tech.toLowerCase().includes(query))
+      );
+    }
+
+    // Sort by year in reverse chronological order (newest first)
+    return projects.sort((a, b) => b.year - a.year);
+  }, [data, selectedCategories, searchQuery]);
+
+  // Handle category toggle
+  const handleCategoryToggle = (categoryId: string) => {
+    setSelectedCategories((prev) =>
+      prev.includes(categoryId)
+        ? prev.filter((id) => id !== categoryId)
+        : [...prev, categoryId]
+    );
+  };
+
+  // Handle search change
+  const handleSearchChange = (query: string) => {
+    setSearchQuery(query);
+  };
+
+  // Clear all filters
+  const handleClearFilters = () => {
+    setSelectedCategories([]);
+    setSearchQuery('');
+  };
+
+  // Clear search only
+  const handleClearSearch = () => {
+    setSearchQuery('');
+  };
+
+  // Check if any filters are active
+  const hasActiveFilters = selectedCategories.length > 0 || searchQuery.trim() !== '';
+
+  if (!data) {
+    return (
+      <div className="container mx-auto px-4 sm:px-6 lg:px-8 py-16 animate-fade-in">
+        <div className="max-w-4xl mx-auto">
+          <div className="flex items-center justify-center py-16">
+            <div className="animate-spin rounded-full h-12 w-12 border-4 border-gray-300 dark:border-gray-700 border-t-primary-600"></div>
+          </div>
+        </div>
+      </div>
+    );
+  }
 
   return (
     <div className="container mx-auto px-4 sm:px-6 lg:px-8 py-16 animate-fade-in">
@@ -25,86 +107,34 @@ export default async function PortfolioPage() {
           </p>
         </div>
 
+        {/* Filter Bar */}
+        <FilterBar
+          categories={data.categories}
+          selectedCategories={selectedCategories}
+          onCategoryToggle={handleCategoryToggle}
+          onClearFilters={handleClearFilters}
+        />
+
+        {/* Search Bar */}
+        <SearchBar
+          searchQuery={searchQuery}
+          onSearchChange={handleSearchChange}
+          onClearSearch={handleClearSearch}
+        />
+
         {/* Projects Grid */}
-        <div className="space-y-12">
-          {data.projects.map((project: Project, index: number) => (
-            <article
-              key={index}
-              className="card p-6 md:p-8 hover:shadow-soft-lg transition-shadow duration-300"
-            >
-              <h2 className="text-2xl md:text-3xl font-serif font-bold text-gray-800 dark:text-gray-100 mb-4">
-                {project.title}
-              </h2>
-
-              {/* Project Image */}
-              {project.images && project.images.length > 0 && (
-                <div className="mb-6">
-                  <img
-                    src={project.images[0]}
-                    alt={`${project.title} project screenshot`}
-                    className="w-full h-auto max-h-96 object-contain rounded-lg shadow-md"
-                  />
-                </div>
-              )}
-
-              {/* Project Description */}
-              <div className="prose prose-gray dark:prose-invert max-w-none mb-6">
-                <p className="text-gray-700 dark:text-gray-300 leading-relaxed">
-                  {project.description}
-                </p>
-              </div>
-
-              {/* Technologies */}
-              <div className="mb-6">
-                <h3 className="text-lg font-serif font-semibold text-gray-800 dark:text-gray-100 mb-3">
-                  Technologies
-                </h3>
-                <div className="flex flex-wrap gap-2">
-                  {project.technologies.map((tech: string, i: number) => (
-                    <span
-                      key={i}
-                      className="px-3 py-1 bg-primary-100 dark:bg-primary-900 text-primary-700 dark:text-primary-300 rounded-full text-sm font-medium"
-                    >
-                      {tech}
-                    </span>
-                  ))}
-                </div>
-              </div>
-
-              {/* Additional Images */}
-              {project.images && project.images.length > 1 && (
-                <div className="grid grid-cols-2 gap-4 mb-6">
-                  {project.images.slice(1).map((image: string, i: number) => (
-                    <img
-                      key={i}
-                      src={image}
-                      alt={`${project.title} additional screenshot ${i + 1}`}
-                      className="w-full h-auto max-h-64 object-contain rounded-lg shadow-md"
-                    />
-                  ))}
-                </div>
-              )}
-
-              {/* Project Links */}
-              {project.links && project.links.length > 0 && (
-                <div className="flex flex-wrap gap-3">
-                  {project.links.map((link: { label: string; url: string }, i: number) => (
-                    <a
-                      key={i}
-                      href={link.url}
-                      target="_blank"
-                      rel="noopener noreferrer"
-                      className="btn btn-primary"
-                      aria-label={`View ${link.label} (opens in new tab)`}
-                    >
-                      {link.label}
-                    </a>
-                  ))}
-                </div>
-              )}
-            </article>
-          ))}
-        </div>
+        {filteredProjects.length > 0 ? (
+          <div className="grid grid-cols-1 md:grid-cols-2 gap-8">
+            {filteredProjects.map((project: Project) => (
+              <ProjectCard key={project.id} project={project} />
+            ))}
+          </div>
+        ) : (
+          <EmptyState
+            onClearFilters={handleClearFilters}
+            hasActiveFilters={hasActiveFilters}
+          />
+        )}
       </div>
     </div>
   );

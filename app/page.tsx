@@ -2,6 +2,7 @@
 
 import { useState, useEffect } from 'react';
 import Link from 'next/link';
+import Image from 'next/image';
 import TestimonialCarousel from '@/components/TestimonialCarousel';
 
 export default function HomePage() {
@@ -69,15 +70,21 @@ export default function HomePage() {
             <div className="relative animate-float">
               <div className="absolute inset-0 bg-gradient-to-br from-accent-400/30 to-primary-400/30 blur-2xl rounded-full" />
               {/* Image with glasses in light mode, without glasses in dark mode */}
-              <img
-                src="/images/glasses-positioned.png"
-                alt="Krystal Elliott"
-                className="relative w-64 h-64 md:w-80 md:h-80 object-contain rotate-3 hover:rotate-0 transition-all duration-500 ease-in-out dark:hidden"
+              <Image
+                 src="/images/glasses-positioned.png"
+                 alt="Krystal Elliott"
+                 width={320}
+                 height={320}
+                 className="relative w-64 h-64 md:w-80 md:h-80 object-contain rotate-3 hover:rotate-0 transition-all duration-500 ease-in-out dark:hidden"
+                 priority
               />
-              <img
-                src="/images/krystalelliott-nobg.png"
-                alt="Krystal Elliott"
-                className="relative w-64 h-64 md:w-80 md:h-80 object-contain rotate-3 hover:rotate-0 transition-all duration-500 ease-in-out hidden dark:block"
+              <Image
+                 src="/images/krystalelliott-nobg.png"
+                 alt="Krystal Elliott"
+                 width={320}
+                 height={320}
+                 className="relative w-64 h-64 md:w-80 md:h-80 object-contain rotate-3 hover:rotate-0 transition-all duration-500 ease-in-out hidden dark:block"
+                 priority
               />
               <div className="absolute bottom-0 left-0 right-0 transform translate-y-1/2 text-center rotate-3">
                 <div className="inline-block relative">
