@@ -1,6 +1,6 @@
 'use client';
 
-import { useState, useEffect, useRef } from 'react';
+import { useState, useEffect, useRef, KeyboardEvent } from 'react';
 import { loadResumeData, formatDate } from '@/lib/data';
 import { Experience, Internship, Education, Skill } from '@/types';
 import ShareButton from '@/components/ShareButton';
@@ -38,7 +38,7 @@ function CollapsibleSectionHeader({
     <div 
       className="flex items-center justify-between cursor-pointer group" 
       onClick={onToggle}
-      onKeyDown={(e: React.KeyboardEvent) => {
+      onKeyDown={(e: KeyboardEvent) => {
         if (e.key === 'Enter' || e.key === ' ') {
           e.preventDefault();
           onToggle();
