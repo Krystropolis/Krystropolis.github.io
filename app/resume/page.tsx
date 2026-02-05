@@ -7,21 +7,6 @@ import ShareButton from '@/components/ShareButton';
 import ScrollToTop from '@/components/ScrollToTop';
 import { ChevronDown, ChevronUp } from 'lucide-react';
 
-// Map icon names to Lucide React icon components
-const iconMap: Record<string, React.ComponentType<{ className?: string }>> = {
-  Code: ChevronDown,
-  FileCode: ChevronDown,
-  Palette: ChevronDown,
-  Cpu: ChevronDown,
-  Terminal: ChevronDown,
-  Hash: ChevronDown,
-  FileJson: ChevronDown,
-  Database: ChevronDown,
-  GitBranch: ChevronDown,
-  Layout: ChevronDown,
-  Globe: ChevronDown,
-};
-
 function SkillIcon({ skill, index }: { skill: Skill; index: number }) {
 
   return (
@@ -88,7 +73,6 @@ function CollapsibleSectionHeader({
 export default function ResumePage() {
   const [data, setData] = useState<any>(null);
   const [collapsedSections, setCollapsedSections] = useState<Record<string, boolean>>({});
-  const [activeSection, setActiveSection] = useState<string>('');
   const [mounted, setMounted] = useState(false);
   const sectionRefs = useRef<Record<string, HTMLElement>>({});
 
@@ -108,7 +92,8 @@ export default function ResumePage() {
     const observer = new IntersectionObserver((entries: IntersectionObserverEntry[]) => {
       entries.forEach((entry: IntersectionObserverEntry) => {
         if (entry.isIntersecting) {
-          setActiveSection(entry.target.id);
+          // Track which section is currently visible (for future use)
+          console.log('Section visible:', entry.target.id);
         }
       });
     }, observerOptions);
@@ -132,13 +117,6 @@ export default function ResumePage() {
       sectionRefs.current[sectionId] = el;
     }
   };
-
-  const sections = [
-    { id: 'experience-heading', label: 'Experience' },
-    { id: 'internships-heading', label: 'Internships' },
-    { id: 'education-heading', label: 'Education' },
-    { id: 'skills-heading', label: 'Skills' },
-  ];
 
   if (!data) return null;
 
