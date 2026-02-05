@@ -1,7 +1,6 @@
 import { loadAboutData } from '@/lib/data';
 import { AboutData, Interest, Milestone } from '@/types';
-import Link from 'next/link';
-import { Cpu, Book, Dumbbell, Heart, Palette, Mountain } from 'lucide-react';
+import { Cpu, Book, Dumbbell, Heart, Palette, Mountain, Quote } from 'lucide-react';
 
 export default async function AboutPage() {
   const data = await loadAboutData();
@@ -21,88 +20,34 @@ export default async function AboutPage() {
           </div>
         </div>
 
-        {/* Hero Section */}
-        <section className="card p-8 mb-10 text-center animate-fade-in-up" style={{ animationDelay: '0.1s' }}>
-          <h2 className="text-3xl md:text-4xl font-serif font-bold text-gray-900 dark:text-gray-100 mb-3">
-            {data.hero.name}
-          </h2>
-          <p className="text-xl text-primary-600 dark:text-primary-400 font-medium mb-4">
-            {data.hero.title}
-          </p>
-          <p className="text-lg text-gray-600 dark:text-gray-400 max-w-2xl mx-auto">
-            {data.hero.tagline}
-          </p>
-        </section>
-
-        {/* Who I Am */}
-        <section className="card p-6 mb-10 animate-fade-in-up" style={{ animationDelay: '0.2s' }} aria-labelledby="who-heading">
-          <h2 id="who-heading" className="text-2xl font-serif font-bold text-primary-600 dark:text-primary-400 mb-4">
-            Who I Am
-          </h2>
-          <p className="text-lg text-gray-700 dark:text-gray-300 leading-relaxed mb-6">
-            {data.about.summary}
-          </p>
-          
-          {/* Values */}
-          <div className="mb-6">
-            <h3 className="text-lg font-semibold text-gray-900 dark:text-gray-100 mb-3">My Values</h3>
-            <div className="flex flex-wrap gap-2">
-              {data.about.values.map((value, index) => (
-                <span
-                  key={index}
-                  className="px-4 py-2 bg-primary-50 dark:bg-primary-900/20 text-primary-700 dark:text-primary-300 rounded-full text-sm font-medium"
-                >
-                  {value}
-                </span>
-              ))}
-            </div>
+        {/* Quote Section - Large centered with decorative marks */}
+        <section className="relative py-20 md:py-28 -mx-4 sm:-mx-6 lg:-mx-8 px-4 sm:px-6 lg:px-8 mb-10 animate-fade-in-up" style={{ animationDelay: '0.15s' }}>
+          {/* Large decorative quote mark */}
+          <div className="absolute top-8 left-1/2 -translate-x-1/2 text-primary-300 dark:text-primary-800">
+            <Quote className="w-24 h-24 md:w-32 md:h-32" />
           </div>
 
-          {/* Unique */}
-          <div className="bg-gray-50 dark:bg-gray-800/50 p-4 rounded-lg border-l-4 border-primary-500">
-            <p className="text-gray-700 dark:text-gray-300 italic">
-              &ldquo;{data.about.unique}&rdquo;
-            </p>
+          <div className="text-center relative z-10">
+            <blockquote className="text-2xl md:text-4xl font-serif text-gray-800 dark:text-gray-100 leading-relaxed font-medium px-8 md:px-12">
+              {data.about.unique}
+            </blockquote>
           </div>
         </section>
 
-        {/* What I Do */}
-        <section className="card p-6 mb-10 animate-fade-in-up" style={{ animationDelay: '0.3s' }} aria-labelledby="what-heading">
-          <h2 id="what-heading" className="text-2xl font-serif font-bold text-gray-900 dark:text-gray-100 mb-6 pb-2 border-b border-gray-200 dark:border-gray-700">
-            What I Do
+        {/* My Values */}
+        <section className="card p-6 mb-10 animate-fade-in-up" style={{ animationDelay: '0.2s' }} aria-labelledby="values-heading">
+          <h2 id="values-heading" className="text-2xl font-serif font-bold text-primary-600 dark:text-primary-400 mb-4">
+            My Values
           </h2>
-          
-          <div className="mb-6">
-            <h3 className="text-lg font-semibold text-gray-900 dark:text-gray-100 mb-2">Current Focus</h3>
-            <p className="text-gray-700 dark:text-gray-300">{data.currentFocus.role}</p>
-          </div>
-
-          <div className="mb-6">
-            <h3 className="text-lg font-semibold text-gray-900 dark:text-gray-100 mb-3">Currently Learning</h3>
-            <div className="flex flex-wrap gap-2">
-              {data.currentFocus.learning.map((item, index) => (
-                <span
-                  key={index}
-                  className="px-3 py-1.5 bg-blue-50 dark:bg-blue-900/20 text-blue-700 dark:text-blue-300 rounded-md text-sm font-medium"
-                >
-                  {item}
-                </span>
-              ))}
-            </div>
-          </div>
-
-          <div>
-            <h3 className="text-lg font-semibold text-gray-900 dark:text-gray-100 mb-3">Technologies</h3>
-            <div className="flex flex-wrap gap-2">
-              {data.currentFocus.technologies.map((tech, index) => (
-                <span
-                  key={index}
-                  className="px-3 py-1.5 bg-gray-100 dark:bg-gray-800 text-gray-700 dark:text-gray-300 rounded-md text-sm font-medium"
-                >
-                  {tech}
-                </span>
-              ))}
-            </div>
+          <div className="flex flex-wrap gap-2">
+            {data.about.values.map((value, index) => (
+              <span
+                key={index}
+                className="px-4 py-2 bg-primary-50 dark:bg-primary-900/20 text-primary-700 dark:text-primary-300 rounded-full text-sm font-medium"
+              >
+                {value}
+              </span>
+            ))}
           </div>
         </section>
 
@@ -174,32 +119,6 @@ export default async function AboutPage() {
               );
             })}
           </div>
-        </section>
-
-        {/* Let's Connect CTA */}
-        <section className="card p-8 text-center animate-fade-in-up" style={{ animationDelay: '0.6s' }}>
-          <h2 className="text-2xl font-serif font-bold text-gray-900 dark:text-gray-100 mb-4">
-            Let&apos;s Connect
-          </h2>
-          <p className="text-lg text-gray-600 dark:text-gray-300 mb-6 max-w-2xl mx-auto">
-            {data.lookingFor.collaboration}
-          </p>
-          <div className="flex flex-wrap justify-center gap-4 mb-6">
-            {data.lookingFor.opportunities.map((opportunity, index) => (
-              <span
-                key={index}
-                className="px-4 py-2 bg-primary-50 dark:bg-primary-900/20 text-primary-700 dark:text-primary-300 rounded-full text-sm font-medium"
-              >
-                {opportunity}
-              </span>
-            ))}
-          </div>
-          <Link
-            href="/contact"
-            className="btn btn-primary inline-block"
-          >
-            Get in Touch
-          </Link>
         </section>
       </div>
     </div>

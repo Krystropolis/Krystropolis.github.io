@@ -5,7 +5,7 @@ import { loadResumeData, formatDate } from '@/lib/data';
 import { Experience, Internship, Education, Skill } from '@/types';
 import ShareButton from '@/components/ShareButton';
 import ScrollToTop from '@/components/ScrollToTop';
-import { ChevronDown, ChevronUp } from 'lucide-react';
+import { ChevronDown, ChevronUp, Mail, Linkedin, Github } from 'lucide-react';
 
 function SkillIcon({ skill, index }: { skill: Skill; index: number }) {
 
@@ -138,6 +138,53 @@ export default function ResumePage() {
             </div>
           </div>
 
+          {/* Contact Links */}
+          <div className="mb-10 space-y-2">
+            {data.contact.email && (
+              <div className="flex items-center gap-2">
+                <Mail className="w-4 h-4 text-gray-600 dark:text-gray-400" />
+                <span className="text-sm text-gray-700 dark:text-gray-300">{data.contact.email}</span>
+              </div>
+            )}
+            {data.contact.linkedin && (
+              <div className="flex items-center gap-2">
+                <Linkedin className="w-4 h-4 text-gray-600 dark:text-gray-400" />
+                <span className="text-sm text-gray-700 dark:text-gray-300">{data.contact.linkedin}</span>
+              </div>
+            )}
+            {data.contact.github && (
+              <div className="flex items-center gap-2">
+                <Github className="w-4 h-4 text-gray-600 dark:text-gray-400" />
+                <span className="text-sm text-gray-700 dark:text-gray-300">{data.contact.github}</span>
+              </div>
+            )}
+          </div>
+
+          {/* Purpose / Mission Statement */}
+          <section className="mb-10" aria-labelledby="purpose-heading">
+            <CollapsibleSectionHeader
+              id="purpose-heading"
+              title="Purpose"
+              isCollapsed={collapsedSections['purpose-heading']}
+              onToggle={() => toggleSection('purpose-heading')}
+              ref={setSectionRef('purpose-heading')}
+            />
+            <div
+              className={`collapsible-content overflow-hidden transition-all duration-300 ${
+                collapsedSections['purpose-heading'] ? 'max-h-0 opacity-0' : 'max-h-[5000px] opacity-100'
+              }`}
+            >
+              <div className="card p-6">
+                <h3 className="text-xl font-serif font-bold text-primary-600 dark:text-primary-400 mb-4">
+                  Building resilient systems with precision and purpose
+                </h3>
+                <p className="text-lg text-gray-700 dark:text-gray-300 leading-relaxed mb-6">
+                  I'm a software engineer who bridges the gap between technical and human-centric development. With experience in quality assurance, project management, and a degree in English, I bring a comprehensive perspective to building resilient systems. I'm passionate about continuous learning and creating software that truly serves people.
+                </p>
+              </div>
+            </div>
+          </section>
+
           {/* Experience */}
           <section className="mb-10" aria-labelledby="experience-heading">
             <CollapsibleSectionHeader
@@ -268,31 +315,13 @@ export default function ResumePage() {
                 <h3 className="text-xl font-serif font-bold text-gray-900 dark:text-gray-100 mb-4">
                     Programming Languages
                 </h3>
-                <div className="space-y-3">
-                  {data.skills.programming.intermediate && (
-                    <div>
-                      <p className="text-sm font-bold text-accent-600 dark:text-accent-400 mb-2">
-                        Intermediate
-                      </p>
-                      <div className="flex flex-wrap gap-2">
-                        {data.skills.programming.intermediate.map((skill: Skill, i: number) => (
-                          <SkillIcon key={i} skill={skill} index={i} />
-                        ))}
-                      </div>
-                    </div>
-                  )}
-                  {data.skills.programming.novice && (
-                    <div>
-                      <p className="text-sm font-bold text-accent-600 dark:text-accent-400 mb-2">
-                        Novice
-                      </p>
-                      <div className="flex flex-wrap gap-2">
-                        {data.skills.programming.novice.map((skill: Skill, i: number) => (
-                          <SkillIcon key={i} skill={skill} index={i} />
-                        ))}
-                      </div>
-                    </div>
-                  )}
+                <div className="flex flex-wrap gap-2">
+                  {data.skills.programming.intermediate && data.skills.programming.intermediate.map((skill: Skill, i: number) => (
+                    <SkillIcon key={`intermediate-${i}`} skill={skill} index={i} />
+                  ))}
+                  {data.skills.programming.novice && data.skills.programming.novice.map((skill: Skill, i: number) => (
+                    <SkillIcon key={`novice-${i}`} skill={skill} index={i + (data.skills.programming.intermediate?.length || 0)} />
+                  ))}
                 </div>
               </div>
 

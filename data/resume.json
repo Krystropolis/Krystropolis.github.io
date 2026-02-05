@@ -1,13 +1,15 @@
 {
   "contact": {
     "email": "e.krystal@gmail.com",
-    "location": "Munich, Germany"
+    "location": "Munich, Germany",
+    "linkedin": "https://www.linkedin.com/in/ejkrystal/",
+    "github": "https://github.com/Krystropolis"
   },
   "experience": [
     {
       "position": "Family Caregiver, Volunteer Work, International Relocation",
       "company": "",
-      "location": "",
+      "location": "Munich, Germany",
       "startDate": "2020-10",
       "endDate": null,
       "isCurrent": true,

@@ -2,16 +2,18 @@
   "hero": {
     "name": "Krystal Elliott",
     "title": "Software Engineer",
-    "tagline": "Building meaningful experiences through code"
+    "tagline": "Building resilient systems with precision and purpose"
   },
   "about": {
-    "summary": "I'm a software engineer with a passion for learning, creating, and problem-solving. I believe in the power of technology to make a positive impact, and I'm always eager to take on new challenges. My journey in tech started with curiosity and has grown into a career dedicated to building solutions that matter.",
+    "summary": "I'm a software engineer who bridges the gap between technical and human-centric development. With experience in quality assurance, project management, and a degree in English, I bring a comprehensive perspective to building resilient systems. I'm passionate about continuous learning and creating software that truly serves people.",
     "values": [
+      "Quality",
+      "Communication",
+      "Collaboration",
       "Continuous Learning",
-      "Problem-Solving",
-      "Community"
+      "Impact"
     ],
-    "unique": "What sets me apart is my blend of technical expertise and genuine curiosity. I don't just write code—I seek to understand the 'why' behind every problem, which leads to more thoughtful and effective solutions."
+    "unique": "What sets me apart is my comprehensive perspective and people-first approach. I don't just build systems—I create solutions that truly serve people, combining technical precision with genuine understanding of user needs."
   },
   "currentFocus": {
     "role": "Software Engineer",
