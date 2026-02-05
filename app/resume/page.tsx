@@ -2,7 +2,7 @@
 
 import { useState, useEffect, useRef } from 'react';
 import { loadResumeData, formatDate } from '@/lib/data';
-import { Experience, Internship, Education, Skills, Skill } from '@/types';
+import { Experience, Internship, Education, Skill } from '@/types';
 import ShareButton from '@/components/ShareButton';
 import ScrollToTop from '@/components/ScrollToTop';
 import { ChevronDown, ChevronUp } from 'lucide-react';
