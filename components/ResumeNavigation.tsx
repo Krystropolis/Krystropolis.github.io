@@ -45,7 +45,7 @@ export default function ResumeNavigation({ sections, activeSection }: ResumeNavi
       <nav className="sticky top-16 z-40 bg-surface-light dark:bg-gray-900 border-b border-gray-200 dark:border-gray-700 shadow-sm no-print">
         <div className="container mx-auto px-4 sm:px-6 lg:px-8">
           <div className="flex overflow-x-auto py-3 gap-4 whitespace-nowrap">
-            {sections.map((section) => (
+            {sections.map((section: NavItem) => (
               <button
                 key={section.id}
                 onClick={() => scrollToSection(section.id)}
@@ -71,7 +71,7 @@ export default function ResumeNavigation({ sections, activeSection }: ResumeNavi
           Quick Navigation
         </h3>
         <ul className="space-y-2">
-          {sections.map((section) => (
+          {sections.map((section: NavItem) => (
             <li key={section.id}>
               <button
                 onClick={() => scrollToSection(section.id)}

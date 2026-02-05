@@ -4,6 +4,11 @@ import { useState, useEffect } from 'react';
 import Link from 'next/link';
 import { usePathname } from 'next/navigation';
 
+interface NavItem {
+  href: string;
+  label: string;
+}
+
 export default function Header({ className = '' }: { className?: string }) {
   const [isDark, setIsDark] = useState(false);
   const [isMenuOpen, setIsMenuOpen] = useState(false);
@@ -80,7 +85,7 @@ export default function Header({ className = '' }: { className?: string }) {
 
           {/* Desktop Navigation */}
           <div className="hidden md:flex items-center space-x-1">
-            {navItems.map((item) => (
+            {navItems.map((item: NavItem) => (
               <Link
                 key={item.href}
                 href={item.href}
@@ -177,7 +182,7 @@ export default function Header({ className = '' }: { className?: string }) {
             className="md:hidden mt-4 pb-2 space-y-1 animate-fade-in-up"
             role="menu"
           >
-            {navItems.map((item) => (
+            {navItems.map((item: NavItem) => (
               <Link
                 key={item.href}
                 href={item.href}

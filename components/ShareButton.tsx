@@ -83,7 +83,7 @@ export default function ShareButton({ className = '' }: ShareButtonProps) {
       <button
         ref={buttonRef}
         onClick={toggleDropdown}
-        onKeyDown={(e) => {
+        onKeyDown={(e: React.KeyboardEvent) => {
           if (e.key === 'Enter' || e.key === ' ') {
             e.preventDefault();
             toggleDropdown();
@@ -111,7 +111,7 @@ export default function ShareButton({ className = '' }: ShareButtonProps) {
           {/* Copy Link */}
           <button
             onClick={copyLink}
-            onKeyDown={(e) => handleOptionKeyDown(e, copyLink)}
+            onKeyDown={(e: React.KeyboardEvent) => handleOptionKeyDown(e, copyLink)}
             role="menuitem"
             className="w-full flex items-center gap-3 px-4 py-3 text-left text-gray-700 dark:text-gray-300 hover:bg-gray-100 dark:hover:bg-gray-700 focus:outline-none focus:bg-gray-100 dark:focus:bg-gray-700 transition-colors"
           >
@@ -122,7 +122,7 @@ export default function ShareButton({ className = '' }: ShareButtonProps) {
           {/* Share via Email */}
           <button
             onClick={shareViaEmail}
-            onKeyDown={(e) => handleOptionKeyDown(e, shareViaEmail)}
+            onKeyDown={(e: React.KeyboardEvent) => handleOptionKeyDown(e, shareViaEmail)}
             role="menuitem"
             className="w-full flex items-center gap-3 px-4 py-3 text-left text-gray-700 dark:text-gray-300 hover:bg-gray-100 dark:hover:bg-gray-700 focus:outline-none focus:bg-gray-100 dark:focus:bg-gray-700 transition-colors"
           >
@@ -133,7 +133,7 @@ export default function ShareButton({ className = '' }: ShareButtonProps) {
           {/* Download PDF */}
           <button
             onClick={downloadPDF}
-            onKeyDown={(e) => handleOptionKeyDown(e, downloadPDF)}
+            onKeyDown={(e: React.KeyboardEvent) => handleOptionKeyDown(e, downloadPDF)}
             role="menuitem"
             className="w-full flex items-center gap-3 px-4 py-3 text-left text-gray-700 dark:text-gray-300 hover:bg-gray-100 dark:hover:bg-gray-700 focus:outline-none focus:bg-gray-100 dark:focus:bg-gray-700 transition-colors"
           >

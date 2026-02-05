@@ -56,7 +56,7 @@ function CollapsibleSectionHeader({
     <div 
       className="flex items-center justify-between cursor-pointer group" 
       onClick={onToggle}
-      onKeyDown={(e) => {
+      onKeyDown={(e: React.KeyboardEvent) => {
         if (e.key === 'Enter' || e.key === ' ') {
           e.preventDefault();
           onToggle();
@@ -108,15 +108,15 @@ export default function ResumePage() {
       threshold: 0
     };
 
-    const observer = new IntersectionObserver((entries) => {
-      entries.forEach((entry) => {
+    const observer = new IntersectionObserver((entries: IntersectionObserverEntry[]) => {
+      entries.forEach((entry: IntersectionObserverEntry) => {
         if (entry.isIntersecting) {
           setActiveSection(entry.target.id);
         }
       });
     }, observerOptions);
 
-    Object.values(sectionRefs.current).forEach((ref) => {
+    Object.values(sectionRefs.current).forEach((ref: HTMLElement | null) => {
       if (ref) observer.observe(ref);
     });
 
@@ -124,7 +124,7 @@ export default function ResumePage() {
   }, [mounted, sectionRefs, data]);
 
   const toggleSection = (sectionId: string) => {
-    setCollapsedSections((prev) => ({
+    setCollapsedSections((prev: Record<string, boolean>) => ({
       ...prev,
       [sectionId]: !prev[sectionId]
     }));
@@ -168,7 +168,7 @@ export default function ResumePage() {
             <CollapsibleSectionHeader
               id="experience-heading"
               title="Experience"
-              isCollapsed={!!collapsedSections['experience-heading']}
+              isCollapsed={collapsedSections['experience-heading']}
               onToggle={() => toggleSection('experience-heading')}
               ref={setSectionRef('experience-heading')}
             />
@@ -210,7 +210,7 @@ export default function ResumePage() {
             <CollapsibleSectionHeader
               id="internships-heading"
               title="Internships"
-              isCollapsed={!!collapsedSections['internships-heading']}
+              isCollapsed={collapsedSections['internships-heading']}
               onToggle={() => toggleSection('internships-heading')}
               ref={setSectionRef('internships-heading')}
             />

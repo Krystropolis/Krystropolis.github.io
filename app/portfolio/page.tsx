@@ -1,6 +1,6 @@
 'use client';
 
-import { useState, useMemo } from 'react';
+import { useState, useEffect, useMemo } from 'react';
 import { loadPortfolioData } from '@/lib/data';
 import { Project } from '@/types';
 import FilterBar from '@/components/Portfolio/FilterBar';
@@ -14,7 +14,7 @@ export default function PortfolioPage() {
   const [searchQuery, setSearchQuery] = useState('');
 
   // Load portfolio data on mount
-  useState(() => {
+  useEffect(() => {
     loadPortfolioData().then(setData);
   }, []);
 
@@ -26,8 +26,8 @@ export default function PortfolioPage() {
 
     // Filter by categories (OR logic - project matches if it has ANY selected category)
     if (selectedCategories.length > 0) {
-      projects = projects.filter((project) =>
-        project.categories.some((category) => selectedCategories.includes(category))
+      projects = projects.filter((project: Project) =>
+        project.categories.some((category: string) => selectedCategories.includes(category))
       );
     }
 
@@ -35,22 +35,22 @@ export default function PortfolioPage() {
     if (searchQuery.trim()) {
       const query = searchQuery.toLowerCase();
       projects = projects.filter(
-        (project) =>
+        (project: Project) =>
           project.title.toLowerCase().includes(query) ||
           project.description.toLowerCase().includes(query) ||
-          project.technologies.some((tech) => tech.toLowerCase().includes(query))
+          project.technologies.some((tech: string) => tech.toLowerCase().includes(query))
       );
     }
 
     // Sort by year in reverse chronological order (newest first)
-    return projects.sort((a, b) => b.year - a.year);
+    return projects.toSorted((a, b) => b.year - a.year);
   }, [data, selectedCategories, searchQuery]);
 
   // Handle category toggle
   const handleCategoryToggle = (categoryId: string) => {
-    setSelectedCategories((prev) =>
+    setSelectedCategories((prev: string[]) =>
       prev.includes(categoryId)
-        ? prev.filter((id) => id !== categoryId)
+        ? prev.filter((id: string) => id !== categoryId)
         : [...prev, categoryId]
     );
   };

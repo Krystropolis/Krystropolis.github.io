@@ -1,6 +1,6 @@
 'use client';
 
-import { useState, useEffect, useCallback } from 'react';
+import { useState, useEffect, useCallback, ChangeEvent, useRef } from 'react';
 
 interface SearchBarProps {
   searchQuery: string;
@@ -15,14 +15,22 @@ export default function SearchBar({
 }: SearchBarProps) {
   const [localQuery, setLocalQuery] = useState(searchQuery);
 
+  // Use refs to avoid unnecessary re-renders when callbacks change
+  const onSearchChangeRef = useRef(onSearchChange);
+  const onClearSearchRef = useRef(onClearSearch);
+
+  // Update refs when callbacks change
+  onSearchChangeRef.current = onSearchChange;
+  onClearSearchRef.current = onClearSearch;
+
   // Debounce function to delay search until user stops typing
   useEffect(() => {
     const timer = setTimeout(() => {
-      onSearchChange(localQuery);
+      onSearchChangeRef.current(localQuery);
     }, 300); // 300ms debounce delay
 
     return () => clearTimeout(timer);
-  }, [localQuery, onSearchChange]);
+  }, [localQuery]);
 
   // Sync local state with prop changes (e.g., when cleared from parent)
   useEffect(() => {
@@ -31,8 +39,8 @@ export default function SearchBar({
 
   const handleClear = useCallback(() => {
     setLocalQuery('');
-    onClearSearch();
-  }, [onClearSearch]);
+    onClearSearchRef.current();
+  }, []);
 
   return (
     <div className="mb-8">
@@ -40,7 +48,7 @@ export default function SearchBar({
         <input
           type="text"
           value={localQuery}
-          onChange={(e) => setLocalQuery(e.target.value)}
+          onChange={(e: ChangeEvent<HTMLInputElement>) => setLocalQuery(e.target.value)}
           placeholder="Search projects..."
           className="w-full px-4 py-3 pl-12 pr-12 rounded-lg border border-gray-300 dark:border-gray-700 bg-white dark:bg-gray-900 text-gray-900 dark:text-gray-100 placeholder-gray-500 dark:placeholder-gray-400 focus:outline-none focus:ring-2 focus:ring-primary-500 focus:border-transparent transition-all"
           aria-label="Search projects"

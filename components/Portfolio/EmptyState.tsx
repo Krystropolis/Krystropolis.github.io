@@ -41,7 +41,7 @@ export default function EmptyState({
           </p>
         ) : (
           <p className="text-gray-600 dark:text-gray-400 mb-6">
-            There are no projects matching your current criteria.
+            No projects found in the portfolio.
           </p>
         )}
 

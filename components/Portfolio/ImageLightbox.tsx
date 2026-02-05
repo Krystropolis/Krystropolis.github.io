@@ -1,8 +1,10 @@
 'use client';
 
-import { useEffect } from 'react';
+import { useEffect, KeyboardEvent, MouseEvent, useCallback } from 'react';
 import Image from 'next/image';
 import { X, ChevronLeft, ChevronRight } from 'lucide-react';
+
+type ButtonMouseEvent = MouseEvent<HTMLButtonElement>;
 
 interface ImageLightboxProps {
   images: string[];
@@ -25,7 +27,7 @@ export default function ImageLightbox({
   useEffect(() => {
     if (!isOpen) return;
 
-    const handleKeyDown = (e: KeyboardEvent) => {
+    const handleKeyDown = (e: globalThis.KeyboardEvent) => {
       if (e.key === 'Escape') {
         onClose();
       } else if (e.key === 'ArrowRight' && onNext) {
@@ -55,7 +57,7 @@ export default function ImageLightbox({
     <div
       className="fixed inset-0 z-50 flex items-center justify-center bg-black/40 backdrop-blur-sm animate-fade-in"
       onClick={onClose}
-      onKeyDown={(e) => {
+      onKeyDown={(e: KeyboardEvent) => {
         if (e.key === 'Escape') {
           onClose();
         }
@@ -76,7 +78,7 @@ export default function ImageLightbox({
       {/* Previous button */}
       {hasMultipleImages && onPrevious && (
         <button
-          onClick={(e) => {
+          onClick={(e: ButtonMouseEvent) => {
             e.stopPropagation();
             onPrevious();
           }}
@@ -110,7 +112,7 @@ export default function ImageLightbox({
       {/* Next button */}
       {hasMultipleImages && onNext && (
         <button
-          onClick={(e) => {
+          onClick={(e: ButtonMouseEvent) => {
             e.stopPropagation();
             onNext();
           }}

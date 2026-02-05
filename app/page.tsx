@@ -1,6 +1,6 @@
 'use client';
 
-import { useState, useEffect } from 'react';
+import { useState, useEffect, useRef } from 'react';
 import Link from 'next/link';
 import Image from 'next/image';
 import TestimonialCarousel from '@/components/TestimonialCarousel';
@@ -9,15 +9,16 @@ export default function HomePage() {
   const [typedText, setTypedText] = useState('');
   const [showCursor, setShowCursor] = useState(true);
   const fullText = 'await hireMe();';
+  const indexRef = useRef(0);
 
   useEffect(() => {
-    let index = 0;
+    indexRef.current = 0;
     const typingSpeed = 100; // ms per character
 
     const timer = setInterval(() => {
-      if (index < fullText.length) {
-        setTypedText(fullText.slice(0, index + 1));
-        index++;
+      if (indexRef.current < fullText.length) {
+        setTypedText(fullText.slice(0, indexRef.current + 1));
+        indexRef.current++;
       } else {
         clearInterval(timer);
         // Hide cursor after typing completes

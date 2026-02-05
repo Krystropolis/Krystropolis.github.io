@@ -36,11 +36,11 @@ export default function TestimonialCarousel() {
   const [isPaused, setIsPaused] = useState(false);
 
   const nextTestimonial = () => {
-    setCurrentIndex((prev) => (prev + 1) % testimonials.length);
+    setCurrentIndex((prev: number) => (prev + 1) % testimonials.length);
   };
 
   const prevTestimonial = () => {
-    setCurrentIndex((prev) => (prev - 1 + testimonials.length) % testimonials.length);
+    setCurrentIndex((prev: number) => (prev - 1 + testimonials.length) % testimonials.length);
   };
 
   const goToTestimonial = (index: number) => {

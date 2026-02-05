@@ -1,4 +1,5 @@
 import { loadContactData } from '@/lib/data';
+import { SocialLink } from '@/types';
 import ContactForm from '@/components/ContactForm';
 
 export default async function ContactPage() {
@@ -24,7 +25,7 @@ export default async function ContactPage() {
 
         {/* Social Links */}
         <div className="flex flex-wrap justify-center gap-4">
-          {data.socialLinks.map((link) => (
+          {data.socialLinks.map((link: SocialLink) => (
             <a
               key={link.label}
               href={link.url}

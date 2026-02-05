@@ -31,7 +31,7 @@ export default function FilterBar({
       </div>
       
       <div className="flex flex-wrap gap-2">
-        {categories.map((category) => (
+        {categories.map((category: Category) => (
           <button
             key={category.id}
             onClick={() => onCategoryToggle(category.id)}

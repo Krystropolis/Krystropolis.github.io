@@ -2,6 +2,7 @@
 
 import { useState } from 'react';
 import { Project } from '@/types';
+import { Star } from 'lucide-react';
 import Image from 'next/image';
 import ImageLightbox from './ImageLightbox';
 
@@ -24,17 +25,21 @@ export default function ProjectCard({ project }: ProjectCardProps) {
   };
 
   const handleNextImage = () => {
-    if (selectedImageIndex !== null && project.images) {
-      setSelectedImageIndex((selectedImageIndex + 1) % project.images.length);
-    }
+    setSelectedImageIndex(prev => {
+      if (prev !== null && project.images) {
+        return (prev + 1) % project.images.length;
+      }
+      return prev;
+    });
   };
 
   const handlePreviousImage = () => {
-    if (selectedImageIndex !== null && project.images) {
-      setSelectedImageIndex(
-        (selectedImageIndex - 1 + project.images.length) % project.images.length
-      );
-    }
+    setSelectedImageIndex(prev => {
+      if (prev !== null && project.images) {
+        return (prev - 1 + project.images.length) % project.images.length;
+      }
+      return prev;
+    });
   };
   return (
     <article className="card p-6 md:p-8 hover:shadow-soft-lg transition-shadow duration-300">
@@ -42,14 +47,7 @@ export default function ProjectCard({ project }: ProjectCardProps) {
       {project.featured && (
         <div className="mb-4">
           <span className="inline-flex items-center px-3 py-1 rounded-full text-xs font-semibold bg-gradient-to-r from-primary-500 to-primary-600 text-white shadow-sm">
-            <svg
-              className="w-4 h-4 mr-1"
-              fill="currentColor"
-              viewBox="0 0 24 24"
-              aria-hidden="true"
-            >
-              <path d="M11.049 2.927c.3-.921-.752-1.604-1.604C9.283 2.7 8.714 4.008 8.714s-1.717 1.304-2.447 2.008c-.727.705-1.604 1.008-2.447 1.008-.921-.752-1.604-1.604C3.717 2.7 3.148 4.008 3.148s-1.717 1.304-2.447 2.008c-.727.704-1.604 1.008-2.447 1.008-.921-.752-1.604-1.604C4.717 2.7 5.148 4.008 5.148s-1.717 1.304-2.447 2.008c-.727.704-1.604 1.008-2.447 1.008-.921-.752-1.604-1.604zm4.903 10.925l-1.604 1.604 1.604 1.604c.921 0 1.604-.752 1.604-1.604.921 0 1.604.752 1.604 1.604 1.604-.921 0-1.604.752-1.604-1.604-.921 0-1.604-.752-1.604-1.604zm-4.903 8.925l1.604-1.604c-.921 0-1.604.752-1.604 1.604-.921 0-1.604-.752-1.604-1.604-.921 0-1.604.752-1.604 1.604-1.604.921 0 1.604-.752 1.604-1.604-.921 0-1.604-.752-1.604-1.604z" />
-            </svg>
+            <Star className="w-4 h-4 mr-1" aria-hidden="true" />
             Featured
           </span>
         </div>
@@ -67,7 +65,7 @@ export default function ProjectCard({ project }: ProjectCardProps) {
           onClick={() => handleImageClick(0)}
           role="button"
           tabIndex={0}
-          onKeyDown={(e) => {
+          onKeyDown={(e: React.KeyboardEvent) => {
             if (e.key === 'Enter' || e.key === ' ') {
               e.preventDefault();
               handleImageClick(0);
@@ -135,7 +133,7 @@ export default function ProjectCard({ project }: ProjectCardProps) {
               onClick={() => handleImageClick(index + 1)}
               role="button"
               tabIndex={0}
-              onKeyDown={(e) => {
+              onKeyDown={(e: React.KeyboardEvent) => {
                 if (e.key === 'Enter' || e.key === ' ') {
                   e.preventDefault();
                   handleImageClick(index + 1);
