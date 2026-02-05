@@ -1,6 +1,6 @@
 'use client';
 
-import { useEffect, KeyboardEvent, MouseEvent, useCallback } from 'react';
+import { useEffect, KeyboardEvent, MouseEvent } from 'react';
 import Image from 'next/image';
 import { X, ChevronLeft, ChevronRight } from 'lucide-react';
 

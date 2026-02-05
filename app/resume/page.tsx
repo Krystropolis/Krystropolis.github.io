@@ -5,12 +5,10 @@ import { loadResumeData, formatDate } from '@/lib/data';
 import { Experience, Internship, Education, Skills, Skill } from '@/types';
 import ShareButton from '@/components/ShareButton';
 import ScrollToTop from '@/components/ScrollToTop';
-import ResumeNavigation from '@/components/ResumeNavigation';
 import { ChevronDown, ChevronUp } from 'lucide-react';
 
 // Map icon names to Lucide React icon components
 const iconMap: Record<string, React.ComponentType<{ className?: string }>> = {
-  Code2: ChevronDown,
   Code: ChevronDown,
   FileCode: ChevronDown,
   Palette: ChevronDown,
@@ -25,8 +23,7 @@ const iconMap: Record<string, React.ComponentType<{ className?: string }>> = {
 };
 
 function SkillIcon({ skill, index }: { skill: Skill; index: number }) {
-  const IconComponent = skill.icon ? iconMap[skill.icon] : null;
-  
+
   return (
     <div
       className="inline-flex items-center gap-2 px-3 py-2 bg-gradient-to-r from-primary-50 to-accent-50 dark:from-primary-900/20 dark:to-accent-900/20 rounded-lg border border-primary-200 dark:border-primary-800 hover:shadow-lg hover:scale-105 transition-all duration-300 animate-pop-in"
