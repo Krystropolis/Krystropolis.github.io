@@ -27,14 +27,10 @@ export default function AboutPage() {
         textCardRef1.current?.offsetHeight || 0,
         textCardRef2.current?.offsetHeight || 0,
       ].filter(h => h > 0);
-      
+
       // Measure image card height (art card)
       const imgHeight = imageCardRef.current?.offsetHeight || 0;
-      
-      console.log('Text card heights:', heights);
-      console.log('Image card height:', imgHeight);
-      console.log('Max text card height:', Math.max(...heights, 0));
-      
+
       setTextCardHeights(heights);
       setImageCardHeight(imgHeight);
     }
@@ -44,10 +40,6 @@ export default function AboutPage() {
   const targetTextCardHeight = textCardHeights.length > 0
     ? Math.max(...textCardHeights) + imageCardHeight
     : 0;
-
-  useEffect(() => {
-    console.log('Final text card target height:', targetTextCardHeight);
-  }, [targetTextCardHeight]);
 
   if (!data) return null;
 
