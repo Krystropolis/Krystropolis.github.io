@@ -64,6 +64,36 @@
   - Identified 8 unused images: `bg1.png`, `ke-nobg.png`, `krystal-cliffs-of-moher-nobg.png`, `krystalelliott-nobg-2.png`, `krystalelliott.jpg`, `logo.png`, `makers.jpg`, `sons-red.gif`
   - Documented 10 actively used images across the application
 
+### Phase 4.7: About Section Enhancements (2026-02-06)
+- [x] Update [`data/about.json`](../data/about.json) with new Philanthropy content and cardType field:
+  - Added `cardType` field to all interests ('text' or 'image')
+  - Updated Philanthropy description to new content about advocating for vulnerable populations and fundraising for sisters (chuffed.org/project/keys2degrees)
+  - Switched Philanthropy to image card with `cardType: "image"` and `image: "/images/Keys2Degrees.png"`
+  - Switched Fitness to text card with `cardType: "text"` and `image: null`
+- [x] Add `cardType` field to Interest interface in [`types/index.ts`](../types/index.ts)
+- [x] Refactor [`components/InterestCard.tsx`](../components/InterestCard.tsx) to support mixed card types:
+  - Converted to use `forwardRef` for proper ref forwarding
+  - Removed expand/collapse functionality (no more useState for isExpanded)
+  - Added `ref` and `minHeight` optional props to interface
+  - Implemented two card layouts:
+    - **Image Card**: `aspect-square` class, image with dark gradient overlay, title/icon overlaid at bottom
+    - **Text Card**: `flex flex-col`, icon with background, title, description with `minHeight` applied via inline style
+  - Added dynamic icon color: `text-white` for image cards, `text-primary-600 dark:text-primary-400` for text cards
+  - Removed description from image cards (only image + label overlay)
+- [x] Update [`app/about/page.tsx`](../app/about/page.tsx) to implement Pinterest-style masonry grid:
+  - Converted from async server component to client component with 'use client' directive
+  - Added state management with `useState` for data and textCardHeights
+  - Added refs: `textCardRef0`, `textCardRef1`, `textCardRef2` for measuring text card heights
+  - Added `imageCardRef` for measuring image card height
+  - Added `useEffect` to measure heights and calculate `targetTextCardHeight`
+  - Implemented 3-column grid layout with cards organized into columns
+  - Text cards are stretched to match (tallest text card + image card height) for equal column heights
+  - Column structure:
+    - Column 1: Creative Coding (text, ref=0) + Art (image)
+    - Column 2: Philanthropy (image) + Fitness (text, ref=1)
+    - Column 3: Continuous Learning (text, ref=2) + Nature (image)
+- [x] Verify the Pinterest-style masonry grid works correctly with the dev server
+
 ### Phase 5: Deployment Setup (2026-01-23)
 - [x] Fix ESLint errors blocking build (unescaped apostrophes in about page)
 - [x] Configure Next.js for static export (`output: 'export'` in next.config.mjs)
@@ -79,7 +109,7 @@ The Next.js development server is running in the background. You can access the 
 - **Home Page** (`/`): Welcome page with navigation to all sections, typewriter animation, mobile-optimized layout (2026-01-26)
 - **Resume Page** (`/resume`): Full resume with experience, education, and skills
 - **Portfolio Page** (`/portfolio`): Project showcase with technology tags
-- **About Page** (`/about`): Personal interests and background
+- **About Page** (`/about`): Personal interests and background with Pinterest-style masonry grid (2026-02-06)
 - **Contact Page** (`/contact`): Contact form with spam protection (2026-01-24)
 
 ### Features Implemented
@@ -96,6 +126,7 @@ The Next.js development server is running in the background. You can access the 
 - Contact page with spam protection (2026-01-24)
 - Homepage typewriter animation for "await hireMe();" text (2026-01-26)
 - Mobile-optimized homepage layout (image appears first on mobile) (2026-01-26)
+- Pinterest-style masonry grid for interests with mixed card types (text and image) (2026-02-06)
 
 ✅ **Accessibility Features**
 - Proper heading hierarchy (h1, h2, h3)
@@ -148,7 +179,7 @@ The Next.js development server is running in the background. You can access the 
 1. **Content Updates**: Edit [`data/resume.json`](../data/resume.json) to add your recent experience since 2018
 2. **Update skills**: Add modern technologies you've learned since 2018
 3. **Refine copy**: Review and update content in JSON files for professional yet personal tone
-4. **Test the site**: Visit `http://localhost:3000` and navigate through all pages
+4. **Test** site: Visit `http://localhost:3000` and navigate through all pages
 5. **Deploy to GitHub Pages**:
    - Enable GitHub Pages in repository settings (Source: GitHub Actions)
    - Run: `git add . && git commit -m "feat: ready for deployment" && git push origin main`
@@ -189,12 +220,13 @@ The following features are planned but not yet implemented:
 - [`app/page.tsx`](../app/page.tsx) - Home page with typewriter animation (2026-01-26)
 - [`app/resume/page.tsx`](../app/resume/page.tsx) - Resume page
 - [`app/portfolio/page.tsx`](../app/portfolio/page.tsx) - Portfolio page
-- [`app/about/page.tsx`](../app/about/page.tsx) - About page
+- [`app/about/page.tsx`](../app/about/page.tsx) - About page with Pinterest-style masonry grid (2026-02-06)
 - [`app/contact/page.tsx`](../app/contact/page.tsx) - Contact page (2026-01-24)
 - [`app/globals.css`](../app/globals.css) - Global styles
 - [`components/Header.tsx`](../components/Header.tsx) - Navigation header
 - [`components/Footer.tsx`](../components/Footer.tsx) - Footer component
 - [`components/ContactForm.tsx`](../components/ContactForm.tsx) - Contact form component (2026-01-24)
+- [`components/InterestCard.tsx`](../components/InterestCard.tsx) - Interest card with text/image layouts (2026-02-06)
 - [`components/TestimonialCarousel.tsx`](../components/TestimonialCarousel.tsx) - Testimonial carousel
 - [`components/ResumeNavigation.tsx`](../components/ResumeNavigation.tsx) - Resume navigation
 - [`components/ShareButton.tsx`](../components/ShareButton.tsx) - Share button
@@ -206,12 +238,12 @@ The following features are planned but not yet implemented:
 - [`lib/data.ts`](../lib/data.ts) - Data loading utilities
 - [`data/resume.json`](../data/resume.json) - Resume data
 - [`data/portfolio.json`](../data/portfolio.json) - Portfolio data
-- [`data/about.json`](../data/about.json) - About data
+- [`data/about.json`](../data/about.json) - About data with cardType field (2026-02-06)
 - [`data/contact.json`](../data/contact.json) - Contact data (2026-01-24)
 
 ## Git Workflow
 
-When you're ready to commit, you can use the following commit messages:
+When you're ready to commit, you can use following commit messages:
 
 ```bash
 git add .
@@ -229,9 +261,10 @@ git commit -m "feat: initialize Next.js project with TypeScript and Tailwind CSS
 - Homepage features typewriter animation for "await hireMe();" text (2026-01-26).
 - Homepage layout is optimized for mobile devices with image appearing first (2026-01-26).
 - Image audit completed - 8 unused images identified for cleanup (2026-01-26).
+- About page features Pinterest-style masonry grid with mixed card types (text and image) (2026-02-06).
 - All core sections are complete and tested.
 
-**Last Updated**: January 26, 2026
+**Last Updated**: February 6, 2026
 
 ## Questions or Issues?
 

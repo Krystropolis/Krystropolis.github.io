@@ -1,6 +1,7 @@
 'use client';
 
 import { useState, useEffect, useRef, KeyboardEvent } from 'react';
+import Image from 'next/image';
 import { loadResumeData, formatDate } from '@/lib/data';
 import { Experience, Internship, Education, Skill } from '@/types';
 import ShareButton from '@/components/ShareButton';
@@ -179,7 +180,7 @@ export default function ResumePage() {
                   Building resilient systems with precision and purpose
                 </h3>
                 <p className="text-gray-700 dark:text-gray-300">
-                  I&#39;m a software engineer who bridges the gap between technical and human-centric development. With experience in quality assurance, project management, and a degree in English, I bring a comprehensive perspective to building resilient systems. I&#39;m passionate about continuous learning and creating software that truly serves people.
+                  I'm a software engineer who bridges the gap between technical and human-centric development. With experience in quality assurance, project management, and a degree in English, I bring a comprehensive perspective to building resilient systems. I'm passionate about continuous learning and creating software that truly serves people.
                 </p>
               </div>
             </div>
@@ -365,16 +366,18 @@ export default function ResumePage() {
 
           {/* Certification */}
           <section className="mb-10" aria-labelledby="certification-heading">
-            <h2 
-              id="certification-heading" 
+            <h2
+              id="certification-heading"
               className="text-2xl font-serif font-bold text-gray-900 dark:text-gray-100 mb-6 pb-2 border-b border-gray-200 dark:border-gray-700"
             >
               Certification
             </h2>
             <div className="flex justify-center">
-              <img
+              <Image
                 src="/images/google-prompting-essentials.png"
                 alt="Google Prompting Essentials 1 Certification"
+                width={300}
+                height={128}
                 className="h-32 w-auto object-contain"
               />
             </div>

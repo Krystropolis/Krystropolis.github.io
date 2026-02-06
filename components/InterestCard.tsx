@@ -1,64 +1,93 @@
 'use client';
 
+import { forwardRef } from 'react';
+import Image from 'next/image';
 import { Interest } from '@/types';
-import { Cpu, Book, Dumbbell, Heart, Palette, Mountain, ChevronDown, ChevronUp } from 'lucide-react';
-import { useState } from 'react';
+import { Cpu, Book, Dumbbell, Heart, Palette, Mountain } from 'lucide-react';
 
 interface InterestCardProps {
   interest: Interest;
   index: number;
+  minHeight?: number;
 }
 
-export default function InterestCard({ interest, index }: InterestCardProps) {
-  const [isExpanded, setIsExpanded] = useState(false);
+export interface InterestCardRef {
+  minHeight?: number;
+}
 
-  const getIcon = () => {
+const InterestCard = forwardRef<HTMLDivElement, InterestCardProps>(({ interest, index, minHeight }, ref) => {
+  const getIcon = (isImageCard: boolean = false) => {
+    const iconColor = isImageCard ? 'text-white' : 'text-primary-600 dark:text-primary-400';
     switch (interest.title) {
-      case 'Creative Coding': return <Cpu className="w-5 h-5 text-primary-600 dark:text-primary-400" />;
-      case 'Continuous Learning': return <Book className="w-5 h-5 text-primary-600 dark:text-primary-400" />;
-      case 'Fitness': return <Dumbbell className="w-5 h-5 text-primary-600 dark:text-primary-400" />;
-      case 'Philanthropy': return <Heart className="w-5 h-5 text-primary-600 dark:text-primary-400" />;
-      case 'Art': return <Palette className="w-5 h-5 text-primary-600 dark:text-primary-400" />;
-      case 'Nature': return <Mountain className="w-5 h-5 text-primary-600 dark:text-primary-400" />;
+      case 'Creative Coding': return <Cpu className={`w-5 h-5 ${iconColor}`} />;
+      case 'Continuous Learning': return <Book className={`w-5 h-5 ${iconColor}`} />;
+      case 'Fitness': return <Dumbbell className={`w-5 h-5 ${iconColor}`} />;
+      case 'Philanthropy': return <Heart className={`w-5 h-5 ${iconColor}`} />;
+      case 'Art': return <Palette className={`w-5 h-5 ${iconColor}`} />;
+      case 'Nature': return <Mountain className={`w-5 h-5 ${iconColor}`} />;
       default: return null;
     }
   };
 
+  const isImageCard = interest.cardType === 'image' && interest.image;
+
+  if (isImageCard) {
+    return (
+      <article
+        className="relative overflow-hidden rounded-lg shadow-md hover:shadow-lg transition-shadow duration-300 aspect-square"
+        style={{ animationDelay: `${0.5 + index * 0.1}s` }}
+      >
+        {/* Image Background */}
+        <Image
+          src={interest.image!}
+          alt={interest.title}
+          fill
+          className="object-cover"
+          sizes="(max-width: 768px) 100vw, (max-width: 1200px) 50vw, 33vw"
+        />
+        {/* Dark Overlay */}
+        <div className="absolute inset-0 bg-gradient-to-t from-black/70 via-black/40 to-transparent" />
+
+        {/* Title and Icon Overlay */}
+        <div className="absolute bottom-0 left-0 right-0 p-6">
+          <div className="flex items-center gap-3">
+            <div className="p-2 bg-white/20 backdrop-blur-sm rounded-lg">
+              {getIcon(true)}
+            </div>
+            <h3 className="text-2xl font-serif font-bold text-white drop-shadow-lg">
+              {interest.title}
+            </h3>
+          </div>
+        </div>
+      </article>
+    );
+  }
+
+  // Text Card
   return (
     <article
-      onClick={() => setIsExpanded(!isExpanded)}
-      className="card p-4 cursor-pointer hover:shadow-soft-lg transition-shadow duration-300"
-      style={{ animationDelay: `${0.5 + index * 0.1}s` }}
+      ref={ref}
+      className="p-6 bg-white dark:bg-gray-800 rounded-lg shadow-md hover:shadow-lg transition-shadow duration-300 flex flex-col"
+      style={{ 
+        animationDelay: `${0.5 + index * 0.1}s`,
+        minHeight: minHeight ? `${minHeight}px` : undefined
+      }}
     >
-      <div className="flex items-center justify-between mb-3">
-        <div className="flex items-center gap-3">
-          {getIcon()}
-          <h3 className="text-lg font-serif font-semibold text-gray-900 dark:text-gray-100">
-            {interest.title}
-          </h3>
+      <div className="flex items-center gap-4 mb-4">
+        <div className="p-2 bg-primary-100 dark:bg-primary-900/30 rounded-lg">
+          {getIcon(false)}
         </div>
-        {isExpanded ? (
-          <ChevronUp className="w-5 h-5 text-gray-500 dark:text-gray-400 transition-transform duration-300" />
-        ) : (
-          <ChevronDown className="w-5 h-5 text-gray-500 dark:text-gray-400 transition-transform duration-300" />
-        )}
+        <h3 className="text-xl font-serif font-semibold text-gray-900 dark:text-gray-100">
+          {interest.title}
+        </h3>
       </div>
-      <p
-        className={`text-sm text-gray-700 dark:text-gray-300 transition-all duration-300 ${
-          isExpanded ? 'max-h-none line-clamp-none' : 'line-clamp-2 max-h-10'
-        }`}
-      >
+      <p className="text-base text-gray-700 dark:text-gray-300 leading-relaxed">
         {interest.description}
       </p>
-      {isExpanded && interest.image && (
-        <div className="mt-4 animate-fade-in">
-          <img
-            src={interest.image}
-            alt={interest.title}
-            className="w-full h-48 object-cover rounded-lg shadow-md"
-          />
-        </div>
-      )}
     </article>
   );
-}
+});
+
+InterestCard.displayName = 'InterestCard';
+
+export default InterestCard;

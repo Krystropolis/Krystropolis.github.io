@@ -1,10 +1,55 @@
+'use client';
+
+import { useState, useEffect, useRef } from 'react';
 import { loadAboutData } from '@/lib/data';
 import { AboutData, Interest, Milestone } from '@/types';
 import { Quote } from 'lucide-react';
 import InterestCard from '@/components/InterestCard';
 
-export default async function AboutPage() {
-  const data = await loadAboutData();
+export default function AboutPage() {
+  const [data, setData] = useState<AboutData | null>(null);
+  const [textCardHeights, setTextCardHeights] = useState<number[]>([]);
+  const [imageCardHeight, setImageCardHeight] = useState<number>(0);
+  const textCardRef0 = useRef<HTMLDivElement>(null);
+  const textCardRef1 = useRef<HTMLDivElement>(null);
+  const textCardRef2 = useRef<HTMLDivElement>(null);
+  const imageCardRef = useRef<HTMLDivElement>(null);
+
+  useEffect(() => {
+    loadAboutData().then(setData);
+  }, []);
+
+  useEffect(() => {
+    if (data) {
+      // Measure heights of all text cards
+      const heights = [
+        textCardRef0.current?.offsetHeight || 0,
+        textCardRef1.current?.offsetHeight || 0,
+        textCardRef2.current?.offsetHeight || 0,
+      ].filter(h => h > 0);
+      
+      // Measure image card height (art card)
+      const imgHeight = imageCardRef.current?.offsetHeight || 0;
+      
+      console.log('Text card heights:', heights);
+      console.log('Image card height:', imgHeight);
+      console.log('Max text card height:', Math.max(...heights, 0));
+      
+      setTextCardHeights(heights);
+      setImageCardHeight(imgHeight);
+    }
+  }, [data]);
+
+  // Calculate the target height for text cards: tallest text card + image card height
+  const targetTextCardHeight = textCardHeights.length > 0 
+    ? Math.max(...textCardHeights) + imageCardHeight
+    : 0;
+
+  useEffect(() => {
+    console.log('Final text card target height:', targetTextCardHeight);
+  }, [textCardHeights, imageCardHeight]);
+
+  if (!data) return null;
 
   return (
     <div className="container mx-auto px-4 sm:px-6 lg:px-8 py-16 animate-fade-in">
@@ -36,16 +81,16 @@ export default async function AboutPage() {
         </section>
 
         {/* My Story */}
-        <section className="card p-6 mb-10 animate-fade-in-up" style={{ animationDelay: '0.4s' }} aria-labelledby="story-heading">
-          <h2 id="story-heading" className="text-2xl font-serif font-bold text-primary-600 dark:text-primary-400 mb-4">
+        <section className="mb-16 animate-fade-in-up" style={{ animationDelay: '0.4s' }} aria-labelledby="story-heading">
+          <h2 id="story-heading" className="text-2xl font-serif font-bold text-primary-600 dark:text-primary-400 mb-6">
             My Story
           </h2>
-          <p className="text-lg text-gray-700 dark:text-gray-300 leading-relaxed mb-8">
+          <p className="text-lg text-gray-700 dark:text-gray-300 leading-relaxed mb-12">
             {data.story.journey}
           </p>
 
           {/* Timeline */}
-          <div className="space-y-6">
+          <div className="space-y-8">
             {data.story.milestones.map((milestone: Milestone, index: number) => (
               <div key={index} className="flex gap-4">
                 <div className="flex-shrink-0 w-16 text-right">
@@ -68,14 +113,45 @@ export default async function AboutPage() {
         </section>
 
         {/* Beyond Code */}
-        <section className="mb-10 animate-fade-in-up" style={{ animationDelay: '0.5s' }} aria-labelledby="interests-heading">
-          <h2 id="interests-heading" className="text-2xl font-serif font-bold text-gray-900 dark:text-gray-100 mb-6 pb-2 border-b border-gray-200 dark:border-gray-700">
+        <section className="mb-16 animate-fade-in-up" style={{ animationDelay: '0.5s' }} aria-labelledby="interests-heading">
+          <h2 id="interests-heading" className="text-2xl font-serif font-bold text-gray-900 dark:text-gray-100 mb-8">
             Beyond Code
           </h2>
-          <div className="grid gap-4">
-            {data.interests.map((interest: Interest, index: number) => (
-              <InterestCard key={index} interest={interest} index={index} />
-            ))}
+          <div className="grid grid-cols-1 md:grid-cols-3 gap-6">
+            {/* Column 1 */}
+            <div className="flex flex-col gap-6">
+              <InterestCard 
+                interest={data.interests[0]} 
+                index={0} 
+                ref={textCardRef0}
+                minHeight={targetTextCardHeight}
+              />
+              <InterestCard 
+                interest={data.interests[3]} 
+                index={3} 
+                ref={imageCardRef}
+              />
+            </div>
+            {/* Column 2 */}
+            <div className="flex flex-col gap-6">
+              <InterestCard interest={data.interests[4]} index={4} />
+              <InterestCard 
+                interest={data.interests[1]} 
+                index={1} 
+                ref={textCardRef1}
+                minHeight={targetTextCardHeight}
+              />
+            </div>
+            {/* Column 3 */}
+            <div className="flex flex-col gap-6">
+              <InterestCard 
+                interest={data.interests[2]} 
+                index={2} 
+                ref={textCardRef2}
+                minHeight={targetTextCardHeight}
+              />
+              <InterestCard interest={data.interests[5]} index={5} />
+            </div>
           </div>
         </section>
       </div>

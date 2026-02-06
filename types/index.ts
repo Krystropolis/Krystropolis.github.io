@@ -89,6 +89,7 @@ export interface Interest {
   title: string;
   description: string;
   image?: string | null;
+  cardType?: 'text' | 'image';
   category?: 'professional' | 'personal' | 'community';
 }
 

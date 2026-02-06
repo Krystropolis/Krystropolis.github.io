@@ -73,38 +73,43 @@
   "interests": [
     {
       "title": "Creative Coding",
-      "description": "I love personal projects and experiments. From robotics kits to web applications, tinkering is how I learn and grow. Currently working with a Boe-Bot to learn about embedded software and robotics.",
-      "image": "/images/boebot1.jpg",
-      "category": "professional"
-    },
-    {
-      "title": "Continuous Learning",
-      "description": "I'm passionate about staying current and expanding my skills. I dive into Data Structures & Algorithms through LeetCode and 'Cracking the Coding Interview.' For frameworks, I use Udemy and Codecademy—they've been invaluable resources throughout my journey.",
+      "description": "Tinkering is what makes this profession fun. I'm currently working on a task management application and a vacation planning suite.",
       "image": null,
+      "cardType": "text",
       "category": "professional"
     },
     {
       "title": "Fitness",
-      "description": "I go to the gym about 3 times a week. I start with cardio to get my heart pumping, then switch to lifting. Starting Strength and StrongLifts 5x5 have influenced my routine. I'm also getting more into stretching and yoga.",
+      "description": "Since becoming a parent my fitness routine has changed greatly. I still visit the gym when I can but a lot of my fitness now takes the form of impromptu family dance parties.",
       "image": null,
+      "cardType": "text",
+      "category": "personal"
+    },
+    {
+      "title": "Continuous Learning",
+      "description": "I will be a life-long learner. I'm currently studying to improve my German language skills. I have recently attained my B1 certification as well as a certification in Prompting Essentials.",
+      "image": null,
+      "cardType": "text",
+      "category": "professional"
+    },
+    {
+      "title": "Art",
+      "description": "I love painting and drawing. All doodles on this site are my own. My kitties inspire me often, and I find creative expression to be a perfect balance to my technical work.", "image": "/images/earring-art-1.heic",
+      "cardType": "image",
       "category": "personal"
     },
     {
       "title": "Philanthropy",
-      "description": "I believe in giving back. Most recently, I worked with Family Gateway in Dallas, leading 12 coworkers in collecting funding and supplies for displaced families. We contributed over 30 backpacks, more than 1 ton of food, and 100+ toys for families in need.",
-      "image": null,
+      "description": "I'm always advocating for one cause or another, usually for the benefit of a vulnerable population. I am currently fundraising for a pair of sisters whose education was interrupted by war. Now they have completed their studies but they require funding to pay for their certificates. The link to this endeavor is chuffed.org/project/keys2degrees",
+      "image": "/images/Keys2Degrees.png",
+      "cardType": "image",
       "category": "community"
-    },
-    {
-      "title": "Art",
-      "description": "I love painting and drawing. All doodles on this site are my own. My kitties inspire me often, and I find creative expression to be a perfect balance to my technical work.",
-      "image": "/images/simba.jpg",
-      "category": "personal"
     },
     {
       "title": "Nature",
       "description": "I'm in love with nature. After a long day of staring at screens, all I want is to be surrounded by trees and mountains. My first hiking trip was to Glendalough in Ireland. I've been hooked ever since.",
       "image": "/images/krystal-cliffs-of-moher.jpg",
+      "cardType": "image",
       "category": "personal"
     }
   ],

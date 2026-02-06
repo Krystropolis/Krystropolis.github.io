@@ -21,6 +21,7 @@ This is a complete redesign of a 2018-era personal portfolio website, transformi
 - ✅ **SEO Optimized**: Next.js static export with meta tags
 - ✅ **Interactive Animations**: Typewriter effect for homepage text
 - ✅ **Mobile-Optimized Layout**: Image-first display on mobile devices
+- ✅ **Pinterest-Style Grid**: Masonry layout for interests with mixed card types (text and image)
 
 ## 🛠️ Technology Stack
 
@@ -50,7 +51,8 @@ Krystropolis.github.io/
 │   ├── TestimonialCarousel.tsx # Testimonial carousel component
 │   ├── ResumeNavigation.tsx   # Resume navigation component
 │   ├── ShareButton.tsx       # Share button component
-│   └── ScrollToTop.tsx      # Scroll to top button
+│   ├── ScrollToTop.tsx      # Scroll to top button
+│   └── InterestCard.tsx     # Interest card with text/image layouts
 ├── data/                    # JSON data files
 │   ├── resume.json          # Resume data
 │   ├── portfolio.json       # Portfolio projects
@@ -120,6 +122,7 @@ Krystropolis.github.io/
 | **Phase 4: Sections** | ✅ Complete | Resume, Portfolio, and About pages |
 | **Phase 4.5: Contact Page** | ✅ Complete | Contact form with spam protection |
 | **Phase 4.6: Homepage Enhancements** | ✅ Complete | Typewriter animation, mobile layout optimization |
+| **Phase 4.7: About Section Enhancements** | ✅ Complete | Pinterest-style masonry grid for interests with mixed card types |
 | **Phase 5: Deployment Setup** | ✅ Complete | Static export, GitHub Actions workflow |
 
 ### Remaining Phases 🔄
@@ -153,8 +156,12 @@ Edit [`data/portfolio.json`](data/portfolio.json) to add:
 ### Updating About
 Edit [`data/about.json`](data/about.json) to modify:
 - Personal introduction
-- Interests and hobbies
+- Interests and hobbies (with card types: text or image)
 - Background information
+
+**Interest Card Types:**
+- **Text Cards**: Display icon, title, and full description with dynamic height
+- **Image Cards**: Display image with dark gradient overlay, title, and icon
 
 ### Updating Contact
 Edit [`data/contact.json`](data/contact.json) to modify:
@@ -236,4 +243,4 @@ This project is open source and available under the [MIT License](LICENSE).
 
 ---
 
-**Last Updated**: January 26, 2026
+**Last Updated**: February 6, 2026
