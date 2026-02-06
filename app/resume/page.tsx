@@ -180,7 +180,7 @@ export default function ResumePage() {
                   Building resilient systems with precision and purpose
                 </h3>
                 <p className="text-gray-700 dark:text-gray-300">
-                  I'm a software engineer who bridges the gap between technical and human-centric development. With experience in quality assurance, project management, and a degree in English, I bring a comprehensive perspective to building resilient systems. I'm passionate about continuous learning and creating software that truly serves people.
+                  I&apos;m a software engineer who bridges the gap between technical and human-centric development. With experience in quality assurance, project management, and a degree in English, I bring a comprehensive perspective to building resilient systems. I&apos;m passionate about continuous learning and creating software that truly serves people.
                 </p>
               </div>
             </div>
