@@ -2,7 +2,7 @@
 
 import { useState, useEffect, useRef } from 'react';
 import { loadAboutData } from '@/lib/data';
-import { AboutData, Interest, Milestone } from '@/types';
+import { AboutData, Milestone } from '@/types';
 import { Quote } from 'lucide-react';
 import InterestCard from '@/components/InterestCard';
 
@@ -41,13 +41,13 @@ export default function AboutPage() {
   }, [data]);
 
   // Calculate the target height for text cards: tallest text card + image card height
-  const targetTextCardHeight = textCardHeights.length > 0 
+  const targetTextCardHeight = textCardHeights.length > 0
     ? Math.max(...textCardHeights) + imageCardHeight
     : 0;
 
   useEffect(() => {
     console.log('Final text card target height:', targetTextCardHeight);
-  }, [textCardHeights, imageCardHeight]);
+  }, [targetTextCardHeight]);
 
   if (!data) return null;
 
