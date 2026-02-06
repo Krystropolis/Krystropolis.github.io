@@ -95,15 +95,7 @@ export default function PortfolioPage() {
             Portfolio
           </h1>
           <p className="text-lg text-gray-600 dark:text-gray-400">
-            Various development projects and endeavors.{' '}
-            <a
-              href="mailto:e.krystal@gmail.com"
-              className="text-primary-600 dark:text-primary-400 hover:underline font-medium"
-            >
-              Contact me
-            </a>
-            {' '}
-            to learn more.
+            Various development projects and endeavors.
           </p>
         </div>
 

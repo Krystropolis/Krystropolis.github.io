@@ -11,7 +11,7 @@
         "Microcontrollers"
       ],
       "categories": ["embedded-systems"],
-      "year": 2020,
+      "year": 2013,
       "images": [
         "/images/boebot2.jpg"
       ],
@@ -30,13 +30,9 @@
         "Node.js"
       ],
       "categories": ["full-stack", "frontend", "backend", "machine-learning"],
-      "year": 2018,
+      "year": 2017,
       "images": [],
       "links": [
-        {
-          "label": "View Live Demo",
-          "url": "https://intelligent-student-advisor.herokuapp.com/lite-version.html"
-        },
         {
           "label": "Read Project Article",
           "url": "http://news.psu.edu/story/506403/2018/02/20/academics/have-world-campus-question-professor-nittany-can-help"
@@ -50,7 +46,6 @@
           "url": "https://www.youtube.com/watch?v=kRPAQEqDL0o"
         }
       ],
-      "featured": true,
       "size": "large"
     },
     {
@@ -68,12 +63,7 @@
       "images": [
         "/images/college-portfolio.PNG"
       ],
-      "links": [
-        {
-          "label": "View College Portfolio",
-          "url": "http://www.personal.psu.edu/kye5098/portfolio"
-        }
-      ],
+      "links": [],
       "featured": false,
       "size": "small"
     },
@@ -88,17 +78,12 @@
         "Game Development"
       ],
       "categories": ["embedded-systems", "game-development"],
-      "year": 2017,
+      "year": 2015,
       "images": [
         "/images/tetris-1.PNG",
         "/images/tetris-2.PNG"
       ],
-      "links": [
-        {
-          "label": "Read Blog Post",
-          "url": "https://krystropolis.blogspot.com/2017/04/united-blocks-of-america.html#more"
-        }
-      ]
+      "links": []
     },
     {
       "id": "lunar-new-year-fire-horse",
@@ -114,7 +99,7 @@
         "CSS Custom Properties"
       ],
       "categories": ["frontend", "ui-ux-design"],
-      "year": 2025,
+      "year": 2026,
       "images": [
         "/images/lny-site-screenshot.png"
       ],

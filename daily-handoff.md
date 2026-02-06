@@ -178,6 +178,22 @@
 - **Hover interaction**: When hovering over a specific label, it displays that label's associated content (text, image, etc.)
 - **Status**: Not ready to implement yet - idea noted for future consideration
 
+### Accessibility Issues Found (To Fix Tomorrow)
+- **Critical Issues**:
+  - Missing page title/metadata export
+  - Decorative Quote icon (line 64-66) needs `aria-hidden="true"`
+  - Icons in InterestCard (lines 54-55, 77-78) need `aria-hidden="true"`
+- **Medium Priority**:
+  - Missing skip-to-content link for keyboard users
+  - Timeline (lines 85-104) should use `<ul>`/`<li>` instead of visual-only divs
+  - Interest grid (line 112) needs better semantic structure
+  - Image alt text (line 43) should be more descriptive, not just the title
+  - Quote section (lines 62-73) lacks a heading for context
+- **Low Priority**:
+  - Verify color contrast meets WCAG AA standards (4.5:1 for normal text, 3:1 for large text)
+  - Ensure visible focus states for keyboard navigation
+  - Timeline dots (line 94) should have `aria-hidden="true"`
+
 ### Layout Exploration Notes
 - User felt original layout was "very rigid"
 - Tried minimalist approach (removed cards/borders) - user said "intensely boring"

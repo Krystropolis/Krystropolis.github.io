@@ -100,10 +100,11 @@
     },
     {
       "title": "Philanthropy",
-      "description": "I'm always advocating for one cause or another, usually for the benefit of a vulnerable population. I am currently fundraising for a pair of sisters whose education was interrupted by war. Now they have completed their studies but they require funding to pay for their certificates. The link to this endeavor is chuffed.org/project/keys2degrees",
+      "description": "I'm always advocating for one cause or another, usually for the benefit of a vulnerable population. I am currently fundraising for a pair of sisters whose education was interrupted by war. Now they have completed their studies but they require funding to pay for their certificates.",
       "image": "/images/Keys2Degrees.png",
       "cardType": "image",
-      "category": "community"
+      "category": "community",
+      "url": "https://chuffed.org/project/keys2degrees"
     },
     {
       "title": "Nature",

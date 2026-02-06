@@ -91,6 +91,7 @@ export interface Interest {
   image?: string | null;
   cardType?: 'text' | 'image';
   category?: 'professional' | 'personal' | 'community';
+  url?: string;
 }
 
 export interface Hero {

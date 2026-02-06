@@ -57,6 +57,9 @@ export default function ProjectCard({ project }: ProjectCardProps) {
       <h2 className="text-2xl md:text-3xl font-serif font-bold text-gray-800 dark:text-gray-100 mb-4">
         {project.title}
       </h2>
+      <p className="text-sm text-gray-500 dark:text-gray-400 mb-6">
+        {project.year}
+      </p>
 
       {/* Project Image */}
       {project.images && project.images.length > 0 && (
