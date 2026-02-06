@@ -1,6 +1,7 @@
 import { loadAboutData } from '@/lib/data';
 import { AboutData, Interest, Milestone } from '@/types';
-import { Cpu, Book, Dumbbell, Heart, Palette, Mountain, Quote } from 'lucide-react';
+import { Quote } from 'lucide-react';
+import InterestCard from '@/components/InterestCard';
 
 export default async function AboutPage() {
   const data = await loadAboutData();
@@ -21,7 +22,7 @@ export default async function AboutPage() {
         </div>
 
         {/* Quote Section - Large centered with decorative marks */}
-        <section className="relative py-20 md:py-28 -mx-4 sm:-mx-6 lg:-mx-8 px-4 sm:px-6 lg:px-8 mb-10 animate-fade-in-up" style={{ animationDelay: '0.15s' }}>
+        <section className="relative py-12 md:py-16 -mx-4 sm:-mx-6 lg:-mx-8 px-4 sm:px-6 lg:px-8 mb-10 animate-fade-in-up" style={{ animationDelay: '0.15s' }}>
           {/* Large decorative quote mark */}
           <div className="absolute top-8 left-1/2 -translate-x-1/2 text-primary-300 dark:text-primary-800">
             <Quote className="w-24 h-24 md:w-32 md:h-32" />
@@ -31,23 +32,6 @@ export default async function AboutPage() {
             <blockquote className="text-2xl md:text-4xl font-serif text-gray-800 dark:text-gray-100 leading-relaxed font-medium px-8 md:px-12">
               {data.about.unique}
             </blockquote>
-          </div>
-        </section>
-
-        {/* My Values */}
-        <section className="card p-6 mb-10 animate-fade-in-up" style={{ animationDelay: '0.2s' }} aria-labelledby="values-heading">
-          <h2 id="values-heading" className="text-2xl font-serif font-bold text-primary-600 dark:text-primary-400 mb-4">
-            My Values
-          </h2>
-          <div className="flex flex-wrap gap-2">
-            {data.about.values.map((value, index) => (
-              <span
-                key={index}
-                className="px-4 py-2 bg-primary-50 dark:bg-primary-900/20 text-primary-700 dark:text-primary-300 rounded-full text-sm font-medium"
-              >
-                {value}
-              </span>
-            ))}
           </div>
         </section>
 
@@ -89,35 +73,9 @@ export default async function AboutPage() {
             Beyond Code
           </h2>
           <div className="grid gap-4">
-            {data.interests.map((interest: Interest, index: number) => {
-              const getIcon = () => {
-                switch (interest.title) {
-                  case 'Creative Coding': return <Cpu className="w-5 h-5 text-primary-600 dark:text-primary-400" />;
-                  case 'Continuous Learning': return <Book className="w-5 h-5 text-primary-600 dark:text-primary-400" />;
-                  case 'Fitness': return <Dumbbell className="w-5 h-5 text-primary-600 dark:text-primary-400" />;
-                  case 'Philanthropy': return <Heart className="w-5 h-5 text-primary-600 dark:text-primary-400" />;
-                  case 'Art': return <Palette className="w-5 h-5 text-primary-600 dark:text-primary-400" />;
-                  case 'Nature': return <Mountain className="w-5 h-5 text-primary-600 dark:text-primary-400" />;
-                  default: return null;
-                }
-              };
-              return (
-                <article
-                  key={index}
-                  className="card p-4 flex items-center justify-between hover:shadow-soft-lg transition-shadow duration-300"
-                >
-                  <div className="flex items-center gap-3">
-                    {getIcon()}
-                    <h3 className="text-lg font-serif font-semibold text-gray-900 dark:text-gray-100">
-                      {interest.title}
-                    </h3>
-                  </div>
-                  <p className="text-sm text-gray-700 dark:text-gray-300 line-clamp-1 max-w-md">
-                    {interest.description}
-                  </p>
-                </article>
-              );
-            })}
+            {data.interests.map((interest: Interest, index: number) => (
+              <InterestCard key={index} interest={interest} index={index} />
+            ))}
           </div>
         </section>
       </div>

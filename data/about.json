@@ -31,22 +31,42 @@
     ]
   },
   "story": {
-    "journey": "My journey began with a simple curiosity about how things work. That curiosity led me to computer science at Penn State, where I discovered my love for creating software. From tinkering with robotics in the Makers Club to building production applications today, every step has been driven by a desire to learn and create. I studied in Ireland for four months, which gave me a global perspective that I bring to every project. Today, I'm focused on building meaningful software while continuing to grow as a developer and as a person.",
+    "journey": "My journey began with a degree in English Literature, fueled by a love of analysis and language. I wanted to teach at the high school level, because I believe deeply in the power of literacy and mentorship, but during my time as a teaching assistant, I witnessed systemic gaps that told me I needed to reevaluate where I could channel my love of critical thinking. Thankfully, a friend introduced me to programming in 2012 and I have been hooked since. I decided to try again and started my Software Engineering degree in 2013. Software engineering feels like magic to me—I love bringing ideas to life with technology. As a purpose-driven individual, it is my hope to one day be a part of a team who builds something with real world impact. I have had a lot of interesting life experiences and every step has been driven by a desire to learn, create, and make a meaningful impact.",
     "milestones": [
       {
-        "year": "2015",
-        "title": "Penn State Makers Club",
-        "description": "Discovered my passion for tinkering and creating with technology"
-      },
-      {
-        "year": "2016",
-        "title": "Study Abroad in Ireland",
-        "description": "Gained global perspective and fell in love with nature and hiking"
+        "year": "2013",
+        "title": "Penn State University",
+        "description": "Began BS in Software Engineering, discovering my passion for building technology that matters (WE ARE!)"
       },
       {
         "year": "2017",
-        "title": "Started Career",
-        "description": "Began my professional journey as a software engineer"
+        "title": "ARGO Data",
+        "description": "Started as Application Developer I, quickly promoted to App Dev II—my first professional role building production software"
+      },
+      {
+        "year": "2018",
+        "title": "Disney",
+        "description": "Joined as Software Solutions Engineer, converted to FTE Software Engineer within a year—working on systems that bring magic to millions"
+      },
+      {
+        "year": "2020",
+        "title": "Family Caregiver",
+        "description": "Transitioned to full-time family caregiving, prioritizing what matters most while developing patience, resilience, and deep empathy... did I mention patience?"
+      },
+      {
+        "year": "2023",
+        "title": "Germany",
+        "description": "Family relocation to Munich—embracing new cultures, languages, and perspectives in the heart of Europe"
+      },
+      {
+        "year": "2024",
+        "title": "Non-Profit Art",
+        "description": "Started a small wood-burning art business to fundraise for refugees, combining creativity with community impact while applying agile development principles to product creation and business management"
+      },
+      {
+        "year": "2026",
+        "title": "New Chapter",
+        "description": "Envisioning a transition to a value-aligned full stack role, bringing a refreshed perspective and renewed passion to software engineering"
       }
     ]
   },
