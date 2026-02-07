@@ -3,7 +3,7 @@
 import { forwardRef } from 'react';
 import Image from 'next/image';
 import { Interest } from '@/types';
-import { Cpu, Book, Dumbbell, Heart, Palette, Mountain } from 'lucide-react';
+import { Book, Dumbbell, Heart, Palette, Mountain, GraduationCap } from 'lucide-react';
 
 interface InterestCardProps {
   interest: Interest;
@@ -19,8 +19,8 @@ const InterestCard = forwardRef<HTMLDivElement, InterestCardProps>(({ interest, 
   const getIcon = (isImageCard: boolean = false) => {
     const iconColor = isImageCard ? 'text-white' : 'text-primary-600 dark:text-primary-400';
     switch (interest.title) {
-      case 'Creative Coding': return <Cpu className={`w-5 h-5 ${iconColor}`} />;
-      case 'Continuous Learning': return <Book className={`w-5 h-5 ${iconColor}`} />;
+      case 'Reading': return <Book className={`w-5 h-5 ${iconColor}`} />;
+      case 'Continuous Learning': return <GraduationCap className={`w-5 h-5 ${iconColor}`} />;
       case 'Fitness': return <Dumbbell className={`w-5 h-5 ${iconColor}`} />;
       case 'Philanthropy': return <Heart className={`w-5 h-5 ${iconColor}`} />;
       case 'Art': return <Palette className={`w-5 h-5 ${iconColor}`} />;
@@ -57,11 +57,11 @@ const InterestCard = forwardRef<HTMLDivElement, InterestCardProps>(({ interest, 
     </>
   ) : (
     <>
-      <div className="flex items-center gap-4 mb-4">
-        <div className="p-2 bg-primary-100 dark:bg-primary-900/30 rounded-lg">
+      <div className="flex items-start gap-4 mb-4">
+        <div className="flex-shrink-0 p-2 bg-primary-100 dark:bg-primary-900/30 rounded-lg flex items-center justify-center">
           {getIcon(false)}
         </div>
-        <h3 className="text-xl font-serif font-semibold text-gray-900 dark:text-gray-100">
+        <h3 className="text-xl font-serif font-semibold text-gray-900 dark:text-gray-100 leading-tight">
           {interest.title}
         </h3>
       </div>

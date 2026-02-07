@@ -31,7 +31,7 @@
     ]
   },
   "story": {
-    "journey": "My journey began with a degree in English Literature, fueled by a love of analysis and language. I wanted to teach at the high school level, because I believe deeply in the power of literacy and mentorship, but during my time as a teaching assistant, I witnessed systemic gaps that told me I needed to reevaluate where I could channel my love of critical thinking. Thankfully, a friend introduced me to programming in 2012 and I have been hooked since. I decided to try again and started my Software Engineering degree in 2013. Software engineering feels like magic to me—I love bringing ideas to life with technology. As a purpose-driven individual, it is my hope to one day be a part of a team who builds something with real world impact. I have had a lot of interesting life experiences and every step has been driven by a desire to learn, create, and make a meaningful impact.",
+    "journey": "My journey began with a degree in English Literature, fueled by a love of analysis and language. I wanted to teach at the high school level, because I believe deeply in the power of literacy and mentorship, but during my time as a teaching assistant, I witnessed systemic gaps that told me I needed to reevaluate where I could channel my love of critical thinking. Thankfully, a friend introduced me to programming in 2012. I began a second degree in Software Engineering in 2013, realizing that I could combine my love of language with technology. I knew that a career in Software Engineering would allow me to move to Europe, a decision I had made after a beautiful semester abroad in Ireland, and hoped to one day apply my skills to a value-aligned project with real world impact. After graduating, I spent 1 year in FinTech and 2 years with Disney, which felt like a dream come true! In 2020 I began a new chapter of life, temporarily trading in my keyboard for diapers, and in 2023 my family relocated to Germany from the USA. Now that we've settled in, bin ich bereit für mein nächstes Kapitel.",
     "milestones": [
       {
         "year": "2013",
@@ -72,22 +72,22 @@
   },
   "interests": [
     {
-      "title": "Creative Coding",
-      "description": "Tinkering is what makes this profession fun. I'm currently working on a task management application and a vacation planning suite.",
+      "title": "Reading",
+      "description": "As a child, I read everything I could find, from cereal boxes to encyclopedias. Now as an adult, I know that learning to read was the greatest gift one could have given me. Reading keeps my mind sharp and my imagination alive—it's my way of exploring new worlds and perspectives.",
       "image": null,
       "cardType": "text",
-      "category": "professional"
+      "category": "personal"
     },
     {
       "title": "Fitness",
-      "description": "Since becoming a parent my fitness routine has changed greatly. I still visit the gym when I can but a lot of my fitness now takes the form of impromptu family dance parties.",
+      "description": "Since becoming a parent my fitness routine has changed greatly. I still visit the gym when I can but a lot of my fitness now takes the form of impromptu family dance parties and bike rides with precious cargo.",
       "image": null,
       "cardType": "text",
       "category": "personal"
     },
     {
       "title": "Continuous Learning",
-      "description": "I will be a life-long learner. I'm currently studying to improve my German language skills. I have recently attained my B1 certification as well as a certification in Prompting Essentials.",
+      "description": "Learning is my hobby. In addition to learning the latest tiktok dances, I'm currently studying to improve my German language skills and upskill in tech. I have recently attained my B1 language certification as well as a certification from Google in Prompting Essentials.",
       "image": null,
       "cardType": "text",
       "category": "professional"
@@ -100,7 +100,7 @@
     },
     {
       "title": "Philanthropy",
-      "description": "I'm always advocating for one cause or another, usually for the benefit of a vulnerable population. I am currently fundraising for a pair of sisters whose education was interrupted by war. Now they have completed their studies but they require funding to pay for their certificates.",
+      "description": "Care for community lies at the heart of my motivations. My mentality is simple; if I can help, I will. I am currently fundraising for a pair of sisters whose education was interrupted by war. Now they have completed their studies but they require funding to pay for their certificates.",
       "image": "/images/Keys2Degrees.png",
       "cardType": "image",
       "category": "community",
@@ -108,7 +108,7 @@
     },
     {
       "title": "Nature",
-      "description": "I'm in love with nature. After a long day of staring at screens, all I want is to be surrounded by trees and mountains. My first hiking trip was to Glendalough in Ireland. I've been hooked ever since.",
+      "description": "Nature is a spiritual place for me. It is where I return to myself. The trees, oceans and mountains have a way of reminding you of your place in the universe.",
       "image": "/images/krystal-cliffs-of-moher.jpg",
       "cardType": "image",
       "category": "personal"
