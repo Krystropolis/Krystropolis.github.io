@@ -3,7 +3,7 @@
 import { forwardRef } from 'react';
 import Image from 'next/image';
 import { Interest } from '@/types';
-import { Book, Dumbbell, Heart, Palette, Mountain, GraduationCap } from 'lucide-react';
+import { Book, Dumbbell, Heart, Palette, Mountain, GraduationCap, ExternalLink } from 'lucide-react';
 
 interface InterestCardProps {
   interest: Interest;
@@ -45,13 +45,21 @@ const InterestCard = forwardRef<HTMLDivElement, InterestCardProps>(({ interest, 
 
       {/* Title and Icon Overlay */}
       <div className="absolute bottom-0 left-0 right-0 p-6">
-        <div className="flex items-center gap-3">
-          <div className="p-2 bg-white/20 backdrop-blur-sm rounded-lg">
-            {getIcon(true)}
+        <div className="flex items-center justify-between">
+          <div className="flex items-center gap-3">
+            <div className="p-2 bg-white/20 backdrop-blur-sm rounded-lg">
+              {getIcon(true)}
+            </div>
+            <h3 className="text-2xl font-serif font-bold text-white drop-shadow-lg">
+              {interest.title}
+            </h3>
           </div>
-          <h3 className="text-2xl font-serif font-bold text-white drop-shadow-lg">
-            {interest.title}
-          </h3>
+          {interest.url && interest.title === 'Philanthropy' && (
+            <span className="inline-flex items-center gap-2 text-sm font-medium text-white/90 hover:text-white transition-colors">
+              Learn More
+              <ExternalLink className="w-4 h-4" />
+            </span>
+          )}
         </div>
       </div>
     </>
@@ -65,9 +73,17 @@ const InterestCard = forwardRef<HTMLDivElement, InterestCardProps>(({ interest, 
           {interest.title}
         </h3>
       </div>
-      <p className="text-base text-gray-700 dark:text-gray-300 leading-relaxed">
+      <p className="text-base text-gray-700 dark:text-gray-300 leading-relaxed mb-4">
         {interest.description}
       </p>
+      {interest.url && interest.title === 'Philanthropy' && (
+        <div className="mt-auto">
+          <span className="inline-flex items-center gap-2 text-sm font-medium text-primary-600 dark:text-primary-400 group-hover:text-primary-700 dark:group-hover:text-primary-300 transition-colors">
+            Learn More
+            <ExternalLink className="w-4 h-4" />
+          </span>
+        </div>
+      )}
     </>
   );
 
@@ -75,8 +91,8 @@ const InterestCard = forwardRef<HTMLDivElement, InterestCardProps>(({ interest, 
     <article
       ref={ref}
       className={`${isImageCard
-        ? 'relative overflow-hidden rounded-lg shadow-md hover:shadow-lg transition-shadow duration-300 aspect-square'
-        : 'p-6 bg-white dark:bg-gray-800 rounded-lg shadow-md hover:shadow-lg transition-shadow duration-300 flex flex-col'
+        ? 'relative overflow-hidden rounded-lg shadow-md hover:shadow-lg transition-shadow duration-400 aspect-square group'
+        : 'p-6 bg-white dark:bg-gray-800 rounded-lg shadow-md hover:shadow-lg transition-shadow duration-400 flex flex-col border-2 border-transparent group'
       } ${interest.url ? 'cursor-pointer' : ''}`}
       style={{
         animationDelay: `${0.5 + index * 0.1}s`,

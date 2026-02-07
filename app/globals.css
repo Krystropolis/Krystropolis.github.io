@@ -41,6 +41,46 @@
     radial-gradient(circle at 50% 80%, rgba(59, 130, 246, 0.7) 0%, transparent 40%);
 }
 
+/* Wind Animation */
+.wind-svg-extended {
+  position: absolute;
+  top: -20%;
+  left: -10%;
+  width: 120%;
+  height: 140%;
+  pointer-events: none;
+  z-index: 50;
+}
+
+.wind-path {
+  fill: none;
+  stroke: rgba(255, 255, 255, 0.4);
+  stroke-width: 2;
+  stroke-linecap: round;
+  stroke-dasharray: 100 1000;
+  animation: dash 5s linear infinite;
+  filter: blur(1px);
+}
+
+.wind-path.path-2 {
+  animation-delay: -1s;
+  stroke-opacity: 0.2;
+}
+
+.wind-path.path-3 {
+  animation-delay: -3s;
+  stroke-opacity: 0.3;
+}
+
+@keyframes dash {
+  from {
+    stroke-dashoffset: 1100;
+  }
+  to {
+    stroke-dashoffset: 0;
+  }
+}
+
 /* Base styles */
 @layer base {
   html {
@@ -438,4 +478,27 @@
 /* Ensure sticky navigation stays visible */
 .sticky {
   position: sticky !important;
+}
+
+/* Accessibility: Respect reduced motion preference */
+@media (prefers-reduced-motion: reduce) {
+  *,
+  *::before,
+  *::after {
+    animation-duration: 0.01ms !important;
+    animation-iteration-count: 1 !important;
+    transition-duration: 0.01ms !important;
+  }
+
+  .animate-float {
+    animation: none !important;
+  }
+
+  .wind-path {
+    animation: none !important;
+  }
+
+  .wind-svg-extended {
+    display: none !important;
+  }
 }

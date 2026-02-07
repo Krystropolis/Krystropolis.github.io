@@ -62,28 +62,36 @@ export default function AboutPage() {
           </h2>
 
           {/* Featured Interest Card - Nature */}
-          <div className="mb-8 relative rounded-2xl overflow-hidden shadow-soft-lg group">
-            <Image
-              src={data.interests[5].image!}
-              alt={data.interests[5].title}
-              width={1200}
-              height={500}
-              className="w-full h-[400px] md:h-[500px] object-cover"
-              priority
-            />
-            <div className="absolute inset-0 bg-gradient-to-t from-black/80 via-black/40 to-transparent" />
-            <div className="absolute bottom-0 left-0 right-0 p-8 md:p-12">
-              <div className="flex items-center gap-4 mb-4">
-                <div className="p-3 bg-white/20 backdrop-blur-sm rounded-xl">
-                  <Mountain className="w-8 h-8 text-white" />
+          <div className="mb-8 relative">
+            {/* Wind Animation SVG - extends beyond card boundaries */}
+            <svg viewBox="0 0 800 200" preserveAspectRatio="none" className="wind-svg-extended">
+              <path className="wind-path path-1" d="M-100,80 Q150,20 400,80 T900,80" />
+              <path className="wind-path path-2" d="M-100,120 Q150,60 400,120 T900,120" />
+              <path className="wind-path path-3" d="M-100,160 Q150,100 400,160 T900,160" />
+            </svg>
+            <div className="relative rounded-2xl overflow-hidden shadow-soft-lg">
+              <Image
+                src={data.interests[5].image!}
+                alt={data.interests[5].title}
+                width={1200}
+                height={500}
+                className="w-full h-[400px] md:h-[500px] object-cover"
+                priority
+              />
+              <div className="absolute inset-0 bg-gradient-to-t from-black/80 via-black/40 to-transparent" />
+              <div className="absolute bottom-0 left-0 right-0 p-8 md:p-12">
+                <div className="flex items-center gap-4 mb-4">
+                  <div className="p-3 bg-white/20 backdrop-blur-sm rounded-xl">
+                    <Mountain className="w-8 h-8 text-white" />
+                  </div>
+                  <h3 className="text-3xl md:text-4xl font-serif font-bold text-white drop-shadow-lg">
+                    {data.interests[5].title}
+                  </h3>
                 </div>
-                <h3 className="text-3xl md:text-4xl font-serif font-bold text-white drop-shadow-lg">
-                  {data.interests[5].title}
-                </h3>
+                <p className="text-lg md:text-xl text-gray-100 leading-relaxed max-w-3xl">
+                  {data.interests[5].description}
+                </p>
               </div>
-              <p className="text-lg md:text-xl text-gray-100 leading-relaxed max-w-3xl">
-                {data.interests[5].description}
-              </p>
             </div>
           </div>
 
