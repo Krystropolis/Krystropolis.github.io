@@ -30,6 +30,25 @@ export interface Education {
   gpa?: string;
 }
 
+export interface Course {
+  name: string;
+  platform: string;
+  status: 'In Progress' | 'Completed' | 'Upcoming';
+  link?: string;
+  hasCertificate?: boolean;
+}
+
+export interface Certificate {
+  id: string;
+  name: string;
+  issuer: string;
+  issueDate: string;
+  credentialId?: string;
+  credentialUrl?: string;
+  imageUrl: string;
+  courseName?: string;
+}
+
 export interface Skill {
   name: string;
   icon?: string;
@@ -54,6 +73,8 @@ export interface ResumeData {
   experience: Experience[];
   internships: Internship[];
   education: Education[];
+  courses?: Course[];
+  certificates?: Certificate[];
   skills: Skills;
 }
 

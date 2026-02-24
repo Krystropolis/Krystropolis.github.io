@@ -3,9 +3,11 @@
 import { useState, useEffect, useRef, KeyboardEvent } from 'react';
 import Image from 'next/image';
 import { loadResumeData, formatDate } from '@/lib/data';
-import { Experience, Internship, Education, Skill } from '@/types';
+import { Experience, Internship, Education, Skill, Course } from '@/types';
 import ShareButton from '@/components/ShareButton';
 import ScrollToTop from '@/components/ScrollToTop';
+import CurrentCourses from '@/components/CurrentCourses';
+import Certifications from '@/components/Certifications';
 import { ChevronDown, ChevronUp, Mail, Linkedin, Github } from 'lucide-react';
 
 function SkillIcon({ skill, index }: { skill: Skill; index: number }) {
@@ -301,6 +303,12 @@ export default function ResumePage() {
             </div>
           </section>
 
+          {/* Current Courses */}
+          {data.courses && <CurrentCourses courses={data.courses} />}
+
+          {/* Certifications */}
+          {data.certificates && <Certifications certificates={data.certificates} />}
+
           {/* Skills */}
           <section className="mb-10" aria-labelledby="skills-heading">
             <h2 
@@ -361,25 +369,6 @@ export default function ResumePage() {
                   ))}
                 </div>
               </div>
-            </div>
-          </section>
-
-          {/* Certification */}
-          <section className="mb-10" aria-labelledby="certification-heading">
-            <h2
-              id="certification-heading"
-              className="text-2xl font-serif font-bold text-gray-900 dark:text-gray-100 mb-6 pb-2 border-b border-gray-200 dark:border-gray-700"
-            >
-              Certification
-            </h2>
-            <div className="flex justify-center">
-              <Image
-                src="/images/google-prompting-essentials.png"
-                alt="Google Prompting Essentials 1 Certification"
-                width={300}
-                height={128}
-                className="h-32 w-auto object-contain"
-              />
             </div>
           </section>
         </div>

@@ -133,6 +133,43 @@
       "gpa": "3.59"
     }
   ],
+  "courses": [
+    {
+      "name": "Atlassian Agile Project Management Professional Certificate",
+      "platform": "LinkedIn",
+      "status": "In Progress",
+      "link": "https://www.linkedin.com/learning/paths/atlassian-agile-project-management-professional-certificate"
+    },
+    {
+      "name": "IBM Product Manager Professional Certificate",
+      "platform": "Coursera",
+      "status": "In Progress",
+      "link": "https://www.coursera.org/professional-certificates/ibm-product-manager"
+    },
+    {
+      "name": "Deutsch als Zweitsprache B2.1",
+      "platform": "VHS",
+      "status": "Upcoming"
+    },
+    {
+      "name": "Google Prompting Essentials",
+      "platform": "Coursera",
+      "status": "Completed",
+      "link": "https://www.coursera.org/specializations/prompting-essentials-google",
+      "hasCertificate": true
+    }
+  ],
+  "certificates": [
+    {
+      "id": "google-prompting-essentials",
+      "name": "Google Prompting Essentials",
+      "issuer": "Google",
+      "issueDate": "2024-01-15",
+      "credentialUrl": "https://coursera.org/share/b7e1e0355f5662034988e35079107bd3",
+      "imageUrl": "/images/google-prompting-essentials.png",
+      "courseName": "Google Prompting Essentials"
+    }
+  ],
   "skills": {
     "programming": {
       "intermediate": [
