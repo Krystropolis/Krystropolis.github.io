@@ -161,6 +161,15 @@
   ],
   "certificates": [
     {
+      "id": "agile-foundations",
+      "name": "Agile Foundations",
+      "issuer": "LinkedIn Learning",
+      "issueDate": "2026-03-07",
+      "credentialUrl": "https://www.linkedin.com/learning/certificates/4d8b81267e4c41374a27cc8b495b17b1dc9d563e61ae01f27a450f2439a7cf32",
+      "imageUrl": "/images/AgileFoundations.jpg",
+      "courseName": "Agile Foundations"
+    },
+    {
       "id": "google-prompting-essentials",
       "name": "Google Prompting Essentials",
       "issuer": "Google",

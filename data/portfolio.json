@@ -109,7 +109,6 @@
           "url": "https://lny.krystropolis.com/"
         }
       ],
-      "featured": true,
       "size": "large"
     },
     {
@@ -139,6 +138,31 @@
         {
           "label": "View GitHub Repository",
           "url": "https://github.com/Krystropolis/Krystropolis.github.io"
+        }
+      ]
+    },
+    {
+      "id": "goal-focused-todo-list",
+      "title": "Goal-focused To Do List",
+      "description": "A goal-oriented to do list that helps users progress towards their goals by establishing routines and maintaining focus.",
+      "technologies": [
+        "Figma"
+      ],
+      "categories": ["product-management", "ui-ux-design", "ai-development"],
+      "year": 2026,
+      "featured": true,
+      "size": "large",
+      "images": [
+        "/images/Goal-focused To Do List.png"
+      ],
+      "links": [
+        {
+          "label": "View Figma File",
+          "url": "https://www.figma.com/community/file/1589734201983826356/goal-focused-to-do-list"
+        },
+        {
+          "label": "Try Live Demo",
+          "url": "https://steel-foil-88135140.figma.site/"
         }
       ]
     }
@@ -183,6 +207,11 @@
       "id": "ai-development",
       "name": "AI-Assisted Development",
       "icon": "Bot"
+    },
+    {
+      "id": "product-management",
+      "name": "Product Management",
+      "icon": "Briefcase"
     }
   ],
   "technologies": [
@@ -210,6 +239,7 @@
     "ESLint",
     "Prettier",
     "Kilo Code",
-    "AI-Assisted Development"
+    "AI-Assisted Development",
+    "Figma"
   ]
 }

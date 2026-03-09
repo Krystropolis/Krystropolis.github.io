@@ -29,7 +29,7 @@ export default function CurrentCourses({ courses }: CurrentCoursesProps) {
         id="courses-heading"
         className="text-2xl font-serif font-bold text-gray-900 dark:text-gray-100 mb-6 pb-2 border-b border-gray-200 dark:border-gray-700"
       >
-        Current Courses
+        Recent Courses
       </h2>
       <div className="space-y-3">
         {courses.map((course, index) => (

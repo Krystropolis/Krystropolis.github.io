@@ -42,8 +42,15 @@ export default function PortfolioPage() {
       );
     }
 
-    // Sort by year in reverse chronological order (newest first)
-    return projects.toSorted((a, b) => b.year - a.year);
+    // Sort by featured status first, then by year (newest first)
+    return projects.toSorted((a, b) => {
+      // Featured projects come first
+      if (a.featured && !b.featured) return -1;
+      if (!a.featured && b.featured) return 1;
+      
+      // Then sort by year (newest first)
+      return b.year - a.year;
+    });
   }, [data, selectedCategories, searchQuery]);
 
   // Handle category toggle
