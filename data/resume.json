@@ -137,8 +137,9 @@
     {
       "name": "Atlassian Agile Project Management Professional Certificate",
       "platform": "LinkedIn",
-      "status": "In Progress",
-      "link": "https://www.linkedin.com/learning/paths/atlassian-agile-project-management-professional-certificate"
+      "status": "Completed",
+      "link": "https://www.linkedin.com/learning/paths/atlassian-agile-project-management-professional-certificate",
+      "hasCertificate": true
     },
     {
       "name": "IBM Product Manager Professional Certificate",
@@ -161,15 +162,6 @@
   ],
   "certificates": [
     {
-      "id": "agile-foundations",
-      "name": "Agile Foundations",
-      "issuer": "LinkedIn Learning",
-      "issueDate": "2026-03-07",
-      "credentialUrl": "https://www.linkedin.com/learning/certificates/4d8b81267e4c41374a27cc8b495b17b1dc9d563e61ae01f27a450f2439a7cf32",
-      "imageUrl": "/images/AgileFoundations.jpg",
-      "courseName": "Agile Foundations"
-    },
-    {
       "id": "google-prompting-essentials",
       "name": "Google Prompting Essentials",
       "issuer": "Google",
@@ -177,6 +169,15 @@
       "credentialUrl": "https://coursera.org/share/b7e1e0355f5662034988e35079107bd3",
       "imageUrl": "/images/google-prompting-essentials.png",
       "courseName": "Google Prompting Essentials"
+    },
+    {
+      "id": "atlassian-agile-project-management-professional",
+      "name": "Atlassian Agile Project Management Professional Certificate",
+      "issuer": "Atlassian",
+      "issueDate": "2026-03-11",
+      "credentialUrl": "https://www.linkedin.com/learning/certificates/0e4a716ea04ae83cf60d34fa779d483102c02e0d9710d5f0318f6539a7861428",
+      "imageUrl": "/images/Atlassian Agile Project Management Professional Certificate.jpg",
+      "courseName": "Atlassian Agile Project Management Professional Certificate"
     }
   ],
   "skills": {
